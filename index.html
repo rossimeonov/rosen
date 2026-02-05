@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Росен Симеонов | Общински председател на ДСБ Русе</title>
+    <title>Росен Симеонов | Начало</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,130 +11,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        :root {
-            --primary-blue: #0B2E5F;
-            --dark-blue: #081F3F;
-            --accent-blue: #00d4ff;
-            --light-text: #ffffff;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #05162d;
-            color: var(--light-text);
-            margin: 0;
-            overflow-x: hidden;
-        }
-
+        :root { --primary-blue: #0B2E5F; --dark-blue: #081F3F; --accent-blue: #00d4ff; --light-text: #ffffff; }
+        body { font-family: 'Roboto', sans-serif; background-color: #05162d; color: var(--light-text); margin: 0; overflow-x: hidden; }
         h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; }
-
-        /* HEADER */
-        .sticky-header {
-            background: linear-gradient(135deg, #0B2E5F, #081F3F);
-            color: #ffffff;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 9999;
-            width: 100%;
-            border-bottom: 2px solid var(--accent-blue);
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
-        }
-
+        .sticky-header { background: linear-gradient(135deg, #0B2E5F, #081F3F); color: #ffffff; padding: 15px 0; position: sticky; top: 0; z-index: 9999; width: 100%; border-bottom: 2px solid var(--accent-blue); }
+        .header-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; }
         .header-text h1 { margin: 0; font-size: 24px; font-weight: 700; }
         .header-text p { margin: 2px 0 0; font-size: 13px; opacity: 0.8; }
-
-        /* HEADER LOGOS - ЦВЕТНИ И БЕЗ ПОДЛОЖКА */
-        .header-logos {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            background: none; 
-            padding: 0;
-        }
-
-        .header-logos img {
-            height: 42px; 
-            width: auto;
-            filter: none; /* Оригинални цветове */
-            transition: transform 0.3s ease;
-        }
-
-        .header-logos img:hover {
-            transform: scale(1.1);
-        }
-
-        nav a { 
-            color: white; text-decoration: none; font-size: 12px; 
-            font-weight: 700; margin-left: 20px; text-transform: uppercase; 
-            opacity: 0.7; transition: 0.3s;
-        }
+        .header-logos { display: flex; gap: 20px; align-items: center; background: none; padding: 0; }
+        .header-logos img { height: 42px; width: auto; transition: transform 0.3s ease; }
+        .header-logos img:hover { transform: scale(1.1); }
+        nav a { color: white; text-decoration: none; font-size: 12px; font-weight: 700; margin-left: 20px; text-transform: uppercase; opacity: 0.7; transition: 0.3s; }
         nav a:hover { opacity: 1; color: var(--accent-blue); }
-
-        /* HERO SECTION */
         .hero { padding: 80px 0; background: radial-gradient(circle at top right, rgba(0, 212, 255, 0.05), transparent); }
-        .hero-quote {
-            font-size: clamp(1.5rem, 3.5vw, 2.8rem);
-            font-weight: 900;
-            line-height: 1.2;
-            border-left: 5px solid var(--accent-blue);
-            padding-left: 25px;
-            margin-bottom: 30px;
-        }
-        .political-photo {
-            width: 100%; max-width: 380px; border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* EXPERTISE SECTION */
-        .expertise-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 35px; border-radius: 20px; height: 100%; transition: 0.3s;
-        }
-        .expertise-card:hover { border-color: var(--accent-blue); background: rgba(255, 255, 255, 0.05); }
+        .hero-quote { font-size: clamp(1.5rem, 3.5vw, 2.8rem); font-weight: 900; line-height: 1.2; border-left: 5px solid var(--accent-blue); padding-left: 25px; margin-bottom: 30px; }
+        .political-photo { width: 100%; max-width: 380px; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); }
+        .expertise-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 35px; border-radius: 20px; height: 100%; transition: 0.3s; }
         .expertise-card i { color: var(--accent-blue); font-size: 2.2rem; margin-bottom: 20px; }
-        .expertise-card h5 { font-weight: 700; margin-bottom: 12px; }
-
-        /* VISION SECTION */
-        .vision-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px; border-radius: 20px; height: 100%; transition: 0.4s;
-        }
+        .vision-card { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 20px; height: 100%; transition: 0.4s; }
         .vision-card h5 { color: var(--accent-blue); font-weight: 700; margin-bottom: 15px; }
-
-        /* TIKTOK */
-        .crt-logo { display: none !important; } 
-        
-        /* CONTACT FORM - WHITE TEXT READABILITY */
         .contact-box { background: #081F3F; padding: 40px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.05); }
-        .form-label { color: #ffffff !important; font-weight: 600; margin-bottom: 8px; }
-        .form-control { 
-            background: rgba(255,255,255,0.08); 
-            border: 1px solid rgba(255,255,255,0.2); 
-            color: #ffffff !important; 
-        }
-        .form-control::placeholder { color: rgba(255,255,255,0.6) !important; }
-        
-        .btn-submit { background: var(--accent-blue); color: var(--dark-blue); font-weight: 900; border: none; padding: 14px; width: 100%; border-radius: 8px; transition: 0.3s; }
-        .btn-submit:hover { background: #ffffff; }
-
+        .form-control { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #ffffff !important; }
+        .btn-submit { background: var(--accent-blue); color: var(--dark-blue); font-weight: 900; border: none; padding: 14px; width: 100%; border-radius: 8px; }
         footer { padding: 40px 0; background: #030d1a; text-align: center; opacity: 0.5; font-size: 13px; }
-
-        @media (max-width: 992px) {
-            .header-container { flex-direction: column; text-align: center; gap: 15px; }
-            .header-logos { flex-wrap: wrap; justify-content: center; }
-        }
     </style>
 </head>
 <body>
@@ -145,15 +44,13 @@
                 <h1>Росен Симеонов</h1>
                 <p>Общински председател на ДСБ Русе</p>
             </div>
-
             <div class="header-logos">
                 <img src="logo-dsb.png.svg" alt="ДСБ">
                 <img src="logo-db.png.svg" alt="ДБ">
                 <img src="logo-epp.png.svg" alt="ЕНП">
             </div>
-
             <nav class="d-none d-lg-block">
-                <a href="#about">За мен</a>
+                <a href="za-men.html">За мен</a>
                 <a href="#vision">Визия</a>
                 <a href="#contact">Контакт</a>
             </nav>
@@ -171,95 +68,42 @@
                         <a href="https://www.tiktok.com/@rossimeonov" target="_blank" class="btn btn-outline-info"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-5 text-center mt-4 mt-lg-0" data-aos="zoom-in">
+                <div class="col-lg-5 text-center" data-aos="zoom-in">
                     <img src="me.jpg.png" alt="Росен Симеонов" class="political-photo">
                 </div>
             </div>
         </section>
 
-        <section id="about" class="container py-5">
-            <h3 class="text-center mb-5 fw-bold" style="letter-spacing: 2px;">ЕКСПЕРТИЗА И КОМПЕТЕНТНОСТ</h3>
+        <section id="expertise" class="container py-5">
+            <h3 class="text-center mb-5 fw-bold">ЕКСПЕРТИЗА И КОМПЕТЕНТНОСТ</h3>
             <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="expertise-card text-center">
-                        <i class="fas fa-ship"></i>
-                        <h5>Управление на логистиката</h5>
-                        <p class="small opacity-75">Над 20 години международен професионален опит в логистика, управление на бюджети и екипи.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="expertise-card text-center">
-                        <i class="fas fa-university"></i>
-                        <h5>AlphaInvest</h5>
-                        <p class="small opacity-75">Основател и водещ инвеститор, фокусиран върху стратегически растеж на капитала и програми за финансова грамотност.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="expertise-card text-center">
-                        <i class="fas fa-globe-europe"></i>
-                        <h5>Глобална перспектива</h5>
-                        <p class="small opacity-75">Владее свободно английски и руски език. Използва международния опит за прозрачни социални действия в България.</p>
-                    </div>
-                </div>
+                <div class="col-md-4"><div class="expertise-card text-center"><i class="fas fa-ship"></i><h5>Логистика</h5><p>Над 20 години международен опит.</p></div></div>
+                <div class="col-md-4"><div class="expertise-card text-center"><i class="fas fa-university"></i><h5>AlphaInvest</h5><p>Финансова грамотност и растеж.</p></div></div>
+                <div class="col-md-4"><div class="expertise-card text-center"><i class="fas fa-globe-europe"></i><h5>Глобалност</h5><p>Международен опит за България.</p></div></div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="za-men.html" class="btn btn-outline-info px-5">Прочетете цялата биография</a>
             </div>
         </section>
 
         <section id="vision" class="container py-5">
-            <h3 class="text-center mb-5 fw-bold" style="letter-spacing: 2px; color: var(--accent-blue);">ВИЗИЯ И ПРИОРИТЕТИ</h3>
+            <h3 class="text-center mb-5 fw-bold" style="color: var(--accent-blue);">ВИЗИЯ И ПРИОРИТЕТИ</h3>
             <div class="row g-4">
-                <div class="col-md-6" data-aos="fade-up">
-                    <div class="vision-card">
-                        <h5>Прозрачност и отчетност</h5>
-                        <p>Установяване на нов стандарт за отворено управление, при който всяко решение и разход са проследими за гражданите на Русе.</p>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="vision-card">
-                        <h5>Финансова грамотност</h5>
-                        <p>Овластяване на хората за финансова независимост и насърчаване на по-устойчива и самостоятелна местна общност.</p>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="vision-card">
-                        <h5>Активно участие</h5>
-                        <p>Преодоляване на пропастта между гражданите и властите чрез гарантиране, че политиката отразява нуждите на хората.</p>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="vision-card">
-                        <h5>Устойчиво развитие</h5>
-                        <p>Дългосрочен икономически просперитет на Русе чрез устойчиви стратегии и модернизация на инфраструктурата.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="container py-5">
-            <h3 class="text-center mb-5 fw-bold" data-aos="fade-up">ПОСЛЕДНО ОТ TIKTOK</h3>
-            <div id="curator-feed-default-feed-layout">
-                <a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a>
+                <div class="col-md-6"><div class="vision-card"><h5>Прозрачност</h5><p>Отчетност за гражданите на Русе.</p></div></div>
+                <div class="col-md-6"><div class="vision-card"><h5>Финансова свобода</h5><p>Овластяване чрез знания.</p></div></div>
             </div>
         </section>
 
         <section id="contact" class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-7">
-                    <div class="contact-box" data-aos="fade-up">
+                    <div class="contact-box">
                         <h3 class="mb-4 text-center fw-bold">СВЪРЖЕТЕ СЕ С МЕН</h3>
                         <form>
-                            <div class="mb-3">
-                                <label class="form-label">Вашето Име</label>
-                                <input type="text" class="form-control" placeholder="Име и фамилия">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Електронна поща</label>
-                                <input type="email" class="form-control" placeholder="your@email.com">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Съобщение</label>
-                                <textarea class="form-control" rows="5" placeholder="Напишете Вашето съобщение тук..."></textarea>
-                            </div>
-                            <button type="submit" class="btn-submit">ИЗПРАТИ СЪОБЩЕНИЕТО</button>
+                            <input type="text" class="form-control mb-3" placeholder="Име">
+                            <input type="email" class="form-control mb-3" placeholder="Имейл">
+                            <textarea class="form-control mb-3" rows="5" placeholder="Съобщение"></textarea>
+                            <button type="submit" class="btn-submit">ИЗПРАТИ</button>
                         </form>
                     </div>
                 </div>
@@ -267,24 +111,13 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>© 2026 Росен Симеонов. Всички права запазени. | Общински председател на ДСБ Русе</p>
-        </div>
-    </footer>
+    <footer><p>© 2026 Росен Симеонов | ДСБ Русе</p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
     <script type="text/javascript">
-    (function(){
-    var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
-    i.src="https://cdn.curator.io/published/90e95303-958e-4937-a4a7-b1e2d8873482.js";
-    e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
-    })();
+    (function(){var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";i.src="https://cdn.curator.io/published/90e95303-958e-4937-a4a7-b1e2d8873482.js";e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i,e);})();
     </script>
-
-    <script> AOS.init({ duration: 1000, once: true }); </script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>
-
