@@ -8,21 +8,112 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        :root { --primary-blue: #0B2E5F; --dark-blue: #081F3F; --accent-blue: #00d4ff; --light-text: #ffffff; }
-        body { font-family: 'Roboto', sans-serif; background-color: #05162d; color: var(--light-text); margin: 0; line-height: 1.7; }
-        .sticky-header { background: linear-gradient(135deg, #0B2E5F, #081F3F); padding: 15px 0; position: sticky; top: 0; z-index: 9999; border-bottom: 2px solid var(--accent-blue); }
-        .header-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; }
-        .header-logos img { height: 35px; filter: none; margin-left: 15px; transition: 0.3s; }
-        .header-logos img:hover { transform: scale(1.1); }
-        nav a { color: white; text-decoration: none; font-size: 12px; font-weight: 700; margin-left: 20px; text-transform: uppercase; opacity: 0.7; }
+        :root { 
+            --primary-blue: #0B2E5F; 
+            --dark-blue: #081F3F; 
+            --accent-blue: #00d4ff; 
+            --light-text: #ffffff; 
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            background-color: #05162d; 
+            color: var(--light-text); 
+            margin: 0; 
+            line-height: 1.7; 
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; }
+
+        /* HEADER */
+        .sticky-header { 
+            background: linear-gradient(135deg, #0B2E5F, #081F3F); 
+            padding: 15px 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 10000; 
+            border-bottom: 2px solid var(--accent-blue); 
+        }
+
+        .header-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 0 20px; 
+        }
+
+        .header-text a { text-decoration: none; color: white; transition: 0.3s; }
+        .header-text h1 { margin: 0; font-size: 24px; font-weight: 700; }
+        .header-text p { margin: 2px 0 0; font-size: 12px; opacity: 0.8; }
+
+        .header-logos img { height: 35px; margin-left: 15px; transition: 0.3s; }
+        
+        nav a { 
+            color: white; text-decoration: none; font-size: 12px; 
+            font-weight: 700; margin-left: 20px; text-transform: uppercase; 
+            opacity: 0.7; transition: 0.3s;
+        }
         nav a:hover { opacity: 1; color: var(--accent-blue); }
-        .bio-header { background: linear-gradient(rgba(5, 22, 45, 0.9), rgba(5, 22, 45, 0.9)), url('me.jpg.png') center/cover; padding: 60px 0; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+        /* MOBILE NAV */
+        .navbar-toggler { border: none; color: white; font-size: 24px; background: transparent; }
+        .mobile-nav { background: var(--dark-blue); border-top: 1px solid var(--accent-blue); }
+        .mobile-nav a { 
+            display: block; padding: 15px 20px; color: white; 
+            text-decoration: none; font-weight: 700; 
+            border-bottom: 1px solid rgba(255,255,255,0.05); 
+        }
+
+        /* BIO CONTENT */
+        .bio-header { 
+            background: linear-gradient(rgba(5, 22, 45, 0.85), rgba(5, 22, 45, 0.85)), url('me.jpg.png') center/top; 
+            padding: 80px 0; 
+            text-align: center; 
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+        }
+
         .bio-content { padding: 60px 0; }
-        .profile-img-container img { max-width: 100%; border-radius: 20px; border-left: 5px solid var(--accent-blue); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-        .section-title { color: var(--accent-blue); font-weight: 700; margin-bottom: 20px; text-transform: uppercase; font-size: 1.4rem; border-bottom: 1px solid rgba(0, 212, 255, 0.2); display: inline-block; padding-bottom: 5px; }
+
+        .profile-img-container img { 
+            width: 100%; 
+            max-width: 400px;
+            border-radius: 20px; 
+            border-left: 5px solid var(--accent-blue); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4); 
+        }
+
+        .section-title { 
+            color: var(--accent-blue); 
+            font-weight: 700; 
+            margin-bottom: 20px; 
+            text-transform: uppercase; 
+            font-size: 1.4rem; 
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2); 
+            display: inline-block; 
+            padding-bottom: 5px; 
+        }
+
+        .info-card {
+            background: rgba(255,255,255,0.03); 
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+        .info-card:hover { border-color: var(--accent-blue); }
+
         footer { padding: 40px 0; background: #030d1a; text-align: center; opacity: 0.5; font-size: 13px; }
+
+        @media (max-width: 992px) {
+            .header-logos { display: none; }
+        }
     </style>
 </head>
 <body>
@@ -30,39 +121,55 @@
     <header class="sticky-header">
         <div class="header-container">
             <div class="header-text">
-                <h1 class="m-0 fs-4 fw-bold" style="color:white">Росен Симеонов</h1>
-                <p class="m-0" style="color:white; font-size: 12px; opacity: 0.8;">Общински председател на ДСБ Русе</p>
+                <a href="index.html">
+                    <h1>Росен Симеонов</h1>
+                    <p>Общински председател на ДСБ Русе</p>
+                </a>
             </div>
-            <div class="header-logos d-none d-md-flex">
-                <img src="logo-dsb.png.svg" alt="ДСБ">
-                <img src="logo-db.png.svg" alt="ДБ">
-                <img src="logo-epp.png.svg" alt="ЕНП">
-            </div>
-            <nav>
+
+            <nav class="d-none d-lg-flex align-items-center">
+                <div class="header-logos me-4">
+                    <img src="logo-dsb.png.svg" alt="ДСБ">
+                    <img src="logo-db.png.svg" alt="ДБ">
+                    <img src="logo-epp.png.svg" alt="ЕНП">
+                </div>
                 <a href="index.html">Начало</a>
                 <a href="index.html#vision">Визия</a>
                 <a href="index.html#contact">Контакт</a>
             </nav>
+
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="collapse d-lg-none mobile-nav" id="mobileMenu">
+            <a href="index.html">Начало</a>
+            <a href="index.html#vision" onclick="bootstrap.Collapse.getInstance(document.getElementById('mobileMenu')).hide()">Визия</a>
+            <a href="index.html#contact" onclick="bootstrap.Collapse.getInstance(document.getElementById('mobileMenu')).hide()">Контакт</a>
         </div>
     </header>
 
     <section class="bio-header" data-aos="fade-down">
         <div class="container">
-            <h2 class="display-5 fw-bold">Биография</h2>
+            <h2 class="display-4 fw-bold">Биография</h2>
+            <p class="lead opacity-75">Пътят от Русе през Лондон и обратно към каузата за Русе</p>
         </div>
     </section>
 
     <div class="container bio-content">
         <div class="row g-5">
             <div class="col-lg-4" data-aos="fade-right">
-                <div class="profile-img-container"><img src="me.jpg.png" alt="Росен Симеонов"></div>
-                <div class="mt-4 p-4" style="background: rgba(255,255,255,0.03); border-radius: 15px;">
-                    <h5 class="fw-bold mb-3">Накратко</h5>
+                <div class="profile-img-container">
+                    <img src="me.jpg.png" alt="Росен Симеонов">
+                </div>
+                <div class="mt-4 p-4 info-card">
+                    <h5 class="fw-bold mb-3 text-info">Накратко</h5>
                     <ul class="list-unstyled opacity-75">
-                        <li>📍 Русе, България</li>
-                        <li>🎓 MBA (Anglia Ruskin University)</li>
-                        <li>💼 Икономист и инвеститор</li>
-                        <li>🗣️ Английски, Руски</li>
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-info"></i> Русе, България</li>
+                        <li class="mb-2"><i class="fas fa-graduation-cap me-2 text-info"></i> MBA (Anglia Ruskin University)</li>
+                        <li class="mb-2"><i class="fas fa-chart-line me-2 text-info"></i> Икономист и инвеститор</li>
+                        <li class="mb-2"><i class="fas fa-language me-2 text-info"></i> Английски, Руски</li>
                     </ul>
                 </div>
             </div>
@@ -77,13 +184,23 @@
 
                 <h3 class="section-title mt-4">Обществен дълг</h3>
                 <p>Росен Симеонов гледа на политиката като на обществен дълг. Включва се активно в „Демократи за силна България“, а през 2025 г. е избран с пълно единодушие за общински председател на ДСБ – Русе. Основните му приоритети са прозрачност, равенство пред закона и дългосрочна визия за развитието на Русе.</p>
-                <p>Женен, баща на две деца.</p>
+                
+                <div class="p-3 mt-4 border-start border-info border-4 bg-white bg-opacity-10">
+                    <p class="m-0 italic text-info">"Вярвам, че Русе има потенциала да бъде модерен, европейски център, ако се управлява с експертиза и честност."</p>
+                </div>
+                
+                <p class="mt-4 opacity-75">Женен, баща на две деца.</p>
             </div>
         </div>
     </div>
 
-    <footer><p>© 2026 Росен Симеонов | ДСБ Русе</p></footer>
+    <footer>
+        <div class="container">
+            <p>© 2026 Росен Симеонов | Общински председател на ДСБ Русе</p>
+        </div>
+    </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
