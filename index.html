@@ -18,6 +18,8 @@
             --light-text: #ffffff;
         }
 
+        html { scroll-behavior: smooth; } /* Оптимизация: Плавно превъртане */
+
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #05162d;
@@ -35,7 +37,7 @@
             padding: 15px 0;
             position: sticky;
             top: 0;
-            z-index: 9999;
+            z-index: 10000; /* По-висок индекс за менюто */
             width: 100%;
             border-bottom: 2px solid var(--accent-blue);
         }
@@ -49,7 +51,8 @@
             padding: 0 20px;
         }
 
-        .header-text a { text-decoration: none; color: white; }
+        .header-text a { text-decoration: none; color: white; transition: 0.3s; }
+        .header-text a:hover { opacity: 0.9; }
         .header-text h1 { margin: 0; font-size: 24px; font-weight: 700; }
         .header-text p { margin: 2px 0 0; font-size: 13px; opacity: 0.8; }
 
@@ -114,9 +117,6 @@
         .expertise-card i { color: var(--accent-blue); font-size: 2.2rem; margin-bottom: 20px; }
         .vision-card h5 { color: var(--accent-blue); font-weight: 700; margin-bottom: 15px; }
 
-        /* TIKTOK */
-        .crt-logo { display: none !important; }
-
         /* CONTACT FORM */
         .contact-box { background: #081F3F; padding: 40px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.05); }
         .form-control { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #ffffff !important; }
@@ -141,9 +141,9 @@
 
             <nav class="d-none d-lg-flex align-items-center">
                 <div class="header-logos me-4">
-                    <img src="logo-dsb.png.svg" alt="ДСБ">
-                    <img src="logo-db.png.svg" alt="ДБ">
-                    <img src="logo-epp.png.svg" alt="ЕНП">
+                    <img src="logo-dsb.png.svg" alt="Лого ДСБ">
+                    <img src="logo-db.png.svg" alt="Лого Демократична България">
+                    <img src="logo-epp.png.svg" alt="Лого ЕНП">
                 </div>
                 <a href="za-men.html">За мен</a>
                 <a href="#vision">Визия</a>
@@ -174,7 +174,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5 text-center mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="500">
-                    <img src="me.jpg.png" alt="Росен Симеонов" class="political-photo">
+                    <img src="me.jpg.png" alt="Росен Симеонов - Общински председател на ДСБ Русе" class="political-photo">
                 </div>
             </div>
         </section>
@@ -186,21 +186,21 @@
                     <div class="expertise-card text-center">
                         <i class="fas fa-ship"></i>
                         <h5>Управление на логистиката</h5>
-                        <p class="small opacity-75">Над 20 години международен професионален опит в логистика, управление на бюджети и екипи.</p>
+                        <p class="small opacity-75">Над 20 години международен опит в логистика и управление на екипи.</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="expertise-card text-center">
                         <i class="fas fa-university"></i>
                         <h5>AlphaInvest</h5>
-                        <p class="small opacity-75">Основател и водещ инвеститор, фокусиран върху стратегически растеж на капитала и финансова грамотност.</p>
+                        <p class="small opacity-75">Програми за финансова грамотност и стратегическо управление на капитала.</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="expertise-card text-center">
                         <i class="fas fa-globe-europe"></i>
                         <h5>Глобална перспектива</h5>
-                        <p class="small opacity-75">Владее свободно английски и руски език. Използва международния опит за прозрачни социални действия.</p>
+                        <p class="small opacity-75">Международен опит, приложен за прозрачно управление на местно ниво.</p>
                     </div>
                 </div>
             </div>
@@ -215,25 +215,13 @@
                 <div class="col-md-6" data-aos="fade-up">
                     <div class="vision-card">
                         <h5>Прозрачност и отчетност</h5>
-                        <p>Установяване на нов стандарт за отворено управление, при който всяко решение и разход са проследими за гражданите.</p>
+                        <p>Отворено управление с проследимост на всяко решение за гражданите на Русе.</p>
                     </div>
                 </div>
                 <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="vision-card">
                         <h5>Финансова грамотност</h5>
-                        <p>Овластяване на хората за финансова независимост и насърчаване на по-устойчива и самостоятелна местна общност.</p>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="vision-card">
-                        <h5>Активно участие</h5>
-                        <p>Преодоляване на пропастта между гражданите и властите чрез гарантиране, че политиката отразява нуждите на хората.</p>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="vision-card">
-                        <h5>Устойчиво развитие</h5>
-                        <p>Дългосрочен икономически просперитет на Русе чрез устойчиви стратегии и модернизация на инфраструктурата.</p>
+                        <p>Насърчаване на финансова независимост за устойчива местна общност.</p>
                     </div>
                 </div>
             </div>
@@ -242,7 +230,7 @@
         <section class="container py-5">
             <h3 class="text-center mb-5 fw-bold" data-aos="fade-up">ПОСЛЕДНО ОТ TIKTOK</h3>
             <div id="curator-feed-default-feed-layout">
-                <a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a>
+                <a href="https://curator.io" target="_blank" class="crt-logo crt-tag" style="display:none;">Powered by Curator.io</a>
             </div>
         </section>
 
@@ -254,15 +242,15 @@
                         <form>
                             <div class="mb-3">
                                 <label class="form-label">Вашето Име</label>
-                                <input type="text" class="form-control" placeholder="Име и фамилия">
+                                <input type="text" class="form-control" placeholder="Име и фамилия" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Електронна поща</label>
-                                <input type="email" class="form-control" placeholder="your@email.com">
+                                <input type="email" class="form-control" placeholder="your@email.com" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Съобщение</label>
-                                <textarea class="form-control" rows="5" placeholder="Напишете Вашето съобщение тук..."></textarea>
+                                <textarea class="form-control" rows="5" placeholder="Напишете Вашето съобщение тук..." required></textarea>
                             </div>
                             <button type="submit" class="btn-submit">ИЗПРАТИ СЪОБЩЕНИЕТО</button>
                         </form>
