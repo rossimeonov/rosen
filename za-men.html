@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>За мен | Росен Симеонов</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #0B2E5F;
+            --dark-blue: #081F3F;
+            --accent-blue: #00d4ff;
+            --light-text: #ffffff;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #05162d;
+            color: var(--light-text);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+
+        /* HEADER */
+        .sticky-header {
+            background: linear-gradient(135deg, #0B2E5F, #081F3F);
+            color: #ffffff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            width: 100%;
+            border-bottom: 2px solid var(--accent-blue);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .header-text h1 { margin: 0; font-size: 24px; font-weight: 700; }
+        .header-text p { margin: 2px 0 0; font-size: 13px; opacity: 0.8; }
+
+        .header-logos { display: flex; gap: 15px; align-items: center; }
+        .header-logos img { height: 35px; filter: brightness(1.1); transition: 0.3s; }
+
+        nav a { 
+            color: white; text-decoration: none; font-size: 12px; 
+            font-weight: 700; margin-left: 20px; text-transform: uppercase; 
+            opacity: 0.7; transition: 0.3s;
+        }
+        nav a:hover { opacity: 1; color: var(--accent-blue); }
+
+        /* CONTENT SECTIONS */
+        .bio-header {
+            background: linear-gradient(rgba(5, 22, 45, 0.8), rgba(5, 22, 45, 0.9)), url('me.jpg.png');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .bio-content { padding: 80px 0; }
+        
+        .profile-img-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-img-container img {
+            max-width: 100%;
+            border-radius: 20px;
+            border-left: 5px solid var(--accent-blue);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .section-title {
+            color: var(--accent-blue);
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            border-right: 4px solid var(--accent-blue);
+            margin: 40px 0;
+        }
+
+        footer { padding: 40px 0; background: #030d1a; text-align: center; opacity: 0.5; font-size: 13px; }
+
+        @media (max-width: 992px) {
+            .header-container { flex-direction: column; text-align: center; gap: 15px; }
+            .header-logos { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="header-text">
+                <h1>Росен Симеонов</h1>
+                <p>Общински председател на ДСБ Русе</p>
+            </div>
+            <div class="header-logos">
+                <img src="logo-dsb.png.svg" alt="ДСБ">
+                <img src="logo-db.png.svg" alt="ДБ">
+                <img src="logo-epp.png.svg" alt="ЕНП">
+            </div>
+            <nav>
+                <a href="index.html">Начало</a>
+                <a href="index.html#vision">Визия</a>
+                <a href="index.html#contact">Контакт</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="bio-header">
+        <div class="container" data-aos="zoom-in">
+            <h2 class="display-4 fw-bold">Биография</h2>
+            <p class="lead">Пътят от Русе през Лондон и обратно – с опит и кауза</p>
+        </div>
+    </section>
+
+    <div class="container bio-content">
+        <div class="row g-5">
+            <div class="col-lg-4" data-aos="fade-right">
+                <div class="profile-img-container">
+                    <img src="me.jpg.png" alt="Росен Симеонов">
+                </div>
+                <div class="mt-4 p-4" style="background: rgba(255,255,255,0.03); border-radius: 15px;">
+                    <h5 class="fw-bold mb-3">Лични данни</h5>
+                    <ul class="list-unstyled opacity-75">
+                        <li><i class="fas fa-baby-carriage me-2"></i> Роден: 1977 г. (Русе)</li>
+                        <li><i class="fas fa-users me-2"></i> Семейно положение: Женен</li>
+                        <li><i class="fas fa-child me-2"></i> Деца: Баща на две деца</li>
+                        <li><i class="fas fa-language me-2"></i> Езици: Английски, Руски</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-8" data-aos="fade-up">
+                <h3 class="section-title">Кой е Росен Симеонов?</h3>
+                <p>Росен Симеонов е икономист, инвеститор и обществено ангажиран гражданин с дългогодишен международен управленски опит. Роден е през 1977 г. в Русе, където завършва средното си образование и изгражда първите си ценности – уважение към труда, отговорност и активна гражданска позиция.</p>
+
+                <h3 class="section-title mt-5">Образование</h3>
+                <p>Завършва бакалавърска степен по аграрна икономика и магистратура по финанси в Стопанска академия „Д. А. Ценов“ – Свищов. През 2022 г. придобива магистърска степен по бизнес администрация с отличие в <strong>Anglia Ruskin University (Великобритания)</strong> – университет с международно признание и силна практическа насоченост.</p>
+
+                <div class="highlight-box">
+                    <h4 class="h5 fw-bold"><i class="fas fa-briefcase me-2"></i> Професионален опит</h4>
+                    <p class="mb-0">Професионалният път на Росен Симеонов включва над 20 години работа в чужбина, основно във Великобритания, където заема ръководни позиции в сферата на логистиката и управлението. Работил е в големи частни компании, отговаряйки за бюджети, екипи, автопаркове и стратегическо планиране. Този опит му дава дълбоко разбиране за това как работят ефективните организации.</p>
+                </div>
+
+                <h3 class="section-title">Завръщане и Кауза</h3>
+                <p>След завръщането си в България през 2022 г. той се установява в родния си град Русе и се посвещава както на инвестиционна дейност на капиталовите пазари, така и на каузата за повишаване на финансовата грамотност и икономическата независимост на хората. За него финансовата свобода е ключова предпоставка за активни, свободно мислещи и независими граждани.</p>
+
+                <h3 class="section-title mt-5">Политическа дейност</h3>
+                <p>Росен Симеонов гледа на политиката не като на професия, а като на обществен дълг. Включва се активно в „Демократи за силна България“, а през 2025 г. е избран с пълно единодушие за общински председател на <strong>ДСБ – Русе</strong>.</p>
+                <p>Основните му приоритети са:</p>
+                <ul>
+                    <li>Отваряне на партията към гражданите и привличане на млади хора.</li>
+                    <li>Експертен подход в местното управление.</li>
+                    <li>Отстояване на прозрачност и равенство пред закона.</li>
+                </ul>
+
+                <p class="mt-4 italic opacity-75">"Вярвам, че Русе има значително по-голям потенциал, отколкото се реализира днес, и че устойчивата промяна идва чрез честен разговор с хората."</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Росен Симеонов. Всички права запазени. | Общински председател на ДСБ Русе</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script> AOS.init({ duration: 1000, once: true }); </script>
+</body>
+</html>
