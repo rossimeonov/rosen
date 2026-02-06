@@ -2,44 +2,30 @@
 <html lang="bg">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Биография | Росен Симеонов</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
         :root { --primary-blue: #0B2E5F; --dark-blue: #051221; --accent-blue: #00d4ff; }
         body { font-family: 'Roboto', sans-serif; background-color: #f4f7f9; color: #333; margin: 0; }
         .navbar { background: #051221; border-bottom: 1px solid var(--accent-blue); }
-        .brand-name { font-size: 20px; font-weight: 900; color: white !important; text-decoration: none; }
-        .header-logos img { height: 26px; }
-        .nav-link { color: white !important; font-weight: 700; font-size: 13px; text-transform: uppercase; margin-left: 20px; }
-        
         .page-header { padding: 140px 0 60px; background: linear-gradient(135deg, #051221, #0B2E5F); color: white; text-align: center; }
-        .section-title { font-weight: 900; color: var(--primary-blue); position: relative; margin-bottom: 40px; }
+        .main-img { border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); width: 100%; border: 6px solid white; margin-bottom: 30px; }
+        .section-title { font-weight: 900; color: var(--primary-blue); margin-bottom: 30px; position: relative; }
         .section-title::after { content: ''; position: absolute; left: 0; bottom: -10px; width: 50px; height: 4px; background: var(--accent-blue); }
-        
-        .main-img { border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); width: 100%; border: 6px solid white; margin-bottom: 25px; }
-        .quick-facts { background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: -60px; border-top: 5px solid var(--accent-blue); }
-        .yard-bg { padding: 100px 0; background: linear-gradient(rgba(5, 18, 33, 0.8), rgba(5, 18, 33, 0.8)), url('2.jpg') center/cover fixed; color: white; text-align: center; }
-        
-        .award-banner { background: #fffbeb; border: 1px solid #fef3c7; border-radius: 20px; padding: 25px; display: flex; gap: 20px; align-items: center; }
-        footer { padding: 50px 0; text-align: center; background: #020a13; color: white; opacity: 0.6; }
-
-        @media (max-width: 991px) { .header-logos, .social-nav { display: none; } .quick-facts { margin-top: 20px; } }
+        .yard-banner { padding: 100px 0; background: linear-gradient(rgba(5, 18, 33, 0.8), rgba(5, 18, 33, 0.8)), url('2.jpg') center/cover fixed; color: white; text-align: center; }
+        footer { padding: 40px 0; text-align: center; background: #020a13; color: white; opacity: 0.6; }
     </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
         <div class="container">
-            <div class="navbar-brand">
-                <a href="index.html" class="brand-name">РОСЕН СИМЕОНОВ</a>
-                <div class="header-logos"><img src="logo-dsb.png.svg" alt="ДСБ"><img src="logo-db.png.svg" alt="ДБ"></div>
-            </div>
+            <a href="index.html" class="navbar-brand fw-bold">РОСЕН СИМЕОНОВ</a>
             <div class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link active" href="za-men.html">Биография</a></li>
@@ -51,64 +37,51 @@
         </div>
     </nav>
 
-    <header class="page-header"><div class="container"><h1>Личната история</h1></div></header>
-
-    <section class="container mb-5">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="quick-facts">
-                    <p><strong><i class="fas fa-home me-2"></i> Русе</strong></p>
-                    <p><strong><i class="fas fa-graduation-cap me-2"></i> MBA Distinction</strong></p>
-                    <p><strong><i class="fas fa-briefcase me-2"></i> Експерт Логистика</strong></p>
-                </div>
-            </div>
-            <div class="col-lg-8 pt-4">
-                <h2 class="section-title">Кой е Росен Симеонов?</h2>
-                <p>Роден в Русе през 1977 г., Росен прекарва 20 години в Лондон, където се издига до Мениджър Логистика. През 2022 г. се завръща у дома, за да работи за промяната.</p>
-            </div>
-        </div>
-    </section>
+    <header class="page-header"><div class="container"><h1>Кой е Росен Симеонов?</h1></div></header>
 
     <section class="container py-5">
         <div class="row align-items-center">
-            <div class="col-lg-6">
-                <h2 class="section-title">Опит и Дисциплина</h2>
-                <p>Работата в най-голямата частна компания за скелета в Англия го учи на правила и отговорност.</p>
-                <img src="DSC_1912.jpg" alt="Лондон опит" class="main-img">
-            </div>
-            <div class="col-lg-6">
-                <img src="Untitled.png" alt="MBA Награждаване" class="main-img">
-                <div class="award-banner">
-                    <i class="fas fa-award fa-3x text-warning"></i>
-                    <div>
-                        <p class="m-0"><strong>Top Achiever MBA</strong></p>
-                        <a href="Top achiever award for outstanding performance MBA.jpg" target="_blank" class="small">Виж сертификата</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="yard-bg"><h2>Мащаб и Експертиза</h2></section>
-
-    <section class="container py-5">
-        <div class="row align-items-center">
-            <div class="col-lg-5"><img src="finance.jpg" alt="Финанси" class="main-img"></div>
             <div class="col-lg-7">
-                <h2 class="section-title">Лична мисия</h2>
-                <p>Като съосновател на Alphainvest.bg, Росен работи за финансовата независимост на русенци.</p>
+                <h2 class="section-title">От Русе до Лондон и обратно</h2>
+                <p>Роден в Русе, Росен Симеонов израства с любов към Дунава и икономическите науки. Прекарва 20 години в Лондон, където превръща дисциплината и спазването на правилата в свой личен стандарт.</p>
+                <p>Работейки в сферата на логистиката, той управлява мащабни операции в най-голямата частна компания за скелета в Англия.</p>
             </div>
+            <div class="col-lg-5">
+                <img src="DSC_1912.jpg" alt="Лондон" class="main-img">
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5 bg-white rounded-4 shadow-sm my-5">
+        <div class="row align-items-center">
+            <div class="col-lg-5"><img src="Untitled.png" alt="MBA" class="main-img"></div>
+            <div class="col-lg-7 px-lg-5">
+                <h2 class="section-title">Академично признание</h2>
+                <p>Завършва MBA степен с пълно отличие (Distinction) в Anglia Ruskin University. Неговата експертиза е подкрепена от международно признание за академични постижения.</p>
+                <a href="Top achiever award for outstanding performance MBA.jpg" target="_blank" class="btn btn-sm btn-outline-primary">Виж сертификата</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="yard-banner"><h2>Дисциплина и Мащаб</h2></section>
+
+    <section class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h2 class="section-title">Финансова свобода</h2>
+                <p>Като съосновател на <strong>Alphainvest.bg</strong>, Росен вярва, че образованите и финансово независими граждани са в основата на силното гражданско общество.</p>
+            </div>
+            <div class="col-lg-5"><img src="finance.jpg" alt="Финанси" class="main-img"></div>
         </div>
     </section>
 
     <section class="container py-5 text-center">
-        <h2 class="section-title mx-auto">Нова енергия за ДСБ Русе</h2>
-        <img src="Rosen Simeonov poema posta obshtinski predsedatel.jpg" alt="ДСБ Русе" class="main-img mx-auto d-block" style="max-width: 800px;">
+        <h2 class="section-title mx-auto">Новото начало за ДСБ Русе</h2>
+        <p class="mb-5">На 25 юни 2025 г. Росен Симеонов поема лидерството на ДСБ в Русе.</p>
+        <img src="Rosen Simeonov poema posta obshtinski predsedatel.jpg" alt="Председател" class="main-img mx-auto d-block" style="max-width: 800px;">
     </section>
 
     <footer><p>© 2026 РОСЕН СИМЕОНОВ | ДСБ РУСЕ</p></footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000 });</script>
 </body>
 </html>
