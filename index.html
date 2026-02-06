@@ -2,7 +2,7 @@
 <html lang="bg">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Росен Симеонов | Председател на ДСБ Русе</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
@@ -16,26 +16,42 @@
             --dark-blue: #051221; 
             --accent-blue: #00d4ff; 
             --pure-white: #ffffff; 
+            --text-gray: #a0aec0;
         }
         
-        body { font-family: 'Roboto', sans-serif; background-color: var(--dark-blue); color: white; margin: 0; overflow-x: hidden; }
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            background-color: var(--dark-blue); 
+            color: white; 
+            margin: 0; 
+            overflow-x: hidden; 
+        }
+
         h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
 
         /* Навигация */
         .navbar { 
             background: rgba(5, 18, 33, 0.95); 
-            backdrop-filter: blur(10px); 
+            backdrop-filter: blur(15px); 
             min-height: 80px; 
             border-bottom: 1px solid rgba(0, 212, 255, 0.2);
-            padding: 15px 0;
+            transition: 0.3s;
         }
-        .navbar-brand { display: flex; align-items: center; gap: 20px; }
-        .brand-name { font-size: 20px; font-weight: 900; color: white !important; text-decoration: none; letter-spacing: 2px; }
+        .navbar-brand { display: flex; align-items: center; gap: 15px; }
+        .brand-name { font-size: 20px; font-weight: 900; color: white !important; text-decoration: none; letter-spacing: 1px; }
         
-        .header-logos { display: flex; align-items: center; gap: 15px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 20px; margin-left: 10px; }
-        .header-logos img { height: 28px; width: auto; filter: brightness(0) invert(1); opacity: 0.9; }
+        .header-logos { display: flex; align-items: center; gap: 12px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 15px; }
+        .header-logos img { height: 26px; width: auto; opacity: 0.9; }
 
-        .nav-link { color: white !important; font-weight: 700; font-size: 13px; text-transform: uppercase; margin-left: 25px; opacity: 0.7; transition: 0.3s; }
+        .nav-link { 
+            color: white !important; 
+            font-weight: 700; 
+            font-size: 13px; 
+            text-transform: uppercase; 
+            margin-left: 20px; 
+            opacity: 0.7; 
+            transition: 0.3s; 
+        }
         .nav-link:hover { color: var(--accent-blue) !important; opacity: 1; }
 
         /* Hero Секция */
@@ -43,39 +59,49 @@
             min-height: 90vh; 
             display: flex; 
             align-items: center;
-            background: linear-gradient(90deg, #051221 35%, rgba(5, 18, 33, 0.6) 100%), url('ruse.jpg') center center/cover no-repeat;
+            background: linear-gradient(90deg, var(--dark-blue) 40%, rgba(5, 18, 33, 0.4) 100%), url('ruse.jpg') center center/cover no-repeat;
             position: relative;
-            padding: 100px 0 0 0; /* Без долно падинг, за да може снимката да "стъпи" на дъното */
+            padding-top: 100px;
+            overflow: hidden;
         }
 
         .hero-quote { 
             font-size: clamp(2.2rem, 5vw, 4rem); 
             font-weight: 900; 
             line-height: 1.15; 
-            margin-bottom: 30px; 
+            margin-bottom: 25px; 
             letter-spacing: -1px;
         }
 
-        .accent-text {
-            color: var(--accent-blue);
-            display: block;
+        .accent-text { color: var(--accent-blue); }
+
+        .hero-lead {
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--text-gray);
+            max-width: 550px;
+            margin-bottom: 40px;
+            border-left: 3px solid var(--accent-blue);
+            padding-left: 20px;
         }
 
-        /* Подобрена обработка на снимката */
-        .photo-wrapper {
+        /* Визуална композиция на снимката - премахната рамка и добавено преливане */
+        .photo-container {
             position: relative;
-            bottom: 0;
+            z-index: 2;
             display: flex;
-            justify-content: flex-end;
             align-items: flex-end;
+            justify-content: flex-end;
         }
 
         .hero-photo {
             width: 100%;
-            max-width: 550px;
+            max-width: 600px;
             height: auto;
             display: block;
-            /* Плавна маска за преливане на тялото към фона */
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+            /* Плавна маска за преливане на тялото към тъмния фон */
             -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
             mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         }
@@ -86,45 +112,78 @@
             color: var(--dark-blue); 
             font-weight: 900; 
             padding: 18px 40px; 
-            border-radius: 50px; /* Модерна овална форма */
+            border-radius: 50px; 
             border: none; 
             text-transform: uppercase; 
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
         }
-        .btn-main:hover { background: white; transform: scale(1.05); box-shadow: 0 15px 30px rgba(0,212,255,0.3); }
+        .btn-main:hover { background: white; transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,212,255,0.4); }
         
         .btn-outline { 
-            border: 2px solid rgba(255,255,255,0.3); 
+            border: 2px solid rgba(255,255,255,0.4); 
             color: white; 
-            font-weight: 700; 
+            font-weight: 900; 
             padding: 16px 40px; 
             border-radius: 50px; 
             text-transform: uppercase; 
             transition: 0.3s; 
         }
-        .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+        .btn-outline:hover { background: white; color: var(--dark-blue); border-color: white; }
 
         /* Секция Приоритети */
         .white-section { padding: 120px 0; background: #ffffff; color: var(--dark-blue); }
-        .section-title { font-weight: 900; font-size: 2.8rem; margin-bottom: 50px; position: relative; }
-        .section-title::after { content: ''; position: absolute; left: 0; bottom: -10px; width: 60px; height: 5px; background: var(--accent-blue); }
+        .section-header h2 { font-weight: 900; font-size: 2.8rem; color: var(--primary-blue); margin-bottom: 50px; position: relative; }
+        .section-header h2::after { content: ''; position: absolute; width: 60px; height: 5px; background: var(--accent-blue); bottom: -15px; left: 0; }
 
-        .feature-box { margin-bottom: 45px; transition: 0.3s; }
-        .feature-box h3 { font-weight: 800; font-size: 1.25rem; color: var(--primary-blue); margin-bottom: 15px; }
+        .feature-box { border-left: 5px solid var(--accent-blue); padding-left: 25px; margin-bottom: 45px; }
+        .feature-box h3 { font-weight: 800; font-size: 1.3rem; margin-bottom: 12px; color: var(--primary-blue); }
         .feature-box p { color: #555; line-height: 1.7; }
+
+        .vision-card { 
+            background: #f8fbff; 
+            padding: 40px; 
+            border-radius: 15px; 
+            border-bottom: 5px solid var(--accent-blue); 
+            transition: 0.4s; 
+            height: 100%; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+        }
+        .vision-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); background: #fff; }
+        .vision-card i { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 25px; display: block; }
+
+        /* Контактна форма */
+        .contact-wrap { 
+            background: var(--primary-blue); 
+            padding: 120px 0; 
+            /* Премахнат острия кът за по-модерен вид или оставен като акцент */
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%); 
+        }
+        .form-control { 
+            background: rgba(255,255,255,0.08); 
+            border: 1px solid rgba(255,255,255,0.15); 
+            color: white !important; 
+            padding: 15px; 
+            border-radius: 8px; 
+        }
+        .form-control:focus { background: rgba(255,255,255,0.12); border-color: var(--accent-blue); box-shadow: none; }
+
+        footer { padding: 60px 0; text-align: center; background: #020a13; }
+        footer p { font-size: 13px; letter-spacing: 1px; opacity: 0.6; font-weight: 500; }
 
         @media (max-width: 991px) { 
             .header-logos { display: none; }
-            .hero { text-align: center; padding-top: 120px; background: #051221; }
-            .hero-photo { margin-top: 40px; max-width: 400px; margin-inline: auto; }
-            .photo-wrapper { justify-content: center; }
+            .hero { text-align: center; padding-top: 130px; }
+            .hero-lead { margin-inline: auto; border-left: none; border-top: 3px solid var(--accent-blue); padding-top: 20px; }
+            .photo-container { justify-content: center; margin-top: 50px; }
+            .hero-photo { width: 100%; max-width: 400px; }
+            .contact-wrap { clip-path: none; }
             .btn-main, .btn-outline { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
         <div class="container">
             <div class="navbar-brand">
                 <a href="index.html" class="brand-name">РОСЕН СИМЕОНОВ</a>
@@ -135,7 +194,7 @@
                 </div>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="fas fa-bars" style="color: white;"></i>
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
@@ -151,22 +210,23 @@
     <main>
         <section class="hero">
             <div class="container">
-                <div class="row align-items-end"> <div class="col-lg-7 mb-lg-5 pb-lg-5" data-aos="fade-up">
+                <div class="row align-items-center">
+                    <div class="col-lg-7" data-aos="fade-right">
                         <h1 class="hero-quote">
                             Трябва да сме <br>
-                            <span class="accent-text">сред хората,</span>
+                            <span class="accent-text">сред хората,</span><br>
                             това е начинът.
                         </h1>
-                        <p class="lead opacity-75 mb-5" style="max-width: 500px; font-weight: 300; font-size: 1.1rem; line-height: 1.8;">
-                            „Политиката не е професия, а начин да работиш за обществото. Време е за правила, които важат за всички.“
+                        <p class="hero-lead">
+                            „Политиката не е професия, а начин да работиш за обществото. <br>Време е за правила, които важат за всички.“
                         </p>
-                        <div class="d-flex flex-wrap gap-3 mb-5">
+                        <div class="d-flex flex-wrap gap-3">
                             <a href="#contact" class="btn btn-main">Подай сигнал</a>
                             <a href="za-men.html" class="btn btn-outline">Кой е Росен?</a>
                         </div>
                     </div>
-                    <div class="col-lg-5" data-aos="fade-in">
-                        <div class="photo-wrapper">
+                    <div class="col-lg-5" data-aos="fade-left">
+                        <div class="photo-container">
                             <img src="rosen simeonov.png" alt="Росен Симеонов" class="hero-photo">
                         </div>
                     </div>
@@ -176,26 +236,105 @@
 
         <section id="priorities" class="white-section">
             <div class="container">
-                <h2 class="section-title">Ангажименти</h2>
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Ангажименти</h2>
+                </div>
                 <div class="row g-5">
                     <div class="col-lg-6">
-                        <div class="feature-box" data-aos="fade-up">
+                        <div class="feature-box" data-aos="fade-up" data-aos-delay="100">
                             <h3>Финансова независимост</h3>
                             <p>Колкото по-ниска е финансовата грамотност, толкова по-зависим е човек. Личната ми мисия е икономическото ограмотяване на русенци.</p>
                         </div>
-                        <div class="feature-box" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-box" data-aos="fade-up" data-aos-delay="200">
                             <h3>Равенство пред закона</h3>
                             <p>Общината трябва да бъде партньор на бизнеса и защитник на гражданите. Еднакви правила за всеки в Русе.</p>
                         </div>
                     </div>
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12" data-aos="zoom-in">
+                                <div class="vision-card">
+                                    <i class="fas fa-bullhorn"></i>
+                                    <h5>Гражданска активност</h5>
+                                    <p class="opacity-75">Трябва да сме сред хората и да отговаряме дори на най-неудобните въпроси. Гласът на Русе трябва да се чува.</p>
+                                </div>
+                            </div>
+                            <div class="col-12" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="vision-card">
+                                    <i class="fas fa-eye"></i>
+                                    <h5>Пълна прозрачност</h5>
+                                    <p class="opacity-75">Писнало ни е да няма отчетност. Хората искат да знаят точно за какво се разходват техните данъци.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5" style="background: #030d1a;">
+            <div class="container text-center">
+                <h5 class="mb-5 opacity-50 fw-bold">Директно от TikTok</h5>
+                <div id="curator-feed-default-feed-layout"></div>
+            </div>
+        </section>
+
+        <section id="media" class="py-5">
+            <div class="container text-center">
+                <h2 class="mb-5">Медийни <span class="accent-text">Изяви</span></h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8" data-aos="fade-up">
+                        <div style="background: rgba(255,255,255,0.05); padding: 50px; border: 1px solid rgba(255,255,255,0.1); border-radius: 15px;">
+                            <span style="color: var(--accent-blue); font-weight: 700; font-size: 13px; letter-spacing: 2px;">ВЕСТНИК УТРО</span>
+                            <h4 class="mt-3 mb-4">"Трябва да сме сред хората, да отговаряме и на неудобните въпроси дори."</h4>
+                            <a href="https://utroruse.com/article/1179302/" target="_blank" class="btn btn-outline px-5">Прочети интервюто</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-wrap">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center mb-5 text-white">
+                        <h2 class="fw-900">Пишете ми директно</h2>
+                        <p class="opacity-75">Вашият сигнал или идея за Русе са важни. Използвайте формата.</p>
+                    </div>
+                    <div class="col-lg-8">
+                        <form action="https://formspree.io/f/mnjbakgl" method="POST">
+                            <div class="row g-3">
+                                <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="ВАШЕТО ИМЕ" required></div>
+                                <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="ВАШИЯТ EMAIL" required></div>
+                                <div class="col-12"><textarea name="message" class="form-control" rows="5" placeholder="ВАШИЯТ СИГНАЛ ИЛИ ВЪПРОС..." required></textarea></div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn-main mt-4 px-5">ИЗПРАТИ СЪОБЩЕНИЕТО</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
+    <footer>
+        <div class="container">
+            <p>© 2026 РОСЕН СИМЕОНОВ | ДСБ РУСЕ | КЪДЕТО НЯМА РЕД, НЯМА СВОБОДА</p>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
+    <script type="text/javascript">
+        // TikTok Feed Integration
+        (function(){
+            var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
+            i.src="https://cdn.curator.io/published/90e95303-958e-4937-a4a7-b1e2d8873482.js";
+            e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+        })();
+
+        // AOS Init
         AOS.init({ duration: 1000, once: true });
     </script>
 </body>
