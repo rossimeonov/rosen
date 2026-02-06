@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Биография | Росен Симеонов</title>
+    <title>Биография | Росен Симеонов – Пътят от Лондон до Русе</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -22,18 +22,25 @@
         body { font-family: 'Roboto', sans-serif; background-color: #f4f7f9; color: var(--dark-blue); margin: 0; overflow-x: hidden; }
         h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* Навигация - Синхронизирана с началната страница */
-        .navbar { background: rgba(5, 18, 33, 0.98); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0, 212, 255, 0.2); }
+        /* Навигация - ИДЕНТИЧНА С INDEX.HTML */
+        .navbar { 
+            background: rgba(5, 18, 33, 0.95); 
+            backdrop-filter: blur(15px); 
+            min-height: 80px; 
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
         .navbar-brand { display: flex; align-items: center; gap: 15px; }
-        .brand-name { font-size: 20px; font-weight: 900; color: white !important; text-decoration: none; }
+        .brand-name { font-size: 20px; font-weight: 900; color: white !important; text-decoration: none; letter-spacing: 1px; }
+        
         .header-logos { display: flex; align-items: center; gap: 12px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 15px; }
         .header-logos img { height: 26px; width: auto; }
-        .nav-link { color: white !important; font-weight: 700; font-size: 13px; text-transform: uppercase; margin-left: 20px; opacity: 0.7; }
-        .nav-link.active { color: var(--accent-blue) !important; opacity: 1; }
-        
+
+        .nav-link { color: white !important; font-weight: 700; font-size: 13px; text-transform: uppercase; margin-left: 20px; opacity: 0.7; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--accent-blue) !important; opacity: 1; }
+
         .social-nav { display: flex; gap: 15px; margin-left: 25px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 20px; }
         .social-nav a { color: white; font-size: 18px; opacity: 0.7; transition: 0.3s; }
-        .social-nav a:hover { color: var(--accent-blue); transform: translateY(-2px); }
+        .social-nav a:hover { color: var(--accent-blue); opacity: 1; transform: translateY(-2px); }
 
         /* Header */
         .page-header {
@@ -41,29 +48,28 @@
             background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
             color: white; text-align: center; clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
         }
-        .page-header h1 { font-weight: 900; font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 15px; }
 
-        /* Секции */
+        /* Content Blocks */
         .section-title { font-weight: 900; color: var(--primary-blue); margin-bottom: 30px; position: relative; }
         .section-title::after { content: ''; position: absolute; left: 0; bottom: -10px; width: 50px; height: 4px; background: var(--accent-blue); }
 
-        .main-img { border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); width: 100%; border: 8px solid white; margin-bottom: 20px; }
+        .main-img { border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); width: 100%; border: 8px solid white; margin-bottom: 25px; }
         
-        .quick-facts { background: white; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: -80px; }
+        .quick-facts { background: white; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: -80px; position: relative; z-index: 10; }
         .fact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
         .fact-item i { font-size: 1.5rem; color: var(--accent-blue); width: 30px; text-align: center; }
 
-        /* Award Box */
-        .award-banner { background: #fffbeb; border: 1px solid #fef3c7; border-radius: 20px; padding: 30px; display: flex; gap: 20px; align-items: center; margin-top: 20px; }
+        .award-banner { background: #fffbeb; border: 1px solid #fef3c7; border-radius: 20px; padding: 25px; display: flex; gap: 20px; align-items: center; margin-bottom: 20px; }
+        .achievement-img { border-radius: 15px; border: 4px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.08); width: 100%; margin-bottom: 15px; }
 
-        /* Banner */
-        .yard-bg { padding: 120px 0; background: linear-gradient(rgba(5, 18, 33, 0.85), rgba(5, 18, 33, 0.85)), url('2.jpg') center/cover fixed; color: white; text-align: center; }
+        .parallax-banner { padding: 120px 0; background: linear-gradient(rgba(5, 18, 33, 0.8), rgba(5, 18, 33, 0.8)), url('mattison-scaffolding-yard.jpg') center/cover fixed; color: white; text-align: center; }
 
         footer { padding: 60px 0; text-align: center; background: #020a13; color: white; opacity: 0.6; font-size: 13px; }
 
         @media (max-width: 991px) { 
-            .social-nav, .header-logos { display: none; } 
+            .header-logos, .social-nav { display: none; }
             .quick-facts { margin-top: 0; margin-bottom: 40px; }
+            .page-header { clip-path: none; padding-top: 120px; }
         }
     </style>
 </head>
@@ -74,9 +80,9 @@
             <div class="navbar-brand">
                 <a href="index.html" class="brand-name">РОСЕН СИМЕОНОВ</a>
                 <div class="header-logos">
-                    <img src="logo-dsb.png.svg" alt="ДСБ">
-                    <img src="logo-db.png.svg" alt="ДБ">
-                    <img src="logo-epp.png.svg" alt="ЕНП">
+                    <img src="logo-dsb.svg" alt="ДСБ">
+                    <img src="logo-db.svg" alt="ДБ">
+                    <img src="logo-epp.svg" alt="ЕНП">
                 </div>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -86,7 +92,7 @@
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a class="nav-link active" href="za-men.html">Биография</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#priorities">Приоритети</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#media">Медии</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#gallery">На терен</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#contact">Контакт</a></li>
                     <li class="nav-item">
                         <div class="social-nav">
@@ -103,7 +109,7 @@
     <header class="page-header">
         <div class="container" data-aos="fade-up">
             <h1>Личната история зад каузата</h1>
-            <p class="lead opacity-75">„Политиката не е професия, а начин да работиш за обществото.“</p>
+            <p class="lead opacity-75">„Политиката е начин да работиш за обществото.“</p>
         </div>
     </header>
 
@@ -111,70 +117,78 @@
         <div class="row">
             <div class="col-lg-4" data-aos="fade-right">
                 <div class="quick-facts">
-                    <h5 class="mb-4 fw-900 border-bottom pb-2">Данни</h5>
+                    <h5 class="mb-4 fw-900 border-bottom pb-2">Профил</h5>
                     <div class="fact-item"><i class="fas fa-university"></i> <div><strong>MBA (Distinction)</strong><p class="small m-0 text-muted">Anglia Ruskin University</p></div></div>
-                    <div class="fact-item"><i class="fas fa-briefcase"></i> <div><strong>Мениджър Логистика</strong><p class="small m-0 text-muted">20 години опит в UK</p></div></div>
-                    <div class="fact-item"><i class="fas fa-chart-pie"></i> <div><strong>Финансов експерт</strong><p class="small m-0 text-muted">Alphainvest.bg</p></div></div>
-                    <div class="fact-item"><i class="fas fa-heart"></i> <div><strong>Русе</strong><p class="small m-0 text-muted">Роден и израснал тук</p></div></div>
+                    <div class="fact-item"><i class="fas fa-briefcase"></i> <div><strong>Логистичен мениджмънт</strong><p class="small m-0 text-muted">22 г. опит в UK</p></div></div>
+                    <div class="fact-item"><i class="fas fa-chart-line"></i> <div><strong>Финансов експерт</strong><p class="small m-0 text-muted">AlphaInvest.bg</p></div></div>
+                    <div class="fact-item"><i class="fas fa-home"></i> <div><strong>Русе</strong><p class="small m-0 text-muted">Роден и израснал тук</p></div></div>
                 </div>
             </div>
             <div class="col-lg-8 ps-lg-5 pt-lg-5" data-aos="fade-left">
-                <h2 class="section-title">Пътят към дома</h2>
-                <p>Роден през 1977 г. в Русе, Росен Симеонов израства с ценностите на дунавската столица. След завършване на Икономическия техникум и магистратура по финанси в Свищов, съдбата го отвежда във Великобритания.</p>
-                <p>В Лондон Росен прекарва близо две десетилетия, преминавайки през всички нива на йерархията – от служител в склад до <strong>Мениджър Логистика на най-голямата частна компания за строителни скелета в Англия</strong>. Там той открива силата на правилата и дисциплината.</p>
-                <p>През 2022 г. се завръща в Русе със семейството си. „Никога не сме обмисляли София – обичаме Русе и искаме децата ни да израснат тук,“ споделя той.</p>
+                <h2 class="section-title">Европейска школа и завръщане</h2>
+                <p>Роден в Русе през 1977 г., Росен Симеонов прекарва почти 20 години в Обединеното кралство. Професионалният му път в Лондон е пример за дисциплина и израстване – от работник в склад до <strong>Мениджър Логистика</strong> в една от най-големите частни компании в сектора.</p>
+                <div class="row g-3 my-4">
+                    <div class="col-md-6"><img src="mattison-scaffolding.jpg" class="achievement-img shadow-sm" alt="Mattison Scaffolding"></div>
+                    <div class="col-md-6"><img src="rosen-simeonov-manager-mattison.jpg" class="achievement-img shadow-sm" alt="Логистично управление"></div>
+                </div>
+                <p>През 2022 г. той избира да се върне в родния Русе със своето семейство. Воден от принципа, че правилата трябва да важат за всички, той влиза в обществения живот с амбицията да приложи наученото в чужбина за доброто на своя град.</p>
             </div>
         </div>
     </section>
 
-    <section class="container py-5">
-        <div class="row align-items-center">
+    <section class="container py-5 bg-white rounded-5 shadow-sm mb-5">
+        <div class="row align-items-center px-4">
             <div class="col-lg-6" data-aos="fade-right">
-                <h2 class="section-title">Експертиза и признание</h2>
-                <p>Паралелно с професионалните си ангажименти, Росен завършва с отличие MBA степен в престижния <strong>Anglia Ruskin University</strong>. Неговата дисертация и академични резултати му носят признанието <em>Top Achiever</em>.</p>
-                <div class="award-banner">
+                <h2 class="section-title">Академично признание</h2>
+                <p>Паралелно с кариерата си, Росен завършва с отличие MBA степен в <strong>Anglia Ruskin University</strong>. Неговото изключително представяне е удостоени с наградата <strong>Top Achiever Award</strong>.</p>
+                <div class="award-banner mb-4">
                     <i class="fas fa-certificate fa-3x text-warning"></i>
                     <div>
                         <h5 class="m-0 fw-bold">Top Achiever Award</h5>
-                        <p class="m-0 text-muted">За изключителни резултати в MBA програмата.</p>
-                        <a href="Top achiever award for outstanding performance MBA.jpg" target="_blank" class="small fw-bold text-primary">Виж сертификата <i class="fas fa-search-plus"></i></a>
+                        <p class="m-0 text-muted italic">За изключителни резултати в магистърската програма.</p>
                     </div>
                 </div>
+                <img src="top achiever rosen simeonov.png" class="achievement-img" alt="Top Achiever Certificate">
             </div>
             <div class="col-lg-6" data-aos="fade-left">
-                <img src="Untitled.png" alt="Награждаване MBA" class="main-img">
+                <div class="ratio ratio-16x9 shadow rounded-4 overflow-hidden border border-white border-4 mb-3">
+                    <video controls poster="rosen-simeonov-graduation.jpg">
+                        <source src="rosen-simeonov-graduation-stage.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <img src="rosen-simeonov-graduation.jpg" class="achievement-img" alt="Церемония по дипломиране">
             </div>
         </div>
     </section>
 
-    <section class="yard-bg">
+    <section class="parallax-banner">
         <div class="container" data-aos="zoom-in">
-            <h2>Дисциплина, научена на практика</h2>
-            <p class="lead">Управление на автопарк, бюджети и международни екипи по строги правила.</p>
+            <h2 class="fw-900">Дисциплина, научена в практиката</h2>
+            <p class="lead">Над 22 години опит в стратегическото и логистично управление в международна среда.</p>
         </div>
     </section>
 
     <section class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-5" data-aos="fade-right">
-                <img src="finance.jpg" alt="Конференция Финанси" class="main-img">
+                <img src="finansova-konferncia-invest-pro-rosen-simeonov.jpg" class="main-img" alt="Финансова конференция">
             </div>
             <div class="col-lg-7 ps-lg-5" data-aos="fade-left">
                 <h2 class="section-title">Финансовата грамотност като свобода</h2>
-                <p>Като инвеститор и съосновател на <strong>Alphainvest.bg</strong>, Росен вярва, че икономическата независимост е ключът към гражданската смелост. „Колкото по-ниска е финансовата грамотност, толкова по-зависим е човек от властта,“ твърди той.</p>
-                <p>След завръщането си, той веднага се включва в политическия живот на ДСБ, воден от спомените за сините знамена от детството си и мечтата за един подреден и модерен Русе.</p>
+                <p>Росен е основател на <a href="https://www.alphainvest.bg" target="_blank" style="color: var(--primary-blue); font-weight: bold;">AlphaInvest.bg</a> – платформа, посветена на повишаването на финансовата култура в България. Той вярва, че икономическата независимост е в основата на гражданската свобода.</p>
+                <p>„Колкото по-ниска е финансовата грамотност на един човек, толкова по-зависим е той от системата. Моята мисия е да дам на хората инструментите да управляват успешно своя капитал.“</p>
             </div>
         </div>
     </section>
 
-    <section class="container py-5 text-center">
+    <section class="container py-5 text-center mb-5">
         <div class="row justify-content-center">
             <div class="col-lg-10" data-aos="fade-up">
-                <h2 class="section-title mx-auto">Нова енергия за Русе</h2>
-                <p class="mb-5">През 2025 г. Росен Симеонов е избран единодушно за общински председател на ДСБ-Русе. Неговата цел е ясна: прозрачност, привличане на млади хора и отвореност към гражданите.</p>
-                <img src="Rosen Simeonov poema posta obshtinski predsedatel.jpg" alt="Поемане на поста" class="main-img" style="max-width: 800px;">
-                <div class="mt-4 p-4 bg-light border-start border-primary border-4 text-start shadow-sm">
-                    <p class="h4 fw-bold">„Трябва да се върнем към основните принципи в политиката – сред хората, да отговаряме и на неудобните въпроси дори.“</p>
+                <h2 class="section-title mx-auto">Лидерство в ДСБ Русе</h2>
+                <p class="mb-5 lead">През юни 2025 г. Росен Симеонов е избран единодушно за общински председател на ДСБ-Русе. Той поема поста с ясна визия за модерна и ефективна структура, която да бъде истински глас на гражданите.</p>
+                <img src="Rosen Simeonov poema posta obshtinski predsedatel.jpg" class="main-img border border-primary border-5" alt="Избор за председател">
+                <div class="mt-4 p-4 bg-white shadow-sm border-start border-primary border-5 text-start">
+                    <p class="h4 fw-bold mb-0 italic">„Трябва да се върнем към основните принципи в политиката – да сме сред хората и да отговаряме и на неудобните въпроси дори.“</p>
                 </div>
             </div>
         </div>
