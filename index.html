@@ -11,80 +11,127 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        :root { --primary-blue: #0B2E5F; --dark-blue: #05162d; --accent-blue: #00d4ff; --pure-white: #ffffff; }
+        :root { 
+            --primary-blue: #0B2E5F; 
+            --dark-blue: #05162d; 
+            --accent-blue: #00d4ff; 
+            --pure-white: #ffffff; 
+        }
+        
         body { font-family: 'Roboto', sans-serif; background-color: var(--dark-blue); color: white; margin: 0; overflow-x: hidden; }
         h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
 
-        /* По-висока навигация */
+        /* Navigation - По-висока и фиксирана */
         .navbar { 
-            background: rgba(11, 46, 95, 0.95); 
-            backdrop-filter: blur(10px); 
-            min-height: 85px; 
+            background: rgba(5, 22, 45, 0.98); 
+            backdrop-filter: blur(15px); 
+            min-height: 95px; 
             border-bottom: 2px solid var(--accent-blue);
         }
-        .navbar-brand { display: flex; align-items: center; gap: 15px; }
-        .brand-name { font-size: 20px; font-weight: 900; color: white !important; text-decoration: none; }
-        .header-logos { display: flex; align-items: center; gap: 10px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 15px; }
-        .header-logos img { height: 28px; width: auto; }
+        .navbar-brand { display: flex; align-items: center; gap: 20px; }
+        .brand-name { font-size: 22px; font-weight: 900; color: white !important; text-decoration: none; letter-spacing: 1px; }
+        .header-logos { display: flex; align-items: center; gap: 15px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 20px; }
+        .header-logos img { height: 35px; width: auto; filter: drop-shadow(0 0 5px rgba(0,0,0,0.3)); }
 
-        .nav-link { color: white !important; font-weight: 700; font-size: 12px; text-transform: uppercase; margin-left: 15px; opacity: 0.8; transition: 0.3s; }
+        .nav-link { color: white !important; font-weight: 700; font-size: 13px; text-transform: uppercase; margin-left: 20px; opacity: 0.8; transition: 0.3s; }
         .nav-link:hover { color: var(--accent-blue) !important; opacity: 1; }
-        
-        /* Хамбургер бутон */
-        .navbar-toggler { border: none; padding: 0; }
-        .navbar-toggler:focus { box-shadow: none; }
-        .fa-bars { color: white; font-size: 24px; }
 
-        /* Hero с по-светъл Overlay */
+        /* Hero Section - Професионален пакет */
         .hero { 
-            min-height: 75vh; display: flex; align-items: center;
-            /* Overlay-ът е намален от 0.75 на 0.5 за повече яснота на снимката */
-            background: linear-gradient(rgba(5, 22, 45, 0.5), rgba(5, 22, 45, 0.6)), url('ruse.jpg') center center/cover no-repeat;
-            padding: 80px 0; border-bottom: 4px solid var(--accent-blue);
+            min-height: 85vh; 
+            display: flex; 
+            align-items: center;
+            /* По-тъмен градиент вляво за текст */
+            background: linear-gradient(to right, rgba(5, 22, 45, 1) 40%, rgba(5, 22, 45, 0.4) 100%), url('ruse.jpg') center center/cover no-repeat;
             position: relative;
-        }
-        .hero-quote { font-size: clamp(1.8rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 25px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-        
-        /* Снимка с Gradient Mask отдолу */
-        .photo-column { display: flex; justify-content: flex-end; align-items: center; }
-        .photo-wrapper img { 
-            width: 100%; max-width: 380px; 
-            /* Градиентен ефект отдолу */
-            mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-            filter: drop-shadow(0 0 15px rgba(0,212,255,0.2));
+            padding: 80px 0;
+            border-bottom: 5px solid var(--accent-blue);
         }
 
-        /* Приоритети */
-        .priority-section { padding: 100px 0; background: var(--pure-white); color: var(--dark-blue); }
-        .feature-box { border-left: 5px solid var(--primary-blue); padding-left: 20px; margin-bottom: 40px; }
-        .feature-box h3 { font-weight: 900; font-size: 1.3rem; color: var(--primary-blue); margin-bottom: 10px; }
-        
-        .vision-card { background: #f8f9fa; padding: 30px; border-radius: 4px; border-left: 4px solid var(--accent-blue); height: 100%; transition: 0.3s; }
-        .vision-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .vision-card i { font-size: 2rem; color: var(--primary-blue); margin-bottom: 15px; }
+        .hero-quote { 
+            font-size: clamp(2rem, 5vw, 3.8rem); 
+            font-weight: 900; 
+            line-height: 1.1; 
+            margin-bottom: 25px; 
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.8);
+        }
 
-        /* Контакт */
-        .contact-wrap { background: var(--primary-blue); padding: 100px 0; clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%); }
-        .form-control { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white !important; padding: 15px; border-radius: 0; }
-        .btn-main { background: white; color: var(--dark-blue); font-weight: 900; padding: 15px 45px; border: none; text-transform: uppercase; transition: 0.3s; }
-        .btn-main:hover { background: var(--accent-blue); color: white; transform: translateY(-3px); }
+        /* Геометрична подложка за портрета */
+        .photo-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-        footer { padding: 40px 0; text-align: center; opacity: 0.6; font-size: 12px; background: #020a13; }
+        .photo-frame {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 450px;
+            /* Използваме clip-path за модерна геометрична форма */
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            background: var(--dark-blue);
+            padding: 5px; /* Рамка */
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            transition: 0.5s;
+        }
+
+        /* Светлинен ефект зад снимката */
+        .photo-glow {
+            position: absolute;
+            z-index: 1;
+            width: 110%;
+            height: 110%;
+            background: var(--accent-blue);
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            opacity: 0.3;
+            filter: blur(20px);
+            animation: pulse 4s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.2; }
+            50% { transform: scale(1.05); opacity: 0.4; }
+            100% { transform: scale(1); opacity: 0.2; }
+        }
+
+        /* Бутони */
+        .btn-main { background: var(--pure-white); color: var(--dark-blue); font-weight: 900; padding: 18px 45px; border-radius: 0; border: none; text-transform: uppercase; transition: 0.3s; }
+        .btn-main:hover { background: var(--accent-blue); color: white; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,212,255,0.4); }
+        .btn-outline { border: 2px solid white; color: white; font-weight: 900; padding: 16px 45px; border-radius: 0; text-transform: uppercase; transition: 0.3s; }
+        .btn-outline:hover { background: white; color: var(--dark-blue); }
+
+        /* Priorities & Content */
+        .white-section { padding: 100px 0; background: var(--pure-white); color: var(--dark-blue); }
+        .feature-box { border-left: 6px solid var(--primary-blue); padding-left: 25px; margin-bottom: 40px; }
+        .vision-card { background: #f8f9fa; padding: 40px; border-radius: 0; border-bottom: 5px solid var(--accent-blue); transition: 0.3s; height: 100%; }
+        .vision-card:hover { transform: translateY(-10px); background: #ffffff; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+        /* Contact */
+        .contact-wrap { background: var(--primary-blue); padding: 120px 0; clip-path: polygon(0 8%, 100% 0%, 100% 92%, 0% 100%); }
+        .form-control { background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white !important; border-radius: 0; padding: 15px; }
+
+        footer { padding: 50px 0; text-align: center; font-size: 13px; opacity: 0.6; background: #020a13; letter-spacing: 1px; }
 
         @media (max-width: 992px) { 
-            .navbar-brand { gap: 10px; }
-            .header-logos img { height: 22px; }
-            .hero { text-align: center; padding-top: 100px; }
-            .photo-column { justify-content: center; margin-top: 40px; }
-            .contact-wrap { clip-path: none; }
+            .header-logos { display: none; }
+            .hero { text-align: center; padding-top: 120px; }
+            .photo-container { margin-top: 50px; }
+            .contact-wrap { clip-path: none; padding: 80px 0; }
         }
     </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container header-container">
+        <div class="container">
             <div class="navbar-brand">
                 <a href="index.html" class="brand-name">РОСЕН СИМЕОНОВ</a>
                 <div class="header-logos">
@@ -95,7 +142,7 @@
             </div>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars" style="color: white;"></i>
             </button>
             
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -115,53 +162,52 @@
                 <div class="row align-items-center">
                     <div class="col-lg-7" data-aos="fade-right">
                         <h2 class="hero-quote">Трябва да сме <br><span style="color: var(--accent-blue);">сред хората</span>,<br>това е начинът.</h2>
-                        <p class="lead opacity-90 mb-4" style="max-width: 550px;">„Политиката не е професия, а начин да работиш за обществото. Време е за правила, които важат за всички.“</p>
+                        <p class="lead opacity-90 mb-5" style="max-width: 550px; font-weight: 300; text-shadow: 1px 1px 10px rgba(0,0,0,0.5);">„Политиката не е професия, а начин да работиш за обществото. Време е за правила, които важат за всички.“</p>
                         <div class="d-flex flex-wrap gap-3">
                             <a href="#contact" class="btn btn-main">Подай сигнал</a>
-                            <a href="za-men.html" class="btn btn-outline-light p-3 px-5 fw-bold" style="border-radius:0;">Биография</a>
+                            <a href="za-men.html" class="btn btn-outline">Кой е Росен?</a>
                         </div>
                     </div>
-                    <div class="col-lg-5 photo-column" data-aos="fade-left">
-                        <div class="photo-wrapper">
-                            <img src="rosen simeonov.png" alt="Росен Симеонов">
+                    <div class="col-lg-5" data-aos="fade-left">
+                        <div class="photo-container">
+                            <div class="photo-glow"></div>
+                            <div class="photo-frame">
+                                <img src="rosen simeonov.png" alt="Росен Симеонов">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="priorities" class="priority-section">
+        <section id="priorities" class="white-section">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6" data-aos="fade-up">
-                        <h2 class="fw-900 mb-5">Моите <span style="color: var(--primary-blue);">Ангажименти</span></h2>
+                        <h2 class="fw-900 mb-5" style="font-size: 2.5rem; color: var(--primary-blue);">Ангажименти</h2>
                         <div class="feature-box">
-                            <h3>Финансова независимост</h3>
-                            <p>Колкото по-ниска е финансовата грамотност, толкова по-зависим е човек. Личната ми мисия е икономическото ограмотяване на русенци.</p>
+                            <h3>ФИНАНСОВА НЕЗАВИСИМОСТ</h3>
+                            <p>Моята мисия е икономическото ограмотяване на русенци. Свободният човек е финансово независимият човек.</p>
                         </div>
                         <div class="feature-box">
-                            <h3>Равенство пред закона</h3>
-                            <p>Държавата и общината трябва да са равни пред закона с гражданите. Край на "втория начин" и арогантността на администрацията.</p>
-                        </div>
-                        <div class="feature-box">
-                            <h3>Визия за Русе</h3>
-                            <p>Русе не трябва да е град на нископлатени производства. Имаме потенциал за технологии, които да задържат младите хора тук.</p>
+                            <h3>РАВЕНСТВО ПРЕД ЗАКОНА</h3>
+                            <p>Общината трябва да бъде партньор, а не пречка. Еднакви правила за всеки бизнес и всеки гражданин на Русе.</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="row g-4">
                             <div class="col-12" data-aos="zoom-in">
                                 <div class="vision-card">
-                                    <i class="fas fa-bullhorn"></i>
-                                    <h5>Гражданска активност</h5>
-                                    <p class="small opacity-75">Трябва да сме сред хората и да отговаряме дори на най-неудобните въпроси. Егото на заден план.</p>
+                                    <i class="fas fa-comments"></i>
+                                    <h5>ГРАЖДАНСКИ ДИАЛОГ</h5>
+                                    <p>Връщане към основните принципи: сред хората, отговаряйки и на най-неудобните въпроси.</p>
                                 </div>
                             </div>
-                            <div class="col-12" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="col-12" data-aos="zoom-in" data-aos-delay="200">
                                 <div class="vision-card">
-                                    <i class="fas fa-eye"></i>
-                                    <h5>Пълна прозрачност</h5>
-                                    <p class="small opacity-75">Хората искат да знаят точно за какво се разходват публичните средства от техните данъци.</p>
+                                    <i class="fas fa-chart-line"></i>
+                                    <h5>ИКОНОМИЧЕСКИ ПУЛС</h5>
+                                    <p>Привличане на инвестиции в технологии и логистика, които да върнат Русе на картата на Европа.</p>
                                 </div>
                             </div>
                         </div>
@@ -172,31 +218,16 @@
 
         <section class="py-5" style="background: #030d1a;">
             <div class="container text-center">
-                <h5 class="mb-5 opacity-50 fw-bold">Директно от TikTok</h5>
+                <h5 class="mb-5 opacity-50 fw-bold">ДИРЕКТНО ОТ TIKTOK</h5>
                 <div id="curator-feed-default-feed-layout"></div>
             </div>
         </section>
 
-        <section id="media" class="py-5">
-            <div class="container">
-                <h2 class="text-center mb-5">Медийни <span style="color: var(--accent-blue);">Изяви</span></h2>
-                <div class="row justify-content-center">
-                    <div class="col-md-8" data-aos="fade-up">
-                        <div style="background: rgba(255,255,255,0.05); padding: 30px; border: 1px solid rgba(255,255,255,0.1);">
-                            <span style="color: var(--accent-blue); font-weight: 700; font-size: 12px;">ВЕСТНИК УТРО</span>
-                            <h4 class="mt-2">"Трябва да сме сред хората, да отговаряме и на неудобните въпроси дори."</h4>
-                            <a href="https://utroruse.com/article/1179302/" target="_blank" class="btn btn-link p-0 mt-3 text-info" style="text-decoration: none;">Прочети интервюто →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="contact" class="contact-wrap">
-            <div class="container">
+            <div class="container py-5">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center mb-5">
-                        <h2 class="fw-900">Пишете ми директно</h2>
+                    <div class="col-lg-6 text-center text-white mb-5">
+                        <h2 class="fw-900">ПИШЕТЕ МИ ДИРЕКТНО</h2>
                         <p class="opacity-75">Вашият сигнал или идея за Русе са важни. Използвайте формата.</p>
                     </div>
                     <div class="col-lg-8">
@@ -205,7 +236,9 @@
                                 <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="ВАШЕТО ИМЕ" required></div>
                                 <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="ВАШИЯТ EMAIL" required></div>
                                 <div class="col-12"><textarea name="message" class="form-control" rows="5" placeholder="ВАШИЯТ СИГНАЛ ИЛИ ВЪПРОС..." required></textarea></div>
-                                <div class="col-12 text-center"><button type="submit" class="btn-main mt-4">ИЗПРАТИ</button></div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn-main mt-4">ИЗПРАТИ СЪОБЩЕНИЕТО</button>
+                                </div>
                             </div>
                         </form>
                     </div>
