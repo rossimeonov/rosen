@@ -47,25 +47,29 @@
             min-height: 90vh; 
             display: flex; 
             align-items: center;
-            background: linear-gradient(90deg, var(--dark-blue) 40%, rgba(5, 18, 33, 0.4) 100%), url('ruse.jpg') center center/cover no-repeat;
+            /* Градиентът е изместен леко вляво (30% вместо 40%) */
+            background: linear-gradient(90deg, var(--dark-blue) 30%, rgba(5, 18, 33, 0.4) 100%), url('ruse.jpg') center center/cover no-repeat;
             position: relative;
             padding-top: 100px;
             overflow: hidden;
         }
 
-        .hero-quote { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 900; line-height: 1.15; margin-bottom: 25px; }
+        .hero-quote { font-size: clamp(1.8rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.2; margin-bottom: 25px; }
         .accent-text { color: var(--accent-blue); }
 
         .hero-lead {
-            font-size: 1.1rem; font-weight: 300; line-height: 1.8; color: var(--text-gray);
-            max-width: 550px; margin-bottom: 40px; border-left: 3px solid var(--accent-blue); padding-left: 20px;
+            font-size: 1.1rem; font-weight: 300; line-height: 1.6; color: var(--text-gray);
+            max-width: 600px; margin-bottom: 40px; border-left: 3px solid var(--accent-blue); padding-left: 20px;
+            text-transform: none; /* Подзаглавието не е само с главни букви за по-добра четимост */
         }
 
         .hero-photo {
-            width: 100%; max-width: 600px; height: auto; display: block;
+            width: 100%; max-width: 650px; height: auto; display: block;
             filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
             -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
             mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+            /* Изместване на снимката надясно */
+            margin-right: -50px; 
         }
 
         /* Бутони */
@@ -116,9 +120,9 @@
 
         @media (max-width: 991px) { 
             .header-logos, .social-nav { display: none; }
-            .hero { text-align: center; padding-top: 130px; }
+            .hero { text-align: center; padding-top: 130px; background: linear-gradient(180deg, var(--dark-blue) 60%, rgba(5, 18, 33, 0.7) 100%), url('ruse.jpg') center center/cover no-repeat;}
             .hero-lead { margin-inline: auto; border-left: none; border-top: 3px solid var(--accent-blue); padding-top: 20px; }
-            .photo-container { justify-content: center; margin-top: 50px; }
+            .hero-photo { margin-right: 0; margin-inline: auto; max-width: 100%; }
             .btn-main, .btn-outline { width: 100%; margin-bottom: 10px; }
             .contact-wrap { clip-path: none; }
         }
@@ -162,8 +166,8 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-7" data-aos="fade-right">
-                        <h1 class="hero-quote">Трябва да сме <br><span class="accent-text">сред хората,</span><br>това е начинът.</h1>
-                        <p class="hero-lead">„Политиката не е професия, а начин да работиш за обществото. Време е за правила, които важат за всички.“</p>
+                        <h1 class="hero-quote">Росен Симеонов: <br><span class="accent-text">Нова енергия</span> и европейски стандарти за Русе.</h1>
+                        <p class="hero-lead">Председател на ДСБ Русе и финансов експерт с над 20 години международен опит, посветен на прозрачното управление и силното гражданско общество.</p>
                         <div class="d-flex flex-wrap gap-3">
                             <a href="#contact" class="btn-main">Подай сигнал</a>
                             <a href="za-men.html" class="btn-outline">Кой е Росен?</a>
@@ -171,7 +175,7 @@
                     </div>
                     <div class="col-lg-5" data-aos="fade-left">
                         <div class="photo-container text-center">
-                            <img src="rosen simeonov.png" alt="Росен Симеонов" class="hero-photo mx-auto">
+                            <img src="rosen simeonov.png" alt="Росен Симеонов" class="hero-photo">
                         </div>
                     </div>
                 </div>
@@ -233,42 +237,7 @@
                         <img src="kampania-ruse-rosen-simeonov-dialog.jpg" class="gallery-img shadow" alt="Диалог с граждани">
                         <p class="mt-2 small fw-bold">Лице в лице с хората</p>
                     </div>
-                    <div class="col-md-6" data-aos="fade-up">
-                        <img src="sreshta-s-grazhdani-ruse.jpg" class="gallery-img shadow" alt="Среща в Русе" style="height: 400px;">
-                    </div>
-                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                        <img src="dsb-ruse-meeting-rosen-simeonov.jpg" class="gallery-img shadow" alt="Среща на ДСБ" style="height: 400px;">
-                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="media" class="media-section">
-            <div class="container">
-                <div class="text-center mb-5" data-aos="fade-up">
-                    <h2 class="fw-900 mb-3 text-white">Медийни изяви</h2>
-                    <p class="text-white-50">Директни послания през погледа на медиите</p>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-9" data-aos="fade-up">
-                        <div class="media-card">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-newspaper fa-2x text-info me-3"></i>
-                                <span class="text-uppercase fw-bold" style="color: var(--accent-blue); letter-spacing: 1px;">ВЕСТНИК УТРО</span>
-                            </div>
-                            <h4 class="fw-bold mb-4">"Трябва да сме сред хората, да отговаряме и на неудобните въпроси дори. Това е начинът."</h4>
-                            <p class="opacity-75 mb-4">Интервю за професионалния път, дисциплината от Англия и новата визия за Русе.</p>
-                            <a href="https://utroruse.com/article/1179302/" target="_blank" class="btn-outline" style="padding: 10px 25px; font-size: 12px;">Прочети интервюто</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-5" style="background: #020a13;">
-            <div class="container text-center">
-                <h5 class="mb-5 opacity-50 fw-bold">Директно от TikTok</h5>
-                <div id="curator-feed-default-feed-layout"></div>
             </div>
         </section>
 
