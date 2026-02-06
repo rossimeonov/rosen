@@ -19,14 +19,7 @@
             --text-gray: #a0aec0;
         }
         
-        body { 
-            font-family: 'Roboto', sans-serif; 
-            background-color: var(--dark-blue); 
-            color: white; 
-            margin: 0; 
-            overflow-x: hidden; 
-        }
-
+        body { font-family: 'Roboto', sans-serif; background-color: var(--dark-blue); color: white; margin: 0; overflow-x: hidden; }
         h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
 
         /* Навигация */
@@ -40,18 +33,14 @@
         .brand-name { font-size: 20px; font-weight: 900; color: white !important; text-decoration: none; letter-spacing: 1px; }
         
         .header-logos { display: flex; align-items: center; gap: 12px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 15px; }
-        .header-logos img { height: 26px; width: auto; opacity: 0.9; }
+        .header-logos img { height: 26px; width: auto; }
 
-        .nav-link { 
-            color: white !important; 
-            font-weight: 700; 
-            font-size: 13px; 
-            text-transform: uppercase; 
-            margin-left: 20px; 
-            opacity: 0.7; 
-            transition: 0.3s; 
-        }
+        .nav-link { color: white !important; font-weight: 700; font-size: 13px; text-transform: uppercase; margin-left: 20px; opacity: 0.7; transition: 0.3s; }
         .nav-link:hover { color: var(--accent-blue) !important; opacity: 1; }
+
+        .social-nav { display: flex; gap: 15px; margin-left: 25px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 20px; }
+        .social-nav a { color: white; font-size: 18px; opacity: 0.7; transition: 0.3s; }
+        .social-nav a:hover { color: var(--accent-blue); opacity: 1; transform: translateY(-2px); }
 
         /* Hero Секция */
         .hero { 
@@ -64,130 +53,64 @@
             overflow: hidden;
         }
 
-        .hero-quote { 
-            font-size: clamp(2.2rem, 5vw, 4rem); 
-            font-weight: 900; 
-            line-height: 1.15; 
-            margin-bottom: 25px; 
-        }
-
+        .hero-quote { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 900; line-height: 1.15; margin-bottom: 25px; }
         .accent-text { color: var(--accent-blue); }
 
         .hero-lead {
-            font-size: 1.1rem;
-            font-weight: 300;
-            line-height: 1.8;
-            color: var(--text-gray);
-            max-width: 550px;
-            margin-bottom: 40px;
-            border-left: 3px solid var(--accent-blue);
-            padding-left: 20px;
-        }
-
-        /* Визуална композиция на снимката */
-        .photo-container {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-end;
+            font-size: 1.1rem; font-weight: 300; line-height: 1.8; color: var(--text-gray);
+            max-width: 550px; margin-bottom: 40px; border-left: 3px solid var(--accent-blue); padding-left: 20px;
         }
 
         .hero-photo {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            display: block;
+            width: 100%; max-width: 600px; height: auto; display: block;
             filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
-            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
         }
 
         /* Бутони */
-        .btn-main { 
-            background: var(--accent-blue); 
-            color: var(--dark-blue); 
-            font-weight: 900; 
-            padding: 18px 40px; 
-            border-radius: 50px; 
-            border: none; 
-            text-transform: uppercase; 
-            transition: 0.4s; 
-        }
+        .btn-main { background: var(--accent-blue); color: var(--dark-blue); font-weight: 900; padding: 18px 40px; border-radius: 50px; border: none; text-transform: uppercase; transition: 0.4s; }
         .btn-main:hover { background: white; transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,212,255,0.4); }
         
-        .btn-outline { 
-            border: 2px solid rgba(255,255,255,0.4); 
-            color: white; 
-            font-weight: 900; 
-            padding: 16px 40px; 
-            border-radius: 50px; 
-            text-transform: uppercase; 
-            transition: 0.3s; 
-        }
+        .btn-outline { border: 2px solid rgba(255,255,255,0.4); color: white; font-weight: 900; padding: 16px 40px; border-radius: 50px; text-transform: uppercase; transition: 0.3s; }
         .btn-outline:hover { background: white; color: var(--dark-blue); border-color: white; }
 
         /* Секция Приоритети */
-        .white-section { padding: 120px 0; background: #ffffff; color: var(--dark-blue); }
+        .white-section { padding: 100px 0; background: #ffffff; color: var(--dark-blue); }
         .section-header h2 { font-weight: 900; font-size: 2.8rem; color: var(--primary-blue); margin-bottom: 50px; position: relative; }
         .section-header h2::after { content: ''; position: absolute; width: 60px; height: 5px; background: var(--accent-blue); bottom: -15px; left: 0; }
 
-        .feature-box { border-left: 5px solid var(--accent-blue); padding-left: 25px; margin-bottom: 45px; }
-        .feature-box h3 { font-weight: 800; font-size: 1.3rem; color: var(--primary-blue); }
-        .feature-box p { color: #555; line-height: 1.7; }
-
-        .vision-card { 
-            background: #f8fbff; 
-            padding: 40px; 
-            border-radius: 15px; 
-            border-bottom: 5px solid var(--accent-blue); 
-            transition: 0.4s; 
-            height: 100%; 
-        }
+        .vision-card { background: #f8fbff; padding: 40px; border-radius: 15px; border-bottom: 5px solid var(--accent-blue); transition: 0.4s; height: 100%; }
         .vision-card:hover { transform: translateY(-10px); background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .vision-card i { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 25px; display: block; }
 
-        /* Контактна форма - РЕВИЗИРАНИ СТИЛОВЕ ЗА БЯЛ ТЕКСТ */
-        .contact-wrap { 
-            background: var(--primary-blue); 
-            padding: 120px 0; 
-            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%); 
-        }
-
+        /* Контактна форма */
+        .contact-wrap { background: var(--primary-blue); padding: 120px 0; clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%); }
         .form-control { 
             background: rgba(255,255,255,0.1); 
             border: 1px solid rgba(255,255,255,0.2); 
-            color: #ffffff !important; /* Насилено бял цвят при писане */
-            padding: 15px; 
-            border-radius: 8px; 
-            transition: 0.3s;
+            color: #ffffff !important; 
+            padding: 15px; border-radius: 8px; 
         }
+        .form-control::placeholder { color: rgba(255, 255, 255, 0.6) !important; }
 
-        /* Стилове за placeholder (подсказващия текст) */
-        .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.6) !important;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
+        .social-footer { display: flex; gap: 20px; justify-content: center; margin-top: 30px; }
+        .social-footer a { 
+            width: 50px; height: 50px; background: rgba(255,255,255,0.1); 
+            display: flex; align-items: center; justify-content: center; 
+            border-radius: 50%; color: white; font-size: 20px; transition: 0.3s;
         }
+        .social-footer a:hover { background: var(--accent-blue); color: var(--dark-blue); transform: scale(1.1); }
 
-        .form-control:focus { 
-            background: rgba(255,255,255,0.15); 
-            border-color: var(--accent-blue); 
-            box-shadow: none; 
-            color: #ffffff !important;
-        }
-
-        footer { padding: 60px 0; text-align: center; background: #020a13; }
-        footer p { font-size: 13px; opacity: 0.6; }
+        footer { padding: 60px 0; text-align: center; background: #020a13; font-size: 13px; opacity: 0.6; }
 
         @media (max-width: 991px) { 
-            .header-logos { display: none; }
+            .header-logos, .social-nav { display: none; }
             .hero { text-align: center; padding-top: 130px; }
             .hero-lead { margin-inline: auto; border-left: none; border-top: 3px solid var(--accent-blue); padding-top: 20px; }
             .photo-container { justify-content: center; margin-top: 50px; }
-            .contact-wrap { clip-path: none; }
             .btn-main, .btn-outline { width: 100%; }
+            .contact-wrap { clip-path: none; }
         }
     </style>
 </head>
@@ -207,11 +130,17 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a class="nav-link" href="za-men.html">Биография</a></li>
                     <li class="nav-item"><a class="nav-link" href="#priorities">Приоритети</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#media">Медии</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Контакт</a></li>
+                    <li class="nav-item">
+                        <div class="social-nav">
+                            <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.tiktok.com/@rossimeonov" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -222,14 +151,8 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-7" data-aos="fade-right">
-                        <h1 class="hero-quote">
-                            Трябва да сме <br>
-                            <span class="accent-text">сред хората,</span><br>
-                            това е начинът.
-                        </h1>
-                        <p class="hero-lead">
-                            „Политиката не е професия, а начин да работиш за обществото. <br>Време е за правила, които важат за всички.“
-                        </p>
+                        <h1 class="hero-quote">Трябва да сме <br><span class="accent-text">сред хората,</span><br>това е начинът.</h1>
+                        <p class="hero-lead">„Политиката не е професия, а начин да работиш за обществото. Време е за правила, които важат за всички.“</p>
                         <div class="d-flex flex-wrap gap-3">
                             <a href="#contact" class="btn btn-main">Подай сигнал</a>
                             <a href="za-men.html" class="btn btn-outline">Кой е Росен?</a>
@@ -246,36 +169,34 @@
 
         <section id="priorities" class="white-section">
             <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <h2>Ангажименти</h2>
-                </div>
-                <div class="row g-5">
-                    <div class="col-lg-6">
-                        <div class="feature-box" data-aos="fade-up">
-                            <h3>Финансова независимост</h3>
-                            <p>Колкото по-ниска е финансовата грамотност, толкова по-зависим е човек. Личната ми мисия е икономическото ограмотяване на русенци.</p>
-                        </div>
-                        <div class="feature-box" data-aos="fade-up" data-aos-delay="100">
-                            <h3>Равенство пред закона</h3>
-                            <p>Общината трябва да бъде партньор на бизнеса и защитник на гражданите. Еднакви правила за всеки в Русе.</p>
+                <div class="section-header" data-aos="fade-up"><h2>Ангажименти</h2></div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3" data-aos="zoom-in">
+                        <div class="vision-card">
+                            <i class="fas fa-bullhorn"></i>
+                            <h5>Гражданска активност</h5>
+                            <p>Постоянно присъствие сред хората и чуване на техния глас.</p>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="row g-4">
-                            <div class="col-12" data-aos="zoom-in">
-                                <div class="vision-card">
-                                    <i class="fas fa-bullhorn"></i>
-                                    <h5>Гражданска активност</h5>
-                                    <p class="opacity-75">Трябва да сме сред хората и да отговаряме дори на най-неудобните въпроси.</p>
-                                </div>
-                            </div>
-                            <div class="col-12" data-aos="zoom-in" data-aos-delay="200">
-                                <div class="vision-card">
-                                    <i class="fas fa-eye"></i>
-                                    <h5>Пълна прозрачност</h5>
-                                    <p class="opacity-75">Хората искат да знаят точно за какво се разходват техните данъци.</p>
-                                </div>
-                            </div>
+                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="vision-card">
+                            <i class="fas fa-balance-scale"></i>
+                            <h5>Равенство</h5>
+                            <p>Еднакви правила за всеки бизнес и гражданин в Русе.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="vision-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h5>Независимост</h5>
+                            <p>Икономическо ограмотяване и финансова стабилност за русенци.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="vision-card">
+                            <i class="fas fa-eye"></i>
+                            <h5>Прозрачност</h5>
+                            <p>Ясна отчетност за всеки похарчен лев от общинския бюджет.</p>
                         </div>
                     </div>
                 </div>
@@ -294,14 +215,19 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center mb-5 text-white">
                         <h2 class="fw-900">Пишете ми директно</h2>
-                        <p class="opacity-75">Вашият сигнал или идея за Русе са важни.</p>
+                        <p class="opacity-75">Вашият сигнал или идея за Русе са важни. Последвайте ме и в мрежите:</p>
+                        <div class="social-footer">
+                            <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.tiktok.com/@rossimeonov" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        </div>
                     </div>
                     <div class="col-lg-8">
                         <form action="https://formspree.io/f/mnjbakgl" method="POST">
                             <div class="row g-3">
                                 <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="ВАШЕТО ИМЕ" required></div>
                                 <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="ВАШИЯТ EMAIL" required></div>
-                                <div class="col-12"><textarea name="message" class="form-control" rows="5" placeholder="ВАШИЯТ СИГНАЛ ИЛИ ВЪПРОС..." required></textarea></div>
+                                <div class="col-12"><textarea name="message" class="form-control" rows="5" placeholder="ВАШИЯТ СИГНАЛ..." required></textarea></div>
                                 <div class="col-12 text-center">
                                     <button type="submit" class="btn-main mt-4 px-5">ИЗПРАТИ СЪОБЩЕНИЕТО</button>
                                 </div>
