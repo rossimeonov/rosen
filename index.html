@@ -22,16 +22,9 @@
         body { font-family: 'Roboto', sans-serif; background-color: var(--dark-blue); color: white; margin: 0; overflow-x: hidden; }
         h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* Навигация */
-        .navbar { 
-            background: rgba(5, 18, 33, 0.95); 
-            backdrop-filter: blur(15px); 
-            min-height: 80px; 
-            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
-        }
+        .navbar { background: rgba(5, 18, 33, 0.95); backdrop-filter: blur(15px); min-height: 80px; border-bottom: 1px solid rgba(0, 212, 255, 0.2); }
         .navbar-brand { display: flex; align-items: center; gap: 15px; }
         .brand-name { font-size: 20px; font-weight: 900; color: white !important; text-decoration: none; letter-spacing: 1px; }
-        
         .header-logos { display: flex; align-items: center; gap: 12px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 15px; }
         .header-logos img { height: 26px; width: auto; }
 
@@ -42,87 +35,32 @@
         .social-nav a { color: white; font-size: 18px; opacity: 0.7; transition: 0.3s; }
         .social-nav a:hover { color: var(--accent-blue); opacity: 1; transform: translateY(-2px); }
 
-        /* Hero Секция */
-        .hero { 
-            min-height: 90vh; 
-            display: flex; 
-            align-items: center;
-            background: linear-gradient(90deg, var(--dark-blue) 40%, rgba(5, 18, 33, 0.4) 100%), url('ruse.jpg') center center/cover no-repeat;
-            position: relative;
-            padding-top: 100px;
-            overflow: hidden;
-        }
-
+        .hero { min-height: 90vh; display: flex; align-items: center; background: linear-gradient(90deg, var(--dark-blue) 40%, rgba(5, 18, 33, 0.4) 100%), url('ruse.jpg') center center/cover no-repeat; position: relative; padding-top: 100px; overflow: hidden; }
         .hero-quote { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 900; line-height: 1.15; margin-bottom: 25px; }
         .accent-text { color: var(--accent-blue); }
+        .hero-lead { font-size: 1.1rem; font-weight: 300; line-height: 1.8; color: var(--text-gray); max-width: 550px; margin-bottom: 40px; border-left: 3px solid var(--accent-blue); padding-left: 20px; }
+        .hero-photo { width: 100%; max-width: 600px; height: auto; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6)); -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%); mask-image: linear-gradient(to bottom, black 85%, transparent 100%); }
 
-        .hero-lead {
-            font-size: 1.1rem; font-weight: 300; line-height: 1.8; color: var(--text-gray);
-            max-width: 550px; margin-bottom: 40px; border-left: 3px solid var(--accent-blue); padding-left: 20px;
-        }
-
-        .hero-photo {
-            width: 100%; max-width: 600px; height: auto; display: block;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
-            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-            mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-        }
-
-        /* Бутони */
         .btn-main { background: var(--accent-blue); color: var(--dark-blue); font-weight: 900; padding: 18px 40px; border-radius: 50px; border: none; text-transform: uppercase; transition: 0.4s; }
         .btn-main:hover { background: white; transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,212,255,0.4); }
-        
         .btn-outline { border: 2px solid rgba(255,255,255,0.4); color: white; font-weight: 900; padding: 16px 45px; border-radius: 50px; text-transform: uppercase; transition: 0.3s; }
-        .btn-outline:hover { background: white; color: var(--dark-blue); border-color: white; }
 
-        /* Секция Приоритети */
         .white-section { padding: 100px 0; background: #ffffff; color: var(--dark-blue); }
-        .section-header h2 { font-weight: 900; font-size: 2.8rem; color: var(--primary-blue); margin-bottom: 50px; position: relative; }
-        .section-header h2::after { content: ''; position: absolute; width: 60px; height: 5px; background: var(--accent-blue); bottom: -15px; left: 0; }
-
-        .vision-card { background: #f8fbff; padding: 40px; border-radius: 15px; border-bottom: 5px solid var(--accent-blue); transition: 0.4s; height: 100%; }
-        .vision-card:hover { transform: translateY(-10px); background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .vision-card { background: #f8fbff; padding: 40px; border-radius: 15px; border-bottom: 5px solid var(--accent-blue); height: 100%; transition: 0.4s; }
+        .vision-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .vision-card i { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 25px; display: block; }
 
-        /* Медии Секция */
-        .media-section { padding: 100px 0; background: #030d1a; border-top: 1px solid rgba(0, 212, 255, 0.1); }
-        .media-card { 
-            background: rgba(255,255,255,0.05); 
-            padding: 40px; 
-            border-radius: 20px; 
-            border-left: 4px solid var(--accent-blue);
-            transition: 0.3s;
-        }
+        .media-section { padding: 100px 0; background: #030d1a; }
+        .media-card { background: rgba(255,255,255,0.05); padding: 40px; border-radius: 20px; border-left: 4px solid var(--accent-blue); transition: 0.3s; }
         .media-card:hover { background: rgba(255,255,255,0.08); }
 
-        /* Контактна форма */
         .contact-wrap { background: var(--primary-blue); padding: 120px 0; clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%); }
-        .form-control { 
-            background: rgba(255,255,255,0.1); 
-            border: 1px solid rgba(255,255,255,0.2); 
-            color: #ffffff !important; 
-            padding: 15px; border-radius: 8px; 
-        }
+        .form-control { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #ffffff !important; padding: 15px; border-radius: 8px; }
         .form-control::placeholder { color: rgba(255, 255, 255, 0.6) !important; }
-
-        .social-footer { display: flex; gap: 20px; justify-content: center; margin-top: 30px; }
-        .social-footer a { 
-            width: 50px; height: 50px; background: rgba(255,255,255,0.1); 
-            display: flex; align-items: center; justify-content: center; 
-            border-radius: 50%; color: white; font-size: 20px; transition: 0.3s;
-        }
-        .social-footer a:hover { background: var(--accent-blue); color: var(--dark-blue); transform: scale(1.1); }
 
         footer { padding: 60px 0; text-align: center; background: #020a13; font-size: 13px; opacity: 0.6; }
 
-        @media (max-width: 991px) { 
-            .header-logos, .social-nav { display: none; }
-            .hero { text-align: center; padding-top: 130px; }
-            .hero-lead { margin-inline: auto; border-left: none; border-top: 3px solid var(--accent-blue); padding-top: 20px; }
-            .photo-container { justify-content: center; margin-top: 50px; }
-            .btn-main, .btn-outline { width: 100%; }
-            .contact-wrap { clip-path: none; }
-        }
+        @media (max-width: 991px) { .header-logos, .social-nav { display: none; } .hero { text-align: center; } .contact-wrap { clip-path: none; } }
     </style>
 </head>
 <body>
@@ -171,9 +109,7 @@
                         </div>
                     </div>
                     <div class="col-lg-5" data-aos="fade-left">
-                        <div class="photo-container">
-                            <img src="rosen simeonov.png" alt="Росен Симеонов" class="hero-photo">
-                        </div>
+                        <img src="rosen simeonov.png" alt="Росен Симеонов" class="hero-photo">
                     </div>
                 </div>
             </div>
@@ -183,34 +119,10 @@
             <div class="container">
                 <div class="section-header" data-aos="fade-up"><h2>Ангажименти</h2></div>
                 <div class="row g-4 text-dark">
-                    <div class="col-md-6 col-lg-3" data-aos="zoom-in">
-                        <div class="vision-card">
-                            <i class="fas fa-bullhorn"></i>
-                            <h5>Гражданска активност</h5>
-                            <p>Постоянно присъствие сред хората и чуване на техния глас.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="vision-card">
-                            <i class="fas fa-balance-scale"></i>
-                            <h5>Равенство</h5>
-                            <p>Еднакви правила за всеки бизнес и гражданин в Русе.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="vision-card">
-                            <i class="fas fa-chart-line"></i>
-                            <h5>Независимост</h5>
-                            <p>Икономическо ограмотяване и финансова стабилност за русенци.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="vision-card">
-                            <i class="fas fa-eye"></i>
-                            <h5>Прозрачност</h5>
-                            <p>Ясна отчетност за всеки похарчен лев от общинския бюджет.</p>
-                        </div>
-                    </div>
+                    <div class="col-md-6 col-lg-3"><div class="vision-card"><i class="fas fa-bullhorn"></i><h5>Активност</h5><p>Постоянно присъствие сред хората.</p></div></div>
+                    <div class="col-md-6 col-lg-3"><div class="vision-card"><i class="fas fa-balance-scale"></i><h5>Равенство</h5><p>Еднакви правила за всеки в Русе.</p></div></div>
+                    <div class="col-md-6 col-lg-3"><div class="vision-card"><i class="fas fa-chart-line"></i><h5>Независимост</h5><p>Финансова грамотност за русенци.</p></div></div>
+                    <div class="col-md-6 col-lg-3"><div class="vision-card"><i class="fas fa-eye"></i><h5>Прозрачност</h5><p>Отчетност за всеки лев.</p></div></div>
                 </div>
             </div>
         </section>
@@ -218,70 +130,52 @@
         <section id="media" class="media-section">
             <div class="container">
                 <div class="text-center mb-5" data-aos="fade-up">
-                    <h2 class="fw-900 mb-3">Медийни изяви</h2>
-                    <p class="text-white-50">Директни послания през погледа на медиите</p>
+                    <h2 class="fw-900 mb-3 text-white">Медийни изяви</h2>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-9" data-aos="fade-up">
-                        <div class="media-card">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-newspaper fa-2x text-info me-3"></i>
-                                <span class="text-uppercase fw-bold letter-spacing-1" style="color: var(--accent-blue);">ВЕСТНИК УТРО</span>
-                            </div>
-                            <h4 class="fw-bold mb-4">"Трябва да сме сред хората, да отговаряме и на неудобните въпроси дори. Това е начинът."</h4>
-                            <p class="opacity-75 mb-4">Интервю за професионалния път, дисциплината от Англия и новата визия за Русе.</p>
-                            <a href="https://utroruse.com/article/1179302/" target="_blank" class="btn btn-outline-info rounded-pill px-4">Прочети цялото интервю <i class="fas fa-external-link-alt ms-2"></i></a>
+                <div class="row g-4">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="media-card h-100">
+                            <i class="fas fa-video fa-2x text-danger mb-3"></i>
+                            <h4 class="text-white">Казусът ТИР-паркинг (KISS 13)</h4>
+                            <p class="text-white-50">ПП-ДБ дават сделката на прокуратурата в защита на обществения интерес.</p>
+                            <a href="https://kiss13.net/news/ruse/pp-db-davat-sdelkata-za-golemiya-tir-parking-v-ruse-na-prokuraturata" target="_blank" class="btn btn-sm btn-outline-info rounded-pill me-2">Статия</a>
+                            <a href="https://www.facebook.com/share/v/1GgiCGW8E4/" target="_blank" class="btn btn-sm btn-primary rounded-pill"><i class="fab fa-facebook-f me-1"></i> Видео</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="media-card h-100">
+                            <i class="fas fa-newspaper fa-2x text-info mb-3"></i>
+                            <h4 class="text-white">Интервю в. "УТРО"</h4>
+                            <p class="text-white-50">"Трябва да сме сред хората, да отговаряме и на неудобните въпроси дори."</p>
+                            <a href="https://utroruse.com/article/1179302/" target="_blank" class="btn btn-sm btn-outline-info rounded-pill">Прочети</a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="py-5" style="background: #020a13;">
-            <div class="container text-center">
-                <h5 class="mb-5 opacity-50 fw-bold">Директно от TikTok</h5>
-                <div id="curator-feed-default-feed-layout"></div>
             </div>
         </section>
 
         <section id="contact" class="contact-wrap">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center mb-5 text-white">
-                        <h2 class="fw-900">Пишете ми директно</h2>
-                        <p class="opacity-75">Вашият сигнал или идея за Русе са важни. Последвайте ме и в мрежите:</p>
-                        <div class="social-footer">
-                            <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://www.tiktok.com/@rossimeonov" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <div class="container text-center">
+                <h2 class="fw-900 text-white mb-5">Пишете ми директно</h2>
+                <div class="col-lg-8 mx-auto">
+                    <form action="https://formspree.io/f/mnjbakgl" method="POST">
+                        <div class="row g-3">
+                            <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="ИМЕ" required></div>
+                            <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="EMAIL" required></div>
+                            <div class="col-12"><textarea name="message" class="form-control" rows="5" placeholder="СИГНАЛ..." required></textarea></div>
+                            <div class="col-12"><button type="submit" class="btn-main px-5">ИЗПРАТИ</button></div>
                         </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <form action="https://formspree.io/f/mnjbakgl" method="POST">
-                            <div class="row g-3">
-                                <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="ВАШЕТО ИМЕ" required></div>
-                                <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="ВАШИЯТ EMAIL" required></div>
-                                <div class="col-12"><textarea name="message" class="form-control" rows="5" placeholder="ВАШИЯТ СИГНАЛ..." required></textarea></div>
-                                <div class="col-12 text-center">
-                                    <button type="submit" class="btn-main mt-4 px-5">ИЗПРАТИ СЪОБЩЕНИЕТО</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>© 2026 РОСЕН СИМЕОНОВ | ДСБ РУСЕ</p>
-        </div>
-    </footer>
+    <footer><p>© 2026 РОСЕН СИМЕОНОВ | ДСБ РУСЕ</p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script type="text/javascript">
+    <script>
         (function(){
             var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
             i.src="https://cdn.curator.io/published/90e95303-958e-4937-a4a7-b1e2d8873482.js";
