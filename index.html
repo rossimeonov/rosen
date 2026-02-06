@@ -69,10 +69,10 @@
         }
 
         /* Бутони */
-        .btn-main { background: var(--accent-blue); color: var(--dark-blue); font-weight: 900; padding: 18px 40px; border-radius: 50px; border: none; text-transform: uppercase; transition: 0.4s; }
+        .btn-main { background: var(--accent-blue); color: var(--dark-blue); font-weight: 900; padding: 18px 40px; border-radius: 50px; border: none; text-transform: uppercase; transition: 0.4s; text-decoration: none; display: inline-block; }
         .btn-main:hover { background: white; transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,212,255,0.4); }
         
-        .btn-outline { border: 2px solid rgba(255,255,255,0.4); color: white; font-weight: 900; padding: 16px 45px; border-radius: 50px; text-transform: uppercase; transition: 0.3s; }
+        .btn-outline { border: 2px solid rgba(255,255,255,0.4); color: white; font-weight: 900; padding: 16px 45px; border-radius: 50px; text-transform: uppercase; transition: 0.3s; text-decoration: none; display: inline-block; }
         .btn-outline:hover { background: white; color: var(--dark-blue); border-color: white; }
 
         /* Секция Приоритети */
@@ -83,6 +83,13 @@
         .vision-card { background: #f8fbff; padding: 40px; border-radius: 15px; border-bottom: 5px solid var(--accent-blue); transition: 0.4s; height: 100%; }
         .vision-card:hover { transform: translateY(-10px); background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .vision-card i { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 25px; display: block; }
+
+        /* Галерия "На терен" */
+        .gallery-img { 
+            width: 100%; height: 300px; object-fit: cover; border-radius: 15px; 
+            transition: 0.5s; filter: grayscale(20%);
+        }
+        .gallery-img:hover { filter: grayscale(0%); transform: scale(1.02); }
 
         /* Медии Секция */
         .media-section { padding: 100px 0; background: #030d1a; border-top: 1px solid rgba(0, 212, 255, 0.1); }
@@ -105,14 +112,6 @@
         }
         .form-control::placeholder { color: rgba(255, 255, 255, 0.6) !important; }
 
-        .social-footer { display: flex; gap: 20px; justify-content: center; margin-top: 30px; }
-        .social-footer a { 
-            width: 50px; height: 50px; background: rgba(255,255,255,0.1); 
-            display: flex; align-items: center; justify-content: center; 
-            border-radius: 50%; color: white; font-size: 20px; transition: 0.3s;
-        }
-        .social-footer a:hover { background: var(--accent-blue); color: var(--dark-blue); transform: scale(1.1); }
-
         footer { padding: 60px 0; text-align: center; background: #020a13; font-size: 13px; opacity: 0.6; }
 
         @media (max-width: 991px) { 
@@ -120,7 +119,7 @@
             .hero { text-align: center; padding-top: 130px; }
             .hero-lead { margin-inline: auto; border-left: none; border-top: 3px solid var(--accent-blue); padding-top: 20px; }
             .photo-container { justify-content: center; margin-top: 50px; }
-            .btn-main, .btn-outline { width: 100%; }
+            .btn-main, .btn-outline { width: 100%; margin-bottom: 10px; }
             .contact-wrap { clip-path: none; }
         }
     </style>
@@ -132,9 +131,9 @@
             <div class="navbar-brand">
                 <a href="index.html" class="brand-name">РОСЕН СИМЕОНОВ</a>
                 <div class="header-logos">
-                    <img src="logo-dsb.png.svg" alt="ДСБ">
-                    <img src="logo-db.png.svg" alt="ДБ">
-                    <img src="logo-epp.png.svg" alt="ЕНП">
+                    <img src="logo-dsb.svg" alt="ДСБ">
+                    <img src="logo-db.svg" alt="ДБ">
+                    <img src="logo-epp.svg" alt="ЕНП">
                 </div>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -144,7 +143,7 @@
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a class="nav-link" href="za-men.html">Биография</a></li>
                     <li class="nav-item"><a class="nav-link" href="#priorities">Приоритети</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#media">Медии</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#on-field">На терен</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Контакт</a></li>
                     <li class="nav-item">
                         <div class="social-nav">
@@ -166,13 +165,13 @@
                         <h1 class="hero-quote">Трябва да сме <br><span class="accent-text">сред хората,</span><br>това е начинът.</h1>
                         <p class="hero-lead">„Политиката не е професия, а начин да работиш за обществото. Време е за правила, които важат за всички.“</p>
                         <div class="d-flex flex-wrap gap-3">
-                            <a href="#contact" class="btn btn-main">Подай сигнал</a>
-                            <a href="za-men.html" class="btn btn-outline">Кой е Росен?</a>
+                            <a href="#contact" class="btn-main">Подай сигнал</a>
+                            <a href="za-men.html" class="btn-outline">Кой е Росен?</a>
                         </div>
                     </div>
                     <div class="col-lg-5" data-aos="fade-left">
-                        <div class="photo-container">
-                            <img src="rosen simeonov.png" alt="Росен Симеонов" class="hero-photo">
+                        <div class="photo-container text-center">
+                            <img src="rosen simeonov.png" alt="Росен Симеонов" class="hero-photo mx-auto">
                         </div>
                     </div>
                 </div>
@@ -215,10 +214,39 @@
             </div>
         </section>
 
+        <section id="on-field" class="py-5" style="background: #f4f7f9; color: var(--dark-blue);">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="fw-900" style="color: var(--primary-blue);">На терен в Русе</h2>
+                    <p class="opacity-75">Промяната се случва чрез диалог и присъствие</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="fade-up">
+                        <img src="rosen-simeonov-protest-ruse-family.jpg" class="gallery-img shadow" alt="Протест със семейството">
+                        <p class="mt-2 small fw-bold">Гражданска позиция</p>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <img src="rosen-simeonov-kiril-petkov-ruse.jpg" class="gallery-img shadow" alt="С Кирил Петков">
+                        <p class="mt-2 small fw-bold">Национална подкрепа</p>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <img src="kampania-ruse-rosen-simeonov-dialog.jpg" class="gallery-img shadow" alt="Диалог с граждани">
+                        <p class="mt-2 small fw-bold">Лице в лице с хората</p>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-up">
+                        <img src="sreshta-s-grazhdani-ruse.jpg" class="gallery-img shadow" alt="Среща в Русе" style="height: 400px;">
+                    </div>
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <img src="dsb-ruse-meeting-rosen-simeonov.jpg" class="gallery-img shadow" alt="Среща на ДСБ" style="height: 400px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="media" class="media-section">
             <div class="container">
                 <div class="text-center mb-5" data-aos="fade-up">
-                    <h2 class="fw-900 mb-3">Медийни изяви</h2>
+                    <h2 class="fw-900 mb-3 text-white">Медийни изяви</h2>
                     <p class="text-white-50">Директни послания през погледа на медиите</p>
                 </div>
                 <div class="row justify-content-center">
@@ -226,11 +254,11 @@
                         <div class="media-card">
                             <div class="d-flex align-items-center mb-3">
                                 <i class="fas fa-newspaper fa-2x text-info me-3"></i>
-                                <span class="text-uppercase fw-bold letter-spacing-1" style="color: var(--accent-blue);">ВЕСТНИК УТРО</span>
+                                <span class="text-uppercase fw-bold" style="color: var(--accent-blue); letter-spacing: 1px;">ВЕСТНИК УТРО</span>
                             </div>
                             <h4 class="fw-bold mb-4">"Трябва да сме сред хората, да отговаряме и на неудобните въпроси дори. Това е начинът."</h4>
                             <p class="opacity-75 mb-4">Интервю за професионалния път, дисциплината от Англия и новата визия за Русе.</p>
-                            <a href="https://utroruse.com/article/1179302/" target="_blank" class="btn btn-outline-info rounded-pill px-4">Прочети цялото интервю <i class="fas fa-external-link-alt ms-2"></i></a>
+                            <a href="https://utroruse.com/article/1179302/" target="_blank" class="btn-outline" style="padding: 10px 25px; font-size: 12px;">Прочети интервюто</a>
                         </div>
                     </div>
                 </div>
@@ -249,12 +277,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center mb-5 text-white">
                         <h2 class="fw-900">Пишете ми директно</h2>
-                        <p class="opacity-75">Вашият сигнал или идея за Русе са важни. Последвайте ме и в мрежите:</p>
-                        <div class="social-footer">
-                            <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://www.tiktok.com/@rossimeonov" target="_blank"><i class="fab fa-tiktok"></i></a>
-                        </div>
+                        <p class="opacity-75">Вашият сигнал или идея за Русе са важни.</p>
                     </div>
                     <div class="col-lg-8">
                         <form action="https://formspree.io/f/mnjbakgl" method="POST">
@@ -263,7 +286,7 @@
                                 <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="ВАШИЯТ EMAIL" required></div>
                                 <div class="col-12"><textarea name="message" class="form-control" rows="5" placeholder="ВАШИЯТ СИГНАЛ..." required></textarea></div>
                                 <div class="col-12 text-center">
-                                    <button type="submit" class="btn-main mt-4 px-5">ИЗПРАТИ СЪОБЩЕНИЕТО</button>
+                                    <button type="submit" class="btn-main mt-4 px-5">ИЗПРАТИ</button>
                                 </div>
                             </div>
                         </form>
