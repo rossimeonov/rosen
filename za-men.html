@@ -22,7 +22,7 @@
         body { font-family: 'Roboto', sans-serif; background-color: #f4f7f9; color: var(--dark-blue); margin: 0; overflow-x: hidden; }
         h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* Навигация (Синхронизирана с Начало) */
+        /* Навигация - Синхронизирана с началната страница */
         .navbar { background: rgba(5, 18, 33, 0.98); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0, 212, 255, 0.2); }
         .navbar-brand { display: flex; align-items: center; gap: 15px; }
         .brand-name { font-size: 20px; font-weight: 900; color: white !important; text-decoration: none; }
@@ -30,11 +30,12 @@
         .header-logos img { height: 26px; width: auto; }
         .nav-link { color: white !important; font-weight: 700; font-size: 13px; text-transform: uppercase; margin-left: 20px; opacity: 0.7; }
         .nav-link.active { color: var(--accent-blue) !important; opacity: 1; }
+        
         .social-nav { display: flex; gap: 15px; margin-left: 25px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 20px; }
         .social-nav a { color: white; font-size: 18px; opacity: 0.7; transition: 0.3s; }
         .social-nav a:hover { color: var(--accent-blue); transform: translateY(-2px); }
 
-        /* Page Header */
+        /* Header */
         .page-header {
             padding: 160px 0 100px;
             background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
@@ -42,35 +43,28 @@
         }
         .page-header h1 { font-weight: 900; font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 15px; }
 
-        /* Bio Sections */
+        /* Секции */
         .section-title { font-weight: 900; color: var(--primary-blue); margin-bottom: 30px; position: relative; }
         .section-title::after { content: ''; position: absolute; left: 0; bottom: -10px; width: 50px; height: 4px; background: var(--accent-blue); }
 
-        /* Фото стилове */
-        .img-stack { position: relative; padding: 20px; }
-        .main-img { border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); width: 100%; border: 8px solid white; }
-        .floating-badge { position: absolute; top: 0; right: 0; background: var(--accent-blue); color: var(--dark-blue); padding: 10px 20px; border-radius: 50px; font-weight: 900; font-size: 0.8rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-
-        /* Карта с факти */
+        .main-img { border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); width: 100%; border: 8px solid white; margin-bottom: 20px; }
+        
         .quick-facts { background: white; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: -80px; }
         .fact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
-        .fact-item i { font-size: 1.5rem; color: var(--accent-blue); width: 30px; }
-
-        /* Timeline */
-        .timeline-box { position: relative; padding: 40px 0; }
-        .timeline-item { position: relative; padding-left: 40px; margin-bottom: 50px; border-left: 2px solid #e2e8f0; }
-        .timeline-item::before { content: ''; position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background: var(--accent-blue); border: 4px solid white; border-radius: 50%; }
-        .timeline-year { font-weight: 900; color: var(--accent-blue); font-size: 1.2rem; display: block; margin-bottom: 10px; }
+        .fact-item i { font-size: 1.5rem; color: var(--accent-blue); width: 30px; text-align: center; }
 
         /* Award Box */
-        .award-banner { background: #fffbeb; border: 1px solid #fef3c7; border-radius: 20px; padding: 30px; display: flex; gap: 20px; align-items: center; }
+        .award-banner { background: #fffbeb; border: 1px solid #fef3c7; border-radius: 20px; padding: 30px; display: flex; gap: 20px; align-items: center; margin-top: 20px; }
 
-        /* Yard Section */
+        /* Banner */
         .yard-bg { padding: 120px 0; background: linear-gradient(rgba(5, 18, 33, 0.85), rgba(5, 18, 33, 0.85)), url('2.jpg') center/cover fixed; color: white; text-align: center; }
 
         footer { padding: 60px 0; text-align: center; background: #020a13; color: white; opacity: 0.6; font-size: 13px; }
 
-        @media (max-width: 991px) { .quick-facts { margin-top: 0; } .social-nav, .header-logos { display: none; } }
+        @media (max-width: 991px) { 
+            .social-nav, .header-logos { display: none; } 
+            .quick-facts { margin-top: 0; margin-bottom: 40px; }
+        }
     </style>
 </head>
 <body>
@@ -90,9 +84,9 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Начало</a></li>
                     <li class="nav-item"><a class="nav-link active" href="za-men.html">Биография</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#priorities">Приоритети</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#media">Медии</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#contact">Контакт</a></li>
                     <li class="nav-item">
                         <div class="social-nav">
@@ -108,8 +102,8 @@
 
     <header class="page-header">
         <div class="container" data-aos="fade-up">
-            <h1>Пътят на опита и ценностите</h1>
-            <p class="lead opacity-75">От Русе до Лондон и обратно – с вяра в правилата и експертизата.</p>
+            <h1>Личната история зад каузата</h1>
+            <p class="lead opacity-75">„Политиката не е професия, а начин да работиш за обществото.“</p>
         </div>
     </header>
 
@@ -117,18 +111,18 @@
         <div class="row">
             <div class="col-lg-4" data-aos="fade-right">
                 <div class="quick-facts">
-                    <h5 class="mb-4 fw-900 border-bottom pb-2">Накратко</h5>
-                    <div class="fact-item"><i class="fas fa-home"></i> <div><strong>Русе, България</strong><p class="small m-0 text-muted">Роден през 1977 г.</p></div></div>
-                    <div class="fact-item"><i class="fas fa-graduation-cap"></i> <div><strong>MBA (Distinction)</strong><p class="small m-0 text-muted">Anglia Ruskin, Cambridge</p></div></div>
-                    <div class="fact-item"><i class="fas fa-chart-line"></i> <div><strong>Инвеститор</strong><p class="small m-0 text-muted">Капиталови пазари</p></div></div>
-                    <div class="fact-item"><i class="fas fa-users"></i> <div><strong>Семеен</strong><p class="small m-0 text-muted">Баща на две деца</p></div></div>
+                    <h5 class="mb-4 fw-900 border-bottom pb-2">Данни</h5>
+                    <div class="fact-item"><i class="fas fa-university"></i> <div><strong>MBA (Distinction)</strong><p class="small m-0 text-muted">Anglia Ruskin University</p></div></div>
+                    <div class="fact-item"><i class="fas fa-briefcase"></i> <div><strong>Мениджър Логистика</strong><p class="small m-0 text-muted">20 години опит в UK</p></div></div>
+                    <div class="fact-item"><i class="fas fa-chart-pie"></i> <div><strong>Финансов експерт</strong><p class="small m-0 text-muted">Alphainvest.bg</p></div></div>
+                    <div class="fact-item"><i class="fas fa-heart"></i> <div><strong>Русе</strong><p class="small m-0 text-muted">Роден и израснал тук</p></div></div>
                 </div>
             </div>
             <div class="col-lg-8 ps-lg-5 pt-lg-5" data-aos="fade-left">
-                <h2 class="section-title">Кой е Росен Симеонов?</h2>
-                <p class="lead text-muted">„Никога не съм искал да живея в чужбина, но временните неща често стават най-постоянни.“</p>
-                <p>Роден и израснал в Русе, Росен започва своя път със здрава основа в Икономическия техникум. След студентски бригади в Англия и САЩ, той прекарва близо 20 години в Лондон. Там извървява пътя от работник в склад до <strong>мениджър логистика в най-голямата частна компания за строителни скелета в Англия</strong>.</p>
-                <p>Връщането му в България през 2022 г. е продиктувано от най-ценното – семейството, децата и желанието да помогне на родния си град Русе да намери своята дългосрочна визия.</p>
+                <h2 class="section-title">Пътят към дома</h2>
+                <p>Роден през 1977 г. в Русе, Росен Симеонов израства с ценностите на дунавската столица. След завършване на Икономическия техникум и магистратура по финанси в Свищов, съдбата го отвежда във Великобритания.</p>
+                <p>В Лондон Росен прекарва близо две десетилетия, преминавайки през всички нива на йерархията – от служител в склад до <strong>Мениджър Логистика на най-голямата частна компания за строителни скелета в Англия</strong>. Там той открива силата на правилата и дисциплината.</p>
+                <p>През 2022 г. се завръща в Русе със семейството си. „Никога не сме обмисляли София – обичаме Русе и искаме децата ни да израснат тук,“ споделя той.</p>
             </div>
         </div>
     </section>
@@ -136,63 +130,39 @@
     <section class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-6" data-aos="fade-right">
-                <h2 class="section-title">Уроците от Англия: Дисциплина и правила</h2>
-                <p>12 години от своя опит Росен посвещава на мащабната логистика. Управлявайки бюджет, автопарк и десетки шофьори, той научава най-важния урок: <strong>просперитетът идва чрез правила, които се спазват, а не чрез търсене на "втория начин".</strong></p>
-                <div class="timeline-box">
-                    <div class="timeline-item">
-                        <span class="timeline-year">2000 — 2020</span>
-                        <h4>Лидерство в логистиката</h4>
-                        <p class="text-muted">Ръководни позиции в международна среда, изискващи желязна дисциплина и отчетност.</p>
+                <h2 class="section-title">Експертиза и признание</h2>
+                <p>Паралелно с професионалните си ангажименти, Росен завършва с отличие MBA степен в престижния <strong>Anglia Ruskin University</strong>. Неговата дисертация и академични резултати му носят признанието <em>Top Achiever</em>.</p>
+                <div class="award-banner">
+                    <i class="fas fa-certificate fa-3x text-warning"></i>
+                    <div>
+                        <h5 class="m-0 fw-bold">Top Achiever Award</h5>
+                        <p class="m-0 text-muted">За изключителни резултати в MBA програмата.</p>
+                        <a href="Top achiever award for outstanding performance MBA.jpg" target="_blank" class="small fw-bold text-primary">Виж сертификата <i class="fas fa-search-plus"></i></a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">
-                <div class="img-stack">
-                    <img src="DSC_1912.jpg" alt="Росен Симеонов - Лондон" class="main-img">
-                    <div class="floating-badge">Опит в Лондон</div>
-                </div>
+                <img src="Untitled.png" alt="Награждаване MBA" class="main-img">
             </div>
         </div>
     </section>
 
     <section class="yard-bg">
         <div class="container" data-aos="zoom-in">
-            <h2>Експертиза в мащабни операции</h2>
-            <p class="lead">Управление на логистични процеси, където всяко решение носи отговорност.</p>
+            <h2>Дисциплина, научена на практика</h2>
+            <p class="lead">Управление на автопарк, бюджети и международни екипи по строги правила.</p>
         </div>
     </section>
 
     <section class="container py-5">
-        <div class="row align-items-center flex-column-reverse flex-lg-row">
+        <div class="row align-items-center">
             <div class="col-lg-5" data-aos="fade-right">
-                <img src="Untitled.png" alt="Награждаване" class="main-img shadow-lg">
+                <img src="finance.jpg" alt="Конференция Финанси" class="main-img">
             </div>
             <div class="col-lg-7 ps-lg-5" data-aos="fade-left">
-                <h2 class="section-title">Академично съвършенство</h2>
-                <p>Росен придобива магистърска степен по бизнес администрация (MBA) с пълно отличие в <strong>Anglia Ruskin University (Кеймбридж)</strong> – университет в световния Топ 350.</p>
-                <div class="award-banner">
-                    <i class="fas fa-trophy fa-3x text-warning"></i>
-                    <div>
-                        <h5 class="m-0 fw-bold">Top Achiever Award</h5>
-                        <p class="m-0 text-muted">За изключителни академични постижения в MBA програмата.</p>
-                        <a href="Top achiever award for outstanding performance MBA.jpg" target="_blank" class="small fw-bold text-primary">Виж сертификата <i class="fas fa-search-plus"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-white py-5">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-7" data-aos="fade-right">
-                    <h2 class="section-title">Мисия: Финансова независимост</h2>
-                    <p class="lead">„Колкото по-ниска е финансовата грамотност на един човек, толкова по-зависим е той.“</p>
-                    <p>Като съосновател на платформата <strong>Alphainvest.bg</strong> и активен лектор, Росен работи за повишаване на финансовата култура на българите. За него технологиите и знанията са инструментите, които позволяват на всеки да увеличи богатството си и да бъде истински свободен гражданин.</p>
-                </div>
-                <div class="col-lg-5" data-aos="fade-left">
-                    <img src="finance.jpg" alt="Лекция финанси" class="main-img">
-                </div>
+                <h2 class="section-title">Финансовата грамотност като свобода</h2>
+                <p>Като инвеститор и съосновател на <strong>Alphainvest.bg</strong>, Росен вярва, че икономическата независимост е ключът към гражданската смелост. „Колкото по-ниска е финансовата грамотност, толкова по-зависим е човек от властта,“ твърди той.</p>
+                <p>След завръщането си, той веднага се включва в политическия живот на ДСБ, воден от спомените за сините знамена от детството си и мечтата за един подреден и модерен Русе.</p>
             </div>
         </div>
     </section>
@@ -200,12 +170,11 @@
     <section class="container py-5 text-center">
         <div class="row justify-content-center">
             <div class="col-lg-10" data-aos="fade-up">
-                <h2 class="section-title mx-auto">Новото начало за ДСБ Русе</h2>
-                <p class="mb-5">На 25 юни 2025 г. Росен Симеонов поема лидерството на ДСБ в Русе с ясна амбиция: <strong>модернизация, привличане на млади хора и връщане към основните десни ценности.</strong></p>
-                <img src="Rosen Simeonov poema posta obshtinski predsedatel.jpg" alt="Поемане на поста" class="main-img mb-5" style="max-width: 800px;">
-                <div class="p-4 bg-light border-start border-primary border-4 text-start">
-                    <h4 class="fw-bold">„Трябва да сме сред хората, да отговаряме и на неудобните въпроси дори – това е начинът.“</h4>
-                    <p class="m-0">— Интервю пред в. „Утро“, декември 2025</p>
+                <h2 class="section-title mx-auto">Нова енергия за Русе</h2>
+                <p class="mb-5">През 2025 г. Росен Симеонов е избран единодушно за общински председател на ДСБ-Русе. Неговата цел е ясна: прозрачност, привличане на млади хора и отвореност към гражданите.</p>
+                <img src="Rosen Simeonov poema posta obshtinski predsedatel.jpg" alt="Поемане на поста" class="main-img" style="max-width: 800px;">
+                <div class="mt-4 p-4 bg-light border-start border-primary border-4 text-start shadow-sm">
+                    <p class="h4 fw-bold">„Трябва да се върнем към основните принципи в политиката – сред хората, да отговаряме и на неудобните въпроси дори.“</p>
                 </div>
             </div>
         </div>
@@ -222,4 +191,3 @@
     <script> AOS.init({ duration: 1000, once: true }); </script>
 </body>
 </html>
-
