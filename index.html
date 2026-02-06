@@ -72,7 +72,7 @@
         .btn-main { background: var(--accent-blue); color: var(--dark-blue); font-weight: 900; padding: 18px 40px; border-radius: 50px; border: none; text-transform: uppercase; transition: 0.4s; }
         .btn-main:hover { background: white; transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,212,255,0.4); }
         
-        .btn-outline { border: 2px solid rgba(255,255,255,0.4); color: white; font-weight: 900; padding: 16px 40px; border-radius: 50px; text-transform: uppercase; transition: 0.3s; }
+        .btn-outline { border: 2px solid rgba(255,255,255,0.4); color: white; font-weight: 900; padding: 16px 45px; border-radius: 50px; text-transform: uppercase; transition: 0.3s; }
         .btn-outline:hover { background: white; color: var(--dark-blue); border-color: white; }
 
         /* Секция Приоритети */
@@ -83,6 +83,17 @@
         .vision-card { background: #f8fbff; padding: 40px; border-radius: 15px; border-bottom: 5px solid var(--accent-blue); transition: 0.4s; height: 100%; }
         .vision-card:hover { transform: translateY(-10px); background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .vision-card i { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 25px; display: block; }
+
+        /* Медии Секция */
+        .media-section { padding: 100px 0; background: #030d1a; border-top: 1px solid rgba(0, 212, 255, 0.1); }
+        .media-card { 
+            background: rgba(255,255,255,0.05); 
+            padding: 40px; 
+            border-radius: 20px; 
+            border-left: 4px solid var(--accent-blue);
+            transition: 0.3s;
+        }
+        .media-card:hover { background: rgba(255,255,255,0.08); }
 
         /* Контактна форма */
         .contact-wrap { background: var(--primary-blue); padding: 120px 0; clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%); }
@@ -133,6 +144,7 @@
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a class="nav-link" href="za-men.html">Биография</a></li>
                     <li class="nav-item"><a class="nav-link" href="#priorities">Приоритети</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#media">Медии</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Контакт</a></li>
                     <li class="nav-item">
                         <div class="social-nav">
@@ -170,7 +182,7 @@
         <section id="priorities" class="white-section">
             <div class="container">
                 <div class="section-header" data-aos="fade-up"><h2>Ангажименти</h2></div>
-                <div class="row g-4">
+                <div class="row g-4 text-dark">
                     <div class="col-md-6 col-lg-3" data-aos="zoom-in">
                         <div class="vision-card">
                             <i class="fas fa-bullhorn"></i>
@@ -203,7 +215,29 @@
             </div>
         </section>
 
-        <section class="py-5" style="background: #030d1a;">
+        <section id="media" class="media-section">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="fw-900 mb-3">Медийни изяви</h2>
+                    <p class="text-white-50">Директни послания през погледа на медиите</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-9" data-aos="fade-up">
+                        <div class="media-card">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-newspaper fa-2x text-info me-3"></i>
+                                <span class="text-uppercase fw-bold letter-spacing-1" style="color: var(--accent-blue);">ВЕСТНИК УТРО</span>
+                            </div>
+                            <h4 class="fw-bold mb-4">"Трябва да сме сред хората, да отговаряме и на неудобните въпроси дори. Това е начинът."</h4>
+                            <p class="opacity-75 mb-4">Интервю за професионалния път, дисциплината от Англия и новата визия за Русе.</p>
+                            <a href="https://utroruse.com/article/1179302/" target="_blank" class="btn btn-outline-info rounded-pill px-4">Прочети цялото интервю <i class="fas fa-external-link-alt ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5" style="background: #020a13;">
             <div class="container text-center">
                 <h5 class="mb-5 opacity-50 fw-bold">Директно от TikTok</h5>
                 <div id="curator-feed-default-feed-layout"></div>
