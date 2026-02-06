@@ -15,56 +15,67 @@
         body { font-family: 'Roboto', sans-serif; background-color: var(--dark-blue); color: white; margin: 0; overflow-x: hidden; }
         h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
 
-        /* Navigation with Logos */
-        .sticky-header { background: rgba(11, 46, 95, 0.98); padding: 12px 0; position: sticky; top: 0; z-index: 10000; border-bottom: 2px solid var(--accent-blue); }
+        /* Header Fix: Logos next to Name */
+        .sticky-header { background: rgba(11, 46, 95, 0.98); padding: 10px 0; position: sticky; top: 0; z-index: 10000; border-bottom: 2px solid var(--accent-blue); }
         .header-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; }
-        .header-text a { text-decoration: none; color: white; }
-        .header-text h1 { margin: 0; font-size: 20px; font-weight: 700; }
-        .header-logos img { height: 32px; width: auto; margin-left: 12px; transition: 0.3s; }
-        nav a { color: white; text-decoration: none; font-size: 11px; font-weight: 700; margin-left: 20px; opacity: 0.7; transition: 0.3s; }
+        
+        .brand-area { display: flex; align-items: center; gap: 15px; }
+        .brand-area h1 { margin: 0; font-size: 18px; font-weight: 700; white-space: nowrap; }
+        .header-logos { display: flex; align-items: center; gap: 8px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 15px; }
+        .header-logos img { height: 25px; width: auto; opacity: 0.9; }
+
+        nav a { color: white; text-decoration: none; font-size: 11px; font-weight: 700; margin-left: 15px; opacity: 0.7; transition: 0.3s; text-transform: uppercase; }
         nav a:hover { opacity: 1; color: var(--accent-blue); }
 
-        /* Hero */
+        /* Hero: Compact Photo */
         .hero { 
-            min-height: 85vh; display: flex; align-items: center;
-            background: linear-gradient(to right, rgba(5, 22, 45, 1) 35%, rgba(5, 22, 45, 0.4) 100%), url('ruse.jpg') center/cover no-repeat;
-            padding: 80px 0; border-bottom: 5px solid var(--accent-blue);
+            min-height: 70vh; display: flex; align-items: center;
+            background: linear-gradient(to right, rgba(5, 22, 45, 1) 40%, rgba(5, 22, 45, 0.6) 100%), url('ruse.jpg') center/cover no-repeat;
+            padding: 60px 0; border-bottom: 4px solid var(--accent-blue);
         }
-        .hero-quote { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 25px; }
+        .hero-quote { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        
+        .photo-column { display: flex; justify-content: flex-end; align-items: center; }
         .photo-wrapper img { 
-            width: 100%; max-width: 450px; 
-            mask-image: linear-gradient(to bottom, black 85%, transparent 100%), linear-gradient(to left, black 85%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%), linear-gradient(to left, black 85%, transparent 100%);
+            width: 100%; max-width: 350px; /* Намален размер за баланс */
+            mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+            filter: drop-shadow(0 0 20px rgba(0,212,255,0.1));
         }
 
-        /* Priorities Section (White) */
-        .priority-section { padding: 100px 0; background: var(--pure-white); color: var(--dark-blue); }
-        .feature-box { border-left: 5px solid var(--primary-blue); padding-left: 20px; margin-bottom: 40px; }
-        .feature-box h3 { font-weight: 900; font-size: 1.3rem; color: var(--primary-blue); }
-        .vision-card { background: #f8f9fa; padding: 30px; border-radius: 4px; border-left: 4px solid var(--accent-blue); height: 100%; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        /* Priorities Section */
+        .priority-section { padding: 80px 0; background: var(--pure-white); color: var(--dark-blue); }
+        .feature-box { border-left: 5px solid var(--primary-blue); padding-left: 20px; margin-bottom: 35px; }
+        .feature-box h3 { font-weight: 900; font-size: 1.2rem; color: var(--primary-blue); margin-bottom: 8px; }
+        
+        .vision-card { background: #f8f9fa; padding: 25px; border-radius: 4px; border-left: 4px solid var(--accent-blue); height: 100%; transition: 0.3s; }
         .vision-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .vision-card i { font-size: 2rem; color: var(--primary-blue); margin-bottom: 15px; }
+        .vision-card i { font-size: 1.8rem; color: var(--primary-blue); margin-bottom: 15px; }
 
-        /* Media & Social Section */
-        .social-section { padding: 80px 0; background: #030d1a; }
+        /* Media */
+        .media-section { padding: 70px 0; background: #030d1a; }
         .media-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 25px; transition: 0.3s; text-decoration: none; color: white; display: block; border-radius: 4px; }
-        .media-card:hover { background: rgba(0, 212, 255, 0.1); border-color: var(--accent-blue); }
-        .media-card span { font-size: 0.8rem; color: var(--accent-blue); font-weight: 700; }
+        .media-card:hover { border-color: var(--accent-blue); background: rgba(0, 212, 255, 0.05); }
+        .media-card span { font-size: 0.75rem; color: var(--accent-blue); font-weight: 700; letter-spacing: 1px; }
+
+        /* TikTok */
+        .tiktok-section { padding: 60px 0; background: #05162d; border-top: 1px solid rgba(255,255,255,0.05); }
         .crt-logo { display: none !important; }
 
-        /* Contact Section */
-        .contact-wrap { background: var(--primary-blue); padding: 100px 0; clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%); }
-        .form-control { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white !important; padding: 15px; border-radius: 0; }
-        .form-control::placeholder { color: rgba(255,255,255,0.5); }
-        .form-control:focus { background: rgba(255,255,255,0.2); border-color: var(--accent-blue); box-shadow: none; }
-        .btn-main { background: white; color: var(--dark-blue); font-weight: 900; padding: 16px 45px; border: none; text-transform: uppercase; transition: 0.3s; }
+        /* Contact */
+        .contact-wrap { background: var(--primary-blue); padding: 90px 0; clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%); }
+        .form-control { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white !important; padding: 12px; border-radius: 0; }
+        .form-control:focus { background: rgba(255,255,255,0.15); border-color: var(--accent-blue); box-shadow: none; }
+        .btn-main { background: white; color: var(--dark-blue); font-weight: 900; padding: 14px 40px; border: none; text-transform: uppercase; transition: 0.3s; }
         .btn-main:hover { background: var(--accent-blue); color: white; transform: translateY(-3px); }
 
-        footer { padding: 50px 0; text-align: center; opacity: 0.6; font-size: 12px; background: #020a13; }
+        footer { padding: 40px 0; text-align: center; opacity: 0.5; font-size: 11px; background: #020a13; }
 
         @media (max-width: 992px) { 
+            .brand-area h1 { font-size: 16px; }
             .header-logos { display: none; }
-            .hero { text-align: center; padding-top: 100px; }
+            .hero { text-align: center; padding-top: 80px; }
+            .photo-column { justify-content: center; margin-top: 30px; }
             .contact-wrap { clip-path: none; }
         }
     </style>
@@ -73,21 +84,19 @@
 
     <header class="sticky-header">
         <div class="header-container">
-            <div class="header-text">
-                <a href="index.html">
-                    <h1>Росен Симеонов</h1>
-                </a>
-            </div>
-            <nav class="d-none d-lg-flex align-items-center">
-                <a href="za-men.html">Биография</a>
-                <a href="#priorities">Приоритети</a>
-                <a href="#media">Медии</a>
-                <a href="#contact">Контакт</a>
+            <div class="brand-area">
+                <a href="index.html" style="text-decoration: none; color: white;"><h1>Росен Симеонов</h1></a>
                 <div class="header-logos">
                     <img src="logo-dsb.png.svg" alt="ДСБ">
                     <img src="logo-db.png.svg" alt="ДБ">
                     <img src="logo-epp.png.svg" alt="ЕНП">
                 </div>
+            </div>
+            <nav class="d-none d-lg-flex">
+                <a href="za-men.html">Биография</a>
+                <a href="#priorities">Приоритети</a>
+                <a href="#media">Медии</a>
+                <a href="#contact">Контакт</a>
             </nav>
         </div>
     </header>
@@ -98,14 +107,16 @@
                 <div class="row align-items-center">
                     <div class="col-lg-7" data-aos="fade-right">
                         <h2 class="hero-quote">Трябва да сме <br><span style="color: var(--accent-blue);">сред хората</span>,<br>това е начинът.</h2>
-                        <p class="lead opacity-75 mb-4" style="max-width: 550px;">„Политиката не е професия, а начин да работиш за обществото. Време е за правила, които важат за всички.“</p>
-                        <div class="d-flex flex-wrap gap-3">
+                        <p class="lead opacity-75 mb-4" style="max-width: 500px;">„Политиката не е професия, а начин да работиш за обществото. Време е за правила, които важат за всички.“</p>
+                        <div class="d-flex flex-wrap gap-2">
                             <a href="#contact" class="btn btn-main">Подай сигнал</a>
-                            <a href="za-men.html" class="btn btn-outline-light p-3 px-5 fw-bold">Биография</a>
+                            <a href="za-men.html" class="btn btn-outline-light p-3 px-4 fw-bold" style="border-radius:0;">Биография</a>
                         </div>
                     </div>
-                    <div class="col-lg-5 d-none d-lg-block text-end" data-aos="fade-left">
-                        <img src="me.jpg.png" alt="Росен Симеонов" class="photo-wrapper">
+                    <div class="col-lg-5 photo-column" data-aos="fade-left">
+                        <div class="photo-wrapper">
+                            <img src="me.jpg.png" alt="Росен Симеонов">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -115,18 +126,18 @@
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6" data-aos="fade-up">
-                        <h2 class="fw-900 mb-5" style="font-size: 2.2rem; line-height: 1;">МОИТЕ <span style="color: var(--primary-blue);">АНГАЖИМЕНТИ</span></h2>
+                        <h2 class="fw-900 mb-5">Моите <span style="color: var(--primary-blue);">Ангажименти</span></h2>
                         <div class="feature-box">
-                            <h3>ФИНАНСОВА НЕЗАВИСИМОСТ</h3>
-                            <p>Колкото по-ниска е финансовата грамотност, толкова по-зависим е човек. Личната ми мисия е икономическото ограмотяване на русенци – пътят към свободно гражданско общество.</p>
+                            <h3>Финансова независимост</h3>
+                            <p>Колкото по-ниска е финансовата грамотност, толкова по-зависим е човек. Моята мисия е икономическото ограмотяване на русенци.</p>
                         </div>
                         <div class="feature-box">
-                            <h3>РАВЕНСТВО ПРЕД ЗАКОНА</h3>
-                            <p>Държавата и общината трябва да са равни пред закона с гражданите. Време е за край на "втория начин" и арогантността на администрацията спрямо работещите хора.</p>
+                            <h3>Равенство пред закона</h3>
+                            <p>Държавата и общината трябва да са равни пред закона с гражданите. Край на "втория начин" и арогантността на администрацията.</p>
                         </div>
                         <div class="feature-box">
-                            <h3>ВИЗИЯ ЗА РАЗВИТИЕ</h3>
-                            <p>Русе не трябва да е град на нископлатени производства. Имаме ключово място и история – длъжни сме да привлечем инвестиции в технологии и иновации.</p>
+                            <h3>Дългосрочна визия</h3>
+                            <p>Русе не трябва да е град на нископлатени производства. Имаме потенциал за технологии, които да задържат младите хора тук.</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -134,15 +145,15 @@
                             <div class="col-12" data-aos="zoom-in">
                                 <div class="vision-card">
                                     <i class="fas fa-bullhorn"></i>
-                                    <h5>ГРАЖДАНСКА АКТИВНОСТ</h5>
-                                    <p class="small opacity-75">Трябва да сме сред хората и да отговаряме дори на най-неудобните въпроси. Егото трябва да остане на заден план.</p>
+                                    <h5>Гражданска активност</h5>
+                                    <p class="small opacity-75">Трябва да сме сред хората и да отговаряме дори на най-неудобните въпроси. Егото на заден план.</p>
                                 </div>
                             </div>
                             <div class="col-12" data-aos="zoom-in" data-aos-delay="100">
                                 <div class="vision-card">
                                     <i class="fas fa-eye"></i>
-                                    <h5>ПЪЛНА ПРОЗРАЧНОСТ</h5>
-                                    <p class="small opacity-75">Писнало ни е да ни лъжат. Хората искат да знаят точно за какво се изразходват публичните средства от техните данъци.</p>
+                                    <h5>Пълна прозрачност</h5>
+                                    <p class="small opacity-75">Хората искат да знаят точно за какво се разходват публичните средства от техните данъци.</p>
                                 </div>
                             </div>
                         </div>
@@ -151,24 +162,22 @@
             </div>
         </section>
 
-        <section class="py-5" style="background: #05162d;">
+        <section class="tiktok-section">
             <div class="container text-center">
-                <h4 class="mb-5 opacity-75 fw-bold text-uppercase">Директно от TikTok</h4>
-                <div id="curator-feed-default-feed-layout">
-                    <a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a>
-                </div>
+                <h5 class="mb-5 opacity-50 fw-bold">Директно от TikTok</h5>
+                <div id="curator-feed-default-feed-layout"></div>
             </div>
         </section>
 
-        <section id="media" class="social-section">
+        <section id="media" class="media-section">
             <div class="container">
                 <h2 class="text-center mb-5">Медийни <span style="color: var(--accent-blue);">Изяви</span></h2>
-                <div class="row g-4">
-                    <div class="col-md-6" data-aos="fade-up">
-                        <a href="https://utroruse.com" target="_blank" class="media-card">
-                            <span>ИНТЕРВЮ | В-К "УТРО"</span>
-                            <h5 class="mt-2">Росен Симеонов: Трябва да сме сред хората, да отговаряме и на неудобните въпроси дори.</h5>
-                            <p class="small opacity-50 mb-0 mt-2">Прочети цялото интервю за професионалния път от Лондон до Русе...</p>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-8" data-aos="fade-up">
+                        <a href="https://utroruse.com/article/1179302/" target="_blank" class="media-card text-center">
+                            <span>ИНТЕРВЮ | ВЕСТНИК УТРО</span>
+                            <h4 class="mt-3">"Трябва да сме сред хората, да отговаряме и на неудобните въпроси дори. Това е начинът."</h4>
+                            <p class="small opacity-50 mt-2">Прочети повече за визията на Росен Симеонов за управлението на Русе...</p>
                         </a>
                     </div>
                 </div>
@@ -179,8 +188,8 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center mb-5">
-                        <h2 class="fw-900">ПИШЕТЕ МИ ДИРЕКТНО</h2>
-                        <p class="opacity-75">Вашият сигнал или идея за Русе са важни за мен. Използвайте формата по-долу.</p>
+                        <h2 class="fw-900">Пишете ми директно</h2>
+                        <p class="opacity-75">Вашият сигнал или идея за Русе са важни. Използвайте формата.</p>
                     </div>
                     <div class="col-lg-8">
                         <form action="https://formspree.io/f/mnjbakgl" method="POST">
@@ -188,10 +197,8 @@
                                 <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="ВАШЕТО ИМЕ" required></div>
                                 <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="ВАШИЯТ EMAIL" required></div>
                                 <div class="col-12"><textarea name="message" class="form-control" rows="5" placeholder="ВАШИЯТ СИГНАЛ ИЛИ ВЪПРОС..." required></textarea></div>
-                                <div class="col-12 text-center">
-                                    <button type="submit" class="btn-main mt-4">ИЗПРАТИ СЪОБЩЕНИЕТО</button>
-                                </div>
-                                <input type="hidden" name="_subject" value="Ново съобщение от rosen-simeonov.bg">
+                                <input type="hidden" name="_subject" value="Съобщение от rosen-simeonov.bg">
+                                <div class="col-12 text-center"><button type="submit" class="btn-main mt-4">ИЗПРАТИ</button></div>
                             </div>
                         </form>
                     </div>
@@ -201,25 +208,18 @@
     </main>
 
     <footer>
-        <div class="container">
-            <p class="mb-1">© 2026 РОСЕН СИМЕОНОВ | ДСБ РУСЕ | ПП-ДБ</p>
-            <p class="opacity-50 small text-uppercase">Където няма ред и законност, няма и свобода.</p>
-        </div>
+        <p>© 2026 РОСЕН СИМЕОНОВ | ДСБ РУСЕ | КЪДЕТО НЯМА РЕД, НЯМА СВОБОДА</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
     <script type="text/javascript">
         (function(){
             var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
             i.src="https://cdn.curator.io/published/90e95303-958e-4937-a4a7-b1e2d8873482.js";
             e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
         })();
-    </script>
-    
-    <script>
-        AOS.init({ duration: 1000, once: true, disable: 'mobile' });
+        AOS.init({ duration: 1000, once: true });
     </script>
 </body>
 </html>
