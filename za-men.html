@@ -16,105 +16,61 @@
             --dark-blue: #051221; 
             --accent-blue: #00d4ff; 
             --pure-white: #ffffff; 
-            --text-gray: #a0aec0;
+            --text-gray: #4a5568;
         }
         
-        body { font-family: 'Roboto', sans-serif; background-color: var(--dark-blue); color: white; margin: 0; overflow-x: hidden; }
+        body { font-family: 'Roboto', sans-serif; background-color: #f4f7f9; color: var(--dark-blue); margin: 0; overflow-x: hidden; }
         h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* Навигация - Идентична с началната страница */
-        .navbar { 
-            background: rgba(5, 18, 33, 0.95); 
-            backdrop-filter: blur(15px); 
-            min-height: 80px; 
-            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
-        }
+        /* Навигация (Синхронизирана с Начало) */
+        .navbar { background: rgba(5, 18, 33, 0.98); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0, 212, 255, 0.2); }
         .navbar-brand { display: flex; align-items: center; gap: 15px; }
-        .brand-name { font-size: 20px; font-weight: 900; color: white !important; text-decoration: none; letter-spacing: 1px; }
+        .brand-name { font-size: 20px; font-weight: 900; color: white !important; text-decoration: none; }
         .header-logos { display: flex; align-items: center; gap: 12px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 15px; }
         .header-logos img { height: 26px; width: auto; }
-
-        .nav-link { color: white !important; font-weight: 700; font-size: 13px; text-transform: uppercase; margin-left: 20px; opacity: 0.7; transition: 0.3s; }
-        .nav-link:hover, .nav-link.active { color: var(--accent-blue) !important; opacity: 1; }
-
+        .nav-link { color: white !important; font-weight: 700; font-size: 13px; text-transform: uppercase; margin-left: 20px; opacity: 0.7; }
+        .nav-link.active { color: var(--accent-blue) !important; opacity: 1; }
         .social-nav { display: flex; gap: 15px; margin-left: 25px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 20px; }
         .social-nav a { color: white; font-size: 18px; opacity: 0.7; transition: 0.3s; }
-        .social-nav a:hover { color: var(--accent-blue); opacity: 1; transform: translateY(-2px); }
+        .social-nav a:hover { color: var(--accent-blue); transform: translateY(-2px); }
 
         /* Page Header */
         .page-header {
-            padding: 140px 0 60px;
-            background: linear-gradient(180deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
-            text-align: center;
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+            color: white; text-align: center; clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
         }
-        .page-header h1 { font-weight: 900; font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 10px; }
-        .subtitle { color: var(--accent-blue); font-weight: 700; letter-spacing: 2px; font-size: 0.9rem; text-transform: uppercase; }
+        .page-header h1 { font-weight: 900; font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 15px; }
 
-        /* Инфо Карти */
-        .info-grid { margin-top: -45px; position: relative; z-index: 10; }
-        .info-card {
-            background: white; color: var(--dark-blue); padding: 25px;
-            border-radius: 15px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            height: 100%; transition: 0.3s; border-bottom: 4px solid var(--accent-blue);
-        }
-        .info-card i { font-size: 1.8rem; color: var(--primary-blue); margin-bottom: 15px; display: block; }
-        .info-card span { font-weight: 900; display: block; font-family: 'Montserrat'; font-size: 0.85rem; margin-bottom: 5px; }
-        .info-card p { margin: 0; font-size: 0.8rem; color: #666; font-weight: 500; }
+        /* Bio Sections */
+        .section-title { font-weight: 900; color: var(--primary-blue); margin-bottom: 30px; position: relative; }
+        .section-title::after { content: ''; position: absolute; left: 0; bottom: -10px; width: 50px; height: 4px; background: var(--accent-blue); }
 
-        /* Основна Биография */
-        .main-bio { padding: 100px 0; background: white; color: var(--dark-blue); }
-        .bio-text-box h2 { color: var(--primary-blue); font-weight: 900; margin-bottom: 25px; position: relative; }
-        .bio-text-box h2::after { content: ''; position: absolute; left: 0; bottom: -8px; width: 40px; height: 3px; background: var(--accent-blue); }
-        .bio-text-box p { font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px; }
+        /* Фото стилове */
+        .img-stack { position: relative; padding: 20px; }
+        .main-img { border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); width: 100%; border: 8px solid white; }
+        .floating-badge { position: absolute; top: 0; right: 0; background: var(--accent-blue); color: var(--dark-blue); padding: 10px 20px; border-radius: 50px; font-weight: 900; font-size: 0.8rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
-        /* Секция Награда (MBA Top Achiever) */
-        .award-box {
-            background: #fff9e6;
-            border-left: 5px solid #ffc107;
-            padding: 25px;
-            border-radius: 10px;
-            margin: 30px 0;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            transition: 0.3s;
-        }
-        .award-box:hover { transform: scale(1.02); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .award-icon i { font-size: 2.5rem; color: #ffc107; }
+        /* Карта с факти */
+        .quick-facts { background: white; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: -80px; }
+        .fact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .fact-item i { font-size: 1.5rem; color: var(--accent-blue); width: 30px; }
 
-        /* Снимката от Англия */
-        .uk-photo-wrapper {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            border: 8px solid white;
-        }
-        .uk-photo-wrapper img { width: 100%; height: auto; display: block; }
-        .uk-label {
-            position: absolute; bottom: 20px; right: 20px;
-            background: var(--primary-blue); color: white;
-            padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.8rem;
-        }
+        /* Timeline */
+        .timeline-box { position: relative; padding: 40px 0; }
+        .timeline-item { position: relative; padding-left: 40px; margin-bottom: 50px; border-left: 2px solid #e2e8f0; }
+        .timeline-item::before { content: ''; position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background: var(--accent-blue); border: 4px solid white; border-radius: 50%; }
+        .timeline-year { font-weight: 900; color: var(--accent-blue); font-size: 1.2rem; display: block; margin-bottom: 10px; }
 
-        /* Yard Banner */
-        .yard-banner {
-            padding: 120px 0;
-            background: linear-gradient(rgba(5, 18, 33, 0.8), rgba(5, 18, 33, 0.8)), url('2.jpg') center/cover fixed;
-            text-align: center;
-            color: white;
-        }
-        .yard-banner h2 { font-weight: 900; font-size: 2.5rem; margin-bottom: 20px; }
+        /* Award Box */
+        .award-banner { background: #fffbeb; border: 1px solid #fef3c7; border-radius: 20px; padding: 30px; display: flex; gap: 20px; align-items: center; }
 
-        /* Footer */
-        footer { padding: 50px 0; text-align: center; background: #020a13; font-size: 13px; opacity: 0.6; }
+        /* Yard Section */
+        .yard-bg { padding: 120px 0; background: linear-gradient(rgba(5, 18, 33, 0.85), rgba(5, 18, 33, 0.85)), url('2.jpg') center/cover fixed; color: white; text-align: center; }
 
-        @media (max-width: 991px) {
-            .header-logos, .social-nav { display: none; }
-            .main-bio { text-align: center; }
-            .uk-photo-wrapper { margin-top: 50px; }
-            .award-box { flex-direction: column; text-align: center; }
-        }
+        footer { padding: 60px 0; text-align: center; background: #020a13; color: white; opacity: 0.6; font-size: 13px; }
+
+        @media (max-width: 991px) { .quick-facts { margin-top: 0; } .social-nav, .header-logos { display: none; } }
     </style>
 </head>
 <body>
@@ -151,101 +107,105 @@
     </nav>
 
     <header class="page-header">
-        <div class="container" data-aos="fade-down">
-            <span class="subtitle">Професионален път и обществена ангажираност</span>
-            <h1>Биография</h1>
+        <div class="container" data-aos="fade-up">
+            <h1>Пътят на опита и ценностите</h1>
+            <p class="lead opacity-75">От Русе до Лондон и обратно – с вяра в правилата и експертизата.</p>
         </div>
     </header>
 
-    <section class="info-grid">
-        <div class="container">
-            <div class="row g-3 justify-content-center">
-                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="info-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>РУСЕ, БЪЛГАРИЯ</span>
-                        <p>Роден град</p>
+    <section class="container mb-5">
+        <div class="row">
+            <div class="col-lg-4" data-aos="fade-right">
+                <div class="quick-facts">
+                    <h5 class="mb-4 fw-900 border-bottom pb-2">Накратко</h5>
+                    <div class="fact-item"><i class="fas fa-home"></i> <div><strong>Русе, България</strong><p class="small m-0 text-muted">Роден през 1977 г.</p></div></div>
+                    <div class="fact-item"><i class="fas fa-graduation-cap"></i> <div><strong>MBA (Distinction)</strong><p class="small m-0 text-muted">Anglia Ruskin, Cambridge</p></div></div>
+                    <div class="fact-item"><i class="fas fa-chart-line"></i> <div><strong>Инвеститор</strong><p class="small m-0 text-muted">Капиталови пазари</p></div></div>
+                    <div class="fact-item"><i class="fas fa-users"></i> <div><strong>Семеен</strong><p class="small m-0 text-muted">Баща на две деца</p></div></div>
+                </div>
+            </div>
+            <div class="col-lg-8 ps-lg-5 pt-lg-5" data-aos="fade-left">
+                <h2 class="section-title">Кой е Росен Симеонов?</h2>
+                <p class="lead text-muted">„Никога не съм искал да живея в чужбина, но временните неща често стават най-постоянни.“</p>
+                <p>Роден и израснал в Русе, Росен започва своя път със здрава основа в Икономическия техникум. След студентски бригади в Англия и САЩ, той прекарва близо 20 години в Лондон. Там извървява пътя от работник в склад до <strong>мениджър логистика в най-голямата частна компания за строителни скелета в Англия</strong>.</p>
+                <p>Връщането му в България през 2022 г. е продиктувано от най-ценното – семейството, децата и желанието да помогне на родния си град Русе да намери своята дългосрочна визия.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+                <h2 class="section-title">Уроците от Англия: Дисциплина и правила</h2>
+                <p>12 години от своя опит Росен посвещава на мащабната логистика. Управлявайки бюджет, автопарк и десетки шофьори, той научава най-важния урок: <strong>просперитетът идва чрез правила, които се спазват, а не чрез търсене на "втория начин".</strong></p>
+                <div class="timeline-box">
+                    <div class="timeline-item">
+                        <span class="timeline-year">2000 — 2020</span>
+                        <h4>Лидерство в логистиката</h4>
+                        <p class="text-muted">Ръководни позиции в международна среда, изискващи желязна дисциплина и отчетност.</p>
                     </div>
                 </div>
-                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="info-card">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>MBA (ANGLIA RUSKIN)</span>
-                        <p>С отличие, UK 2022</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="info-card">
-                        <i class="fas fa-briefcase"></i>
-                        <span>ФИНАНСОВ ЕКСПЕРТ</span>
-                        <p>Икономист и инвеститор</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="info-card">
-                        <i class="fas fa-language"></i>
-                        <span>АНГЛИЙСКИ, РУСКИ</span>
-                        <p>Професионално ниво</p>
-                    </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="img-stack">
+                    <img src="DSC_1912.jpg" alt="Росен Симеонов - Лондон" class="main-img">
+                    <div class="floating-badge">Опит в Лондон</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <main class="main-bio">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7 bio-text-box" data-aos="fade-right">
-                    <h2>Кой е Росен Симеонов?</h2>
-                    <p>Росен Симеонов е икономист и инвеститор с дългогодишен международен управленски опит. Роден е през 1977 г. в Русе, където завършва средното си образование и изгражда своите основни ценности.</p>
-                    <p>Завършва магистратура по финанси в Стопанска академия „Д. А. Ценов“ – Свищов и магистърска степен по бизнес администрация (MBA) с отличие в Anglia Ruskin University (Великобритания) през 2022 г.</p>
-                    
-                    <div class="award-box" data-aos="zoom-in">
-                        <div class="award-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <div class="award-text">
-                            <h5 class="mb-1 fw-bold" style="color: #b88b00;">Top Achiever Award</h5>
-                            <p class="mb-1 small text-dark">Награден за <strong>Outstanding Module Performance</strong> в MBA програмата на Anglia Ruskin University.</p>
-                            <a href="Untitled.png" target="_blank" class="small fw-bold text-decoration-none">Виж сертификата <i class="fas fa-external-link-alt ms-1"></i></a>
-                        </div>
-                    </div>
-
-                    <p>Професионалният му път включва над 20 години работа в чужбина, основно във Великобритания, на ръководни позиции в сферата на логистиката. Този опит му дава разбиране за ефективното управление и личната отговорност.</p>
-                </div>
-
-                <div class="col-lg-5" data-aos="fade-left">
-                    <div class="uk-photo-wrapper">
-                        <img src="DSC_1912.jpg" alt="Росен Симеонов в Англия">
-                        <div class="uk-label">Управленски опит, UK</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <section class="yard-banner">
-        <div class="container" data-aos="fade-up">
+    <section class="yard-bg">
+        <div class="container" data-aos="zoom-in">
             <h2>Експертиза в мащабни операции</h2>
-            <p class="lead text-white-50">Над две десетилетия управление на логистични дивизии и международни екипи.</p>
+            <p class="lead">Управление на логистични процеси, където всяко решение носи отговорност.</p>
         </div>
     </section>
 
-    <section class="py-5 bg-white text-dark">
+    <section class="container py-5">
+        <div class="row align-items-center flex-column-reverse flex-lg-row">
+            <div class="col-lg-5" data-aos="fade-right">
+                <img src="Untitled.png" alt="Награждаване" class="main-img shadow-lg">
+            </div>
+            <div class="col-lg-7 ps-lg-5" data-aos="fade-left">
+                <h2 class="section-title">Академично съвършенство</h2>
+                <p>Росен придобива магистърска степен по бизнес администрация (MBA) с пълно отличие в <strong>Anglia Ruskin University (Кеймбридж)</strong> – университет в световния Топ 350.</p>
+                <div class="award-banner">
+                    <i class="fas fa-trophy fa-3x text-warning"></i>
+                    <div>
+                        <h5 class="m-0 fw-bold">Top Achiever Award</h5>
+                        <p class="m-0 text-muted">За изключителни академични постижения в MBA програмата.</p>
+                        <a href="Top achiever award for outstanding performance MBA.jpg" target="_blank" class="small fw-bold text-primary">Виж сертификата <i class="fas fa-search-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-5">
         <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-9 text-center">
-                    <h2 class="fw-900 mb-4" style="color: var(--primary-blue);">Обществена дейност</h2>
-                    <p class="lead mb-4">След завръщането си в България се посвещава на повишаване на финансовата грамотност. За него икономическата независимост е в основата на свободното гражданско общество.</p>
-                    <p class="mb-5">Избран е за общински председател на ДСБ – Русе през 2025 г. Неговите приоритети са прозрачност в местното управление, равенство пред закона и устойчиво развитие на региона.</p>
-                    
-                    <div class="p-4 bg-light rounded-4 border-start border-primary border-4 italic">
-                        <h4 class="mb-0">"Вярвам, че Русе може да бъде модерен европейски център чрез почтеност и експертиза."</h4>
-                    </div>
-                    
-                    <div class="mt-5 pt-3 border-top">
-                        <span class="badge bg-primary p-2 px-4 rounded-pill">Семеен, баща на две деца</span>
-                    </div>
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <h2 class="section-title">Мисия: Финансова независимост</h2>
+                    <p class="lead">„Колкото по-ниска е финансовата грамотност на един човек, толкова по-зависим е той.“</p>
+                    <p>Като съосновател на платформата <strong>Alphainvest.bg</strong> и активен лектор, Росен работи за повишаване на финансовата култура на българите. За него технологиите и знанията са инструментите, които позволяват на всеки да увеличи богатството си и да бъде истински свободен гражданин.</p>
+                </div>
+                <div class="col-lg-5" data-aos="fade-left">
+                    <img src="finance.jpg" alt="Лекция финанси" class="main-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5 text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-10" data-aos="fade-up">
+                <h2 class="section-title mx-auto">Новото начало за ДСБ Русе</h2>
+                <p class="mb-5">На 25 юни 2025 г. Росен Симеонов поема лидерството на ДСБ в Русе с ясна амбиция: <strong>модернизация, привличане на млади хора и връщане към основните десни ценности.</strong></p>
+                <img src="Rosen Simeonov poema posta obshtinski predsedatel.jpg" alt="Поемане на поста" class="main-img mb-5" style="max-width: 800px;">
+                <div class="p-4 bg-light border-start border-primary border-4 text-start">
+                    <h4 class="fw-bold">„Трябва да сме сред хората, да отговаряме и на неудобните въпроси дори – това е начинът.“</h4>
+                    <p class="m-0">— Интервю пред в. „Утро“, декември 2025</p>
                 </div>
             </div>
         </div>
@@ -259,8 +219,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
+    <script> AOS.init({ duration: 1000, once: true }); </script>
 </body>
 </html>
+
