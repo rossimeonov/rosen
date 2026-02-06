@@ -3,114 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Росен Симеонов | Общински председател на ДСБ Русе</title>
+    <title>Росен Симеонов | Председател на ДСБ Русе</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        :root { 
-            --primary-blue: #0B2E5F; 
-            --dark-blue: #081F3F; 
-            --accent-blue: #00d4ff; 
-            --light-text: #ffffff; 
-        }
-        
-        html, body { max-width: 100%; overflow-x: hidden; scroll-behavior: smooth; }
-        body { font-family: 'Roboto', sans-serif; background-color: #05162d; color: var(--light-text); margin: 0; }
-        h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; }
+        :root { --primary-blue: #0B2E5F; --dark-blue: #05162d; --accent-blue: #00d4ff; --pure-white: #ffffff; }
+        body { font-family: 'Roboto', sans-serif; background-color: var(--dark-blue); color: white; margin: 0; overflow-x: hidden; }
+        h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
 
-        /* Header */
-        .sticky-header { background: linear-gradient(135deg, #0B2E5F, #081F3F); padding: 15px 0; position: sticky; top: 0; z-index: 10000; width: 100%; border-bottom: 2px solid var(--accent-blue); }
+        /* Navigation with Logos */
+        .sticky-header { background: rgba(11, 46, 95, 0.98); padding: 12px 0; position: sticky; top: 0; z-index: 10000; border-bottom: 2px solid var(--accent-blue); }
         .header-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; }
         .header-text a { text-decoration: none; color: white; }
-        .header-text h1 { margin: 0; font-size: 22px; font-weight: 700; }
-        .header-text p { margin: 0; font-size: 11px; opacity: 0.8; }
-        .header-logos img { height: 35px; width: auto; transition: 0.3s; margin-left: 10px; }
-        
-        nav a { color: white; text-decoration: none; font-size: 12px; font-weight: 700; margin-left: 20px; text-transform: uppercase; opacity: 0.7; transition: 0.3s; }
+        .header-text h1 { margin: 0; font-size: 20px; font-weight: 700; }
+        .header-logos img { height: 32px; width: auto; margin-left: 12px; transition: 0.3s; }
+        nav a { color: white; text-decoration: none; font-size: 11px; font-weight: 700; margin-left: 20px; opacity: 0.7; transition: 0.3s; }
         nav a:hover { opacity: 1; color: var(--accent-blue); }
-        
-        .navbar-toggler { border: none; color: white; font-size: 24px; background: transparent; padding: 0; }
-        .mobile-nav { background: var(--dark-blue); border-top: 1px solid var(--accent-blue); }
-        .mobile-nav a { display: block; padding: 15px 20px; color: white; text-decoration: none; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
-        /* Hero Section with Ruse Background */
+        /* Hero */
         .hero { 
-            padding: 120px 0; 
-            overflow: hidden; 
-            background: linear-gradient(rgba(5, 22, 45, 0.75), rgba(5, 22, 45, 0.85)), url('ruse.jpg') center center/cover no-repeat;
-            background-attachment: fixed; /* Паралакс ефект */
-            border-bottom: 3px solid var(--accent-blue);
+            min-height: 85vh; display: flex; align-items: center;
+            background: linear-gradient(to right, rgba(5, 22, 45, 1) 35%, rgba(5, 22, 45, 0.4) 100%), url('ruse.jpg') center/cover no-repeat;
+            padding: 80px 0; border-bottom: 5px solid var(--accent-blue);
+        }
+        .hero-quote { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 25px; }
+        .photo-wrapper img { 
+            width: 100%; max-width: 450px; 
+            mask-image: linear-gradient(to bottom, black 85%, transparent 100%), linear-gradient(to left, black 85%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%), linear-gradient(to left, black 85%, transparent 100%);
         }
 
-        .hero-quote { font-size: clamp(1.4rem, 4vw, 2.8rem); font-weight: 900; line-height: 1.2; position: relative; display: inline-block; padding-bottom: 15px; margin-bottom: 25px; opacity: 0; transform: translateY(20px); animation: fadeInUp 1s ease forwards 0.3s; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-        .hero-quote::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 4px; background: linear-gradient(90deg, var(--accent-blue), transparent); border-radius: 2px; animation: lineGrow 1.5s ease forwards 0.8s; }
-        
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-        @keyframes lineGrow { to { width: 100%; } }
+        /* Priorities Section (White) */
+        .priority-section { padding: 100px 0; background: var(--pure-white); color: var(--dark-blue); }
+        .feature-box { border-left: 5px solid var(--primary-blue); padding-left: 20px; margin-bottom: 40px; }
+        .feature-box h3 { font-weight: 900; font-size: 1.3rem; color: var(--primary-blue); }
+        .vision-card { background: #f8f9fa; padding: 30px; border-radius: 4px; border-left: 4px solid var(--accent-blue); height: 100%; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .vision-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .vision-card i { font-size: 2rem; color: var(--primary-blue); margin-bottom: 15px; }
 
-        .political-photo { width: 100%; max-width: 380px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2); border-left: 6px solid var(--accent-blue); }
-
-        /* Quick Action Buttons */
-        .action-btn { transition: 0.3s; border-color: rgba(0, 212, 255, 0.4); color: var(--accent-blue); font-weight: 700; text-transform: uppercase; background: rgba(8, 31, 63, 0.6); backdrop-filter: blur(5px); }
-        .action-btn:hover { background: var(--accent-blue); color: var(--dark-blue); transform: translateY(-5px); }
-
-        /* Cards Styling */
-        .expertise-card, .vision-card { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 20px; height: 100%; transition: 0.4s; }
-        .expertise-card i { color: var(--accent-blue); font-size: 2.5rem; margin-bottom: 20px; }
-        .vision-card h5 { color: var(--accent-blue); font-weight: 700; margin-bottom: 15px; display: flex; align-items: center; }
-        .vision-card:hover { transform: translateY(-10px); border-color: var(--accent-blue); background: rgba(0, 212, 255, 0.08); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
-
-        /* Contact Box & Form Corrections */
-        .contact-box { background: #081F3F; padding: 40px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-        
-        .form-control { 
-            background: rgba(255,255,255,0.08); 
-            border: 1px solid rgba(255,255,255,0.2); 
-            color: #ffffff !important; 
-            padding: 12px;
-            font-size: 16px;
-        }
-
-        .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.5) !important;
-            opacity: 1;
-        }
-
-        .form-control:focus { 
-            background: rgba(255,255,255,0.12); 
-            border-color: var(--accent-blue); 
-            box-shadow: none; 
-            color: #ffffff !important;
-        }
-
-        /* Autofill Correction */
-        input:-webkit-autofill,
-        input:-webkit-autofill:hover, 
-        input:-webkit-autofill:focus,
-        textarea:-webkit-autofill,
-        textarea:-webkit-autofill:hover,
-        textarea:-webkit-autofill:focus {
-            -webkit-text-fill-color: #ffffff !important;
-            -webkit-box-shadow: 0 0 0px 1000px #081F3F inset !important;
-            transition: background-color 5000s ease-in-out 0s;
-        }
-
-        .btn-submit { background: var(--accent-blue); color: var(--dark-blue); font-weight: 900; border: none; padding: 15px; width: 100%; border-radius: 10px; transition: 0.3s; text-transform: uppercase; }
-        .btn-submit:hover { background: #ffffff; transform: translateY(-2px); }
-
+        /* Media & Social Section */
+        .social-section { padding: 80px 0; background: #030d1a; }
+        .media-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 25px; transition: 0.3s; text-decoration: none; color: white; display: block; border-radius: 4px; }
+        .media-card:hover { background: rgba(0, 212, 255, 0.1); border-color: var(--accent-blue); }
+        .media-card span { font-size: 0.8rem; color: var(--accent-blue); font-weight: 700; }
         .crt-logo { display: none !important; }
-        footer { padding: 50px 0; background: #030d1a; text-align: center; opacity: 0.7; font-size: 13px; border-top: 1px solid rgba(255,255,255,0.05); }
+
+        /* Contact Section */
+        .contact-wrap { background: var(--primary-blue); padding: 100px 0; clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%); }
+        .form-control { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white !important; padding: 15px; border-radius: 0; }
+        .form-control::placeholder { color: rgba(255,255,255,0.5); }
+        .form-control:focus { background: rgba(255,255,255,0.2); border-color: var(--accent-blue); box-shadow: none; }
+        .btn-main { background: white; color: var(--dark-blue); font-weight: 900; padding: 16px 45px; border: none; text-transform: uppercase; transition: 0.3s; }
+        .btn-main:hover { background: var(--accent-blue); color: white; transform: translateY(-3px); }
+
+        footer { padding: 50px 0; text-align: center; opacity: 0.6; font-size: 12px; background: #020a13; }
 
         @media (max-width: 992px) { 
-            .header-logos { display: none; } 
-            .hero { text-align: center; padding: 60px 0; background-attachment: scroll; } 
-            .hero-quote::after { left: 0; width: 100%; } 
-            .political-photo { margin-top: 40px; }
+            .header-logos { display: none; }
+            .hero { text-align: center; padding-top: 100px; }
+            .contact-wrap { clip-path: none; }
         }
     </style>
 </head>
@@ -121,150 +76,122 @@
             <div class="header-text">
                 <a href="index.html">
                     <h1>Росен Симеонов</h1>
-                    <p>Общински председател на ДСБ Русе</p>
                 </a>
             </div>
             <nav class="d-none d-lg-flex align-items-center">
-                <div class="header-logos me-4">
+                <a href="za-men.html">Биография</a>
+                <a href="#priorities">Приоритети</a>
+                <a href="#media">Медии</a>
+                <a href="#contact">Контакт</a>
+                <div class="header-logos">
                     <img src="logo-dsb.png.svg" alt="ДСБ">
                     <img src="logo-db.png.svg" alt="ДБ">
                     <img src="logo-epp.png.svg" alt="ЕНП">
                 </div>
-                <a href="za-men.html">За мен</a>
-                <a href="#vision">Визия</a>
-                <a href="#contact">Контакт</a>
             </nav>
-            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        <div class="collapse d-lg-none mobile-nav" id="mobileMenu">
-            <a href="za-men.html">За мен</a>
-            <a href="#vision" onclick="bootstrap.Collapse.getInstance(document.getElementById('mobileMenu')).hide()">Визия</a>
-            <a href="#contact" onclick="bootstrap.Collapse.getInstance(document.getElementById('mobileMenu')).hide()">Контакт</a>
         </div>
     </header>
 
     <main>
         <section class="hero container-fluid">
             <div class="container">
-                <div class="row align-items-center g-4">
-                    <div class="col-lg-7">
-                        <h2 class="hero-quote">"Свободата е възможна само там, където правилата важат за всички"</h2>
-                        <p class="lead mb-4 fw-normal" style="text-shadow: 1px 1px 5px rgba(0,0,0,0.8);">За модерно управление на Русе, основано на икономическа експертиза и европейски правила.</p>
-                        <div class="mt-2" data-aos="fade-up" data-aos-delay="1000">
-                            <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank" class="btn btn-outline-info me-2"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank" class="btn btn-outline-info me-2"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://www.tiktok.com/@rossimeonov" target="_blank" class="btn btn-outline-info"><i class="fab fa-tiktok"></i></a>
+                <div class="row align-items-center">
+                    <div class="col-lg-7" data-aos="fade-right">
+                        <h2 class="hero-quote">Трябва да сме <br><span style="color: var(--accent-blue);">сред хората</span>,<br>това е начинът.</h2>
+                        <p class="lead opacity-75 mb-4" style="max-width: 550px;">„Политиката не е професия, а начин да работиш за обществото. Време е за правила, които важат за всички.“</p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#contact" class="btn btn-main">Подай сигнал</a>
+                            <a href="za-men.html" class="btn btn-outline-light p-3 px-5 fw-bold">Биография</a>
                         </div>
                     </div>
-                    <div class="col-lg-5 text-center" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="me.jpg.png" alt="Росен Симеонов" class="political-photo">
+                    <div class="col-lg-5 d-none d-lg-block text-end" data-aos="fade-left">
+                        <img src="me.jpg.png" alt="Росен Симеонов" class="photo-wrapper">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="container mb-5 mt-n5 position-relative" style="z-index: 5;">
-            <div class="row g-3 text-center">
-                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
-                    <a href="#contact" class="btn btn-submit py-3 action-btn"><i class="fas fa-bullhorn me-2"></i>Подай сигнал</a>
-                </div>
-                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
-                    <a href="mailto:office@dsbruse.bg" class="btn btn-outline-info w-100 py-3 action-btn"><i class="fas fa-envelope me-2"></i>Пиши ми</a>
-                </div>
-                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
-                    <a href="#vision" class="btn btn-outline-info w-100 py-3 action-btn"><i class="fas fa-list-check me-2"></i>Приоритети</a>
-                </div>
-                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="400">
-                    <a href="za-men.html" class="btn btn-outline-info w-100 py-3 action-btn"><i class="fas fa-user-tie me-2"></i>Биография</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="container py-5 mt-4">
-            <h3 class="text-center mb-5 fw-bold text-uppercase">Експертиза и компетентност</h3>
-            <div class="row g-4 text-center">
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="expertise-card">
-                        <i class="fas fa-ship"></i>
-                        <h5>Логистика</h5>
-                        <p class="opacity-75">Над 20 години лидерски опит в управлението на международни логистични системи.</p>
+        <section id="priorities" class="priority-section">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-6" data-aos="fade-up">
+                        <h2 class="fw-900 mb-5" style="font-size: 2.2rem; line-height: 1;">МОИТЕ <span style="color: var(--primary-blue);">АНГАЖИМЕНТИ</span></h2>
+                        <div class="feature-box">
+                            <h3>ФИНАНСОВА НЕЗАВИСИМОСТ</h3>
+                            <p>Колкото по-ниска е финансовата грамотност, толкова по-зависим е човек. Личната ми мисия е икономическото ограмотяване на русенци – пътят към свободно гражданско общество.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h3>РАВЕНСТВО ПРЕД ЗАКОНА</h3>
+                            <p>Държавата и общината трябва да са равни пред закона с гражданите. Време е за край на "втория начин" и арогантността на администрацията спрямо работещите хора.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h3>ВИЗИЯ ЗА РАЗВИТИЕ</h3>
+                            <p>Русе не трябва да е град на нископлатени производства. Имаме ключово място и история – длъжни сме да привлечем инвестиции в технологии и иновации.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="expertise-card">
-                        <i class="fas fa-chart-line"></i>
-                        <h5>Финанси</h5>
-                        <p class="opacity-75">MBA от Anglia Ruskin University. Експерт по стратегически икономически анализи.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="expertise-card">
-                        <i class="fas fa-globe-europe"></i>
-                        <h5>За Русе</h5>
-                        <p class="opacity-75">Прилагане на европейски стандарт за прозрачност в работата на Община Русе.</p>
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12" data-aos="zoom-in">
+                                <div class="vision-card">
+                                    <i class="fas fa-bullhorn"></i>
+                                    <h5>ГРАЖДАНСКА АКТИВНОСТ</h5>
+                                    <p class="small opacity-75">Трябва да сме сред хората и да отговаряме дори на най-неудобните въпроси. Егото трябва да остане на заден план.</p>
+                                </div>
+                            </div>
+                            <div class="col-12" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="vision-card">
+                                    <i class="fas fa-eye"></i>
+                                    <h5>ПЪЛНА ПРОЗРАЧНОСТ</h5>
+                                    <p class="small opacity-75">Писнало ни е да ни лъжат. Хората искат да знаят точно за какво се изразходват публичните средства от техните данъци.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="vision" class="container py-5">
-            <h3 class="text-center mb-5 fw-bold text-uppercase" style="color: var(--accent-blue);">Моята визия</h3>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-right">
-                    <div class="vision-card">
-                        <h5><i class="fas fa-eye me-2"></i>Прозрачност</h5>
-                        <p>Край на решенията "на тъмно". Всеки похарчен лев от данъците на русенци трябва да бъде отчетен.</p>
-                    </div>
+        <section class="py-5" style="background: #05162d;">
+            <div class="container text-center">
+                <h4 class="mb-5 opacity-75 fw-bold text-uppercase">Директно от TikTok</h4>
+                <div id="curator-feed-default-feed-layout">
+                    <a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a>
                 </div>
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="vision-card">
-                        <h5><i class="fas fa-balance-scale me-2"></i>Справедливост</h5>
-                        <p>Еднакви правила за всички бизнеси. Общината трябва да бъде партньор, а не пречка.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-left">
-                    <div class="vision-card">
-                        <h5><i class="fas fa-city me-2"></i>Развитие</h5>
-                        <p>Привличане на инвестиции в иновации, за да върнем на Русе славата на икономически център.</p>
+            </div>
+        </section>
+
+        <section id="media" class="social-section">
+            <div class="container">
+                <h2 class="text-center mb-5">Медийни <span style="color: var(--accent-blue);">Изяви</span></h2>
+                <div class="row g-4">
+                    <div class="col-md-6" data-aos="fade-up">
+                        <a href="https://utroruse.com" target="_blank" class="media-card">
+                            <span>ИНТЕРВЮ | В-К "УТРО"</span>
+                            <h5 class="mt-2">Росен Симеонов: Трябва да сме сред хората, да отговаряме и на неудобните въпроси дори.</h5>
+                            <p class="small opacity-50 mb-0 mt-2">Прочети цялото интервю за професионалния път от Лондон до Русе...</p>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="container py-5">
-            <h3 class="text-center mb-5 fw-bold text-uppercase">Видео позиции (TikTok)</h3>
-            <div id="curator-feed-default-feed-layout">
-                <a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a>
-            </div>
-        </section>
-
-        <section id="contact" class="container py-5 mb-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="contact-box" data-aos="fade-up">
-                        <h3 class="mb-4 text-center fw-bold text-uppercase">Свържете се с мен</h3>
-                        <p class="text-center opacity-75 mb-4">Вашето мнение и сигнали са важни. Пишете ми директно.</p>
-                        
+        <section id="contact" class="contact-wrap">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center mb-5">
+                        <h2 class="fw-900">ПИШЕТЕ МИ ДИРЕКТНО</h2>
+                        <p class="opacity-75">Вашият сигнал или идея за Русе са важни за мен. Използвайте формата по-долу.</p>
+                    </div>
+                    <div class="col-lg-8">
                         <form action="https://formspree.io/f/mnjbakgl" method="POST">
                             <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="small mb-1 opacity-75">Вашето име</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Име" required>
+                                <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="ВАШЕТО ИМЕ" required></div>
+                                <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="ВАШИЯТ EMAIL" required></div>
+                                <div class="col-12"><textarea name="message" class="form-control" rows="5" placeholder="ВАШИЯТ СИГНАЛ ИЛИ ВЪПРОС..." required></textarea></div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn-main mt-4">ИЗПРАТИ СЪОБЩЕНИЕТО</button>
                                 </div>
-                                <div class="col-md-6">
-                                    <label class="small mb-1 opacity-75">Електронна поща</label>
-                                    <input type="email" name="_replyto" class="form-control" placeholder="email@example.com" required>
-                                </div>
-                                <div class="col-12">
-                                    <label class="small mb-1 opacity-75">Вашият сигнал или въпрос</label>
-                                    <textarea name="message" class="form-control" rows="5" placeholder="Напишете съобщението си тук..." required></textarea>
-                                </div>
-                                <input type="hidden" name="_subject" value="Ново съобщение от сайта на Росен Симеонов">
-                                <div class="col-12">
-                                    <button type="submit" class="btn-submit">ИЗПРАТИ СЪОБЩЕНИЕТО</button>
-                                </div>
+                                <input type="hidden" name="_subject" value="Ново съобщение от rosen-simeonov.bg">
                             </div>
                         </form>
                     </div>
@@ -275,8 +202,8 @@
 
     <footer>
         <div class="container">
-            <p class="mb-2">© 2026 Росен Симеонов | ДСБ Русе</p>
-            <p class="opacity-50" style="font-size: 11px;">Където няма ред и законност, няма и свобода.</p>
+            <p class="mb-1">© 2026 РОСЕН СИМЕОНОВ | ДСБ РУСЕ | ПП-ДБ</p>
+            <p class="opacity-50 small text-uppercase">Където няма ред и законност, няма и свобода.</p>
         </div>
     </footer>
 
@@ -292,7 +219,7 @@
     </script>
     
     <script>
-        AOS.init({ duration: 800, once: true, disable: 'mobile' });
+        AOS.init({ duration: 1000, once: true, disable: 'mobile' });
     </script>
 </body>
 </html>
