@@ -75,9 +75,9 @@
         /* Форма Сигнали */
         .form-section { padding: 100px 0; background: #f4f7f9; color: var(--dark-blue); }
         .form-card { background: white; padding: 50px; border-radius: 25px; box-shadow: 0 15px 45px rgba(0,0,0,0.05); }
-        .form-control { padding: 15px; border-radius: 10px; border: 1px solid #ced4da; background: #fafafa; }
-        .btn-send-signal { background: var(--accent-blue); color: var(--dark-blue); font-weight: 900; padding: 18px 40px; border-radius: 50px; border: none; text-transform: uppercase; width: 100%; transition: 0.4s; }
-        .btn-send-signal:hover { background: var(--primary-blue); color: white; transform: translateY(-3px); }
+        .form-control { padding: 15px; border-radius: 10px; border: 1px solid #ced4da; background: #fafafa; color: #333 !important; }
+        .btn-send-signal { background: var(--primary-blue); color: white; font-weight: 900; padding: 18px 40px; border-radius: 50px; border: none; text-transform: uppercase; width: 100%; transition: 0.4s; }
+        .btn-send-signal:hover { background: var(--accent-blue); color: var(--dark-blue); transform: translateY(-3px); }
 
         footer { padding: 60px 0; text-align: center; background: #020a13; font-size: 13px; opacity: 0.6; }
 
@@ -95,9 +95,8 @@
             <div class="navbar-brand">
                 <a href="index.html" class="brand-name">РОСЕН СИМЕОНОВ</a>
                 <div class="header-logos">
-                    <img src="logo-dsb.svg" alt="ДСБ">
-                    <img src="logo-db.svg" alt="ДБ">
-                    <img src="logo-epp.svg" alt="ЕНП">
+                    <img src="logo-dsb.svg" alt="ДСБ" style="height: 26px;">
+                    <img src="logo-db.svg" alt="ДБ" style="height: 26px;">
                 </div>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -135,7 +134,7 @@
     <section class="map-section-main">
         <div class="container text-center">
             <div class="map-wrapper mb-4" data-aos="zoom-in">
-                <iframe src="https://www.google.com/maps/d/embed?mid=1vX699U_eOOn_N5xLzY_5hN0_2h-z1vA" width="100%" height="480"></iframe>
+                <iframe src="https://www.google.com/maps/d/embed?mid=1vX699U_eOOn_N79-Vj36p0H8_fInE-A&ehbc=2E312F"></iframe>
             </div>
             
             <div class="map-legend-box text-dark">
@@ -155,23 +154,23 @@
                         <form action="https://formspree.io/f/mnjbakgl" method="POST">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label class="form-label fw-bold text-dark">Вашето име</label>
+                                    <label class="form-label fw-bold text-dark text-uppercase" style="font-size: 0.8rem;">Вашето име</label>
                                     <input type="text" name="name" class="form-control" placeholder="Име и фамилия" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label fw-bold text-dark">Имейл</label>
+                                    <label class="form-label fw-bold text-dark text-uppercase" style="font-size: 0.8rem;">Имейл</label>
                                     <input type="email" name="email" class="form-control" placeholder="example@mail.com" required>
                                 </div>
                                 <div class="col-12">
-                                    <label class="form-label fw-bold text-dark">Локация</label>
+                                    <label class="form-label fw-bold text-dark text-uppercase" style="font-size: 0.8rem;">Локация</label>
                                     <input type="text" name="location" class="form-control" placeholder="напр. кв. Здравец, пред блок..." required>
                                 </div>
                                 <div class="col-12">
-                                    <label class="form-label fw-bold text-dark">Описание</label>
+                                    <label class="form-label fw-bold text-dark text-uppercase" style="font-size: 0.8rem;">Описание</label>
                                     <textarea name="message" class="form-control" rows="5" placeholder="Опишете проблема детайлно..." required></textarea>
                                 </div>
                                 <div class="col-12 text-center mt-4">
-                                    <button type="submit" class="btn-send-signal">ИЗПРАТИ СИГНАЛА</button>
+                                    <button type="submit" class="btn-send-signal shadow">ИЗПРАТИ СИГНАЛА</button>
                                 </div>
                             </div>
                         </form>
