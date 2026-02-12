@@ -22,7 +22,7 @@
         body { font-family: 'Roboto', sans-serif; background-color: var(--dark-blue); color: white; margin: 0; overflow-x: hidden; }
         h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* Навигация (Идентична с index.html) */
+        /* Навигация - Идентична с Началната страница */
         .navbar { 
             background: rgba(5, 18, 33, 0.95); 
             backdrop-filter: blur(15px); 
@@ -47,37 +47,47 @@
             padding: 140px 0 70px; 
             background: linear-gradient(180deg, #051221 0%, #0B2E5F 100%); 
             text-align: center;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
         }
         .accent-line { width: 60px; height: 5px; background: var(--accent-blue); margin: 25px auto; }
 
-        /* Карта Секция */
+        /* Секция Карта */
         .map-section-main { padding: 90px 0; background: #ffffff; color: var(--dark-blue); }
         .map-wrapper { 
-            position: relative; padding-bottom: 50%; height: 0; overflow: hidden; 
-            border-radius: 25px; box-shadow: 0 25px 60px rgba(0,0,0,0.2); border: 1px solid #e0e0e0;
+            position: relative; 
+            padding-bottom: 56.25%; /* 16:9 съотношение */
+            height: 0; 
+            overflow: hidden; 
+            border-radius: 25px; 
+            box-shadow: 0 25px 60px rgba(0,0,0,0.2); 
+            border: 1px solid #e0e0e0;
         }
-        .map-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .map-wrapper iframe { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            border: 0; 
+        }
         
         .map-legend-box { display: flex; justify-content: center; gap: 30px; margin-top: 35px; font-weight: 900; font-size: 0.85rem; }
 
         /* Инструкции */
         .instruction-card { background: #f8fbff; padding: 40px; border-radius: 20px; height: 100%; border-top: 5px solid var(--accent-blue); transition: 0.3s; }
-        .instruction-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         .instruction-card i { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 20px; }
 
         /* Форма Сигнали */
         .form-section { padding: 100px 0; background: #f4f7f9; color: var(--dark-blue); }
         .form-card { background: white; padding: 50px; border-radius: 25px; box-shadow: 0 15px 45px rgba(0,0,0,0.05); }
         .form-control { padding: 15px; border-radius: 10px; border: 1px solid #ced4da; background: #fafafa; }
-        .btn-main { background: var(--accent-blue); color: var(--dark-blue); font-weight: 900; padding: 18px 40px; border-radius: 50px; border: none; text-transform: uppercase; width: 100%; transition: 0.4s; }
-        .btn-main:hover { background: var(--primary-blue); color: white; transform: translateY(-3px); }
+        .btn-send-signal { background: var(--accent-blue); color: var(--dark-blue); font-weight: 900; padding: 18px 40px; border-radius: 50px; border: none; text-transform: uppercase; width: 100%; transition: 0.4s; }
+        .btn-send-signal:hover { background: var(--primary-blue); color: white; transform: translateY(-3px); }
 
         footer { padding: 60px 0; text-align: center; background: #020a13; font-size: 13px; opacity: 0.6; }
 
         @media (max-width: 991px) { 
             .header-logos, .social-nav { display: none; }
-            .map-wrapper { padding-bottom: 100%; }
+            .map-wrapper { padding-bottom: 100%; } /* По-квадратна карта на мобилни */
             .map-legend-box { flex-direction: column; align-items: center; gap: 15px; }
         }
     </style>
@@ -121,7 +131,7 @@
             <h1 class="fw-900 text-white">Русе под лупа</h1>
             <div class="accent-line"></div>
             <p class="lead text-white-50 mx-auto" style="max-width: 700px;">
-                Прозрачност и контрол над общинските дела. Помогнете ни да превърнем проблемите на града в конкретни решения.
+                Вашият сигнал е началото на решението. Тук отбелязваме проблемите на града ни и стъпките, които предприемаме за тяхното отстраняване.
             </p>
         </div>
     </header>
@@ -132,28 +142,28 @@
                 <div class="col-lg-4" data-aos="fade-up">
                     <div class="instruction-card">
                         <i class="fas fa-map-marked-alt"></i>
-                        <h5>Интерактивност</h5>
-                        <p class="text-muted small">Картата се обновява редовно с нови сигнали, които получаваме от гражданите в различните квартали.</p>
+                        <h5>Вижте казусите</h5>
+                        <p class="text-muted small">Интерактивната карта показва в реално време проблемите, за които гражданите на Русе вече са сигнализирали.</p>
                     </div>
                 </div>
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="instruction-card">
                         <i class="fas fa-tasks"></i>
-                        <h5>Администриране</h5>
-                        <p class="text-muted small">Всеки сигнал се преглежда от нашия екип и се трансформира в официално запитване към Община Русе.</p>
+                        <h5>Подайте сигнал</h5>
+                        <p class="text-muted small">Използвайте формата в края на страницата. Като общински председател на ДСБ, ще се погрижа Вашият глас да бъде чут.</p>
                     </div>
                 </div>
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="instruction-card">
                         <i class="fas fa-check-double"></i>
-                        <h5>Отчетност</h5>
-                        <p class="text-muted small">Целта ми е всеки зелен маркер на картата да бъде Ваша малка победа за по-добър живот в квартала Ви.</p>
+                        <h5>Контрол</h5>
+                        <p class="text-muted small">Следим развитието на всеки казус, докато общинската администрация не предприеме реални действия.</p>
                     </div>
                 </div>
             </div>
 
             <div class="map-wrapper" data-aos="zoom-in">
-                <iframe src="https://www.google.com/maps/d/3" allowfullscreen></iframe>
+                <iframe src="https://www.google.com/maps/d/embed?mid=1vX699U_eOOn_2Xn9oG3WpBfMv68AueA&ehbc=2E312F" allowfullscreen></iframe>
             </div>
             
             <div class="map-legend-box text-dark">
@@ -169,27 +179,27 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="form-card" data-aos="fade-up">
-                        <h3 class="fw-900 text-center mb-4" style="color: var(--primary-blue);">Изпратете Вашия сигнал</h3>
+                        <h3 class="fw-900 text-center mb-4" style="color: var(--primary-blue);">Подай сигнал за твоя квартал</h3>
                         <form action="https://formspree.io/f/mnjbakgl" method="POST">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label class="form-label fw-bold">Вашите имена</label>
+                                    <label class="form-label fw-bold text-dark">Вашето име</label>
                                     <input type="text" name="name" class="form-control" placeholder="Име и фамилия" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label fw-bold">Вашият Имейл</label>
-                                    <input type="email" name="email" class="form-control" placeholder="example@domain.com" required>
+                                    <label class="form-label fw-bold text-dark">Вашият Имейл</label>
+                                    <input type="email" name="email" class="form-control" placeholder="email@example.com" required>
                                 </div>
                                 <div class="col-12">
-                                    <label class="form-label fw-bold">Точна локация в Русе</label>
-                                    <input type="text" name="location" class="form-control" placeholder="напр. жк. Възраждане, ул. Плиска..." required>
+                                    <label class="form-label fw-bold text-dark">Локация (Улица / Блок / Квартал)</label>
+                                    <input type="text" name="location" class="form-control" placeholder="Къде точно в Русе е проблемът?" required>
                                 </div>
                                 <div class="col-12">
-                                    <label class="form-label fw-bold">Подробно описание на казуса</label>
-                                    <textarea name="message" class="form-control" rows="5" placeholder="Опишете проблема или Вашата идея за подобрение..." required></textarea>
+                                    <label class="form-label fw-bold text-dark">Описание на казуса</label>
+                                    <textarea name="message" class="form-control" rows="5" placeholder="Опишете подробно проблема..." required></textarea>
                                 </div>
                                 <div class="col-12 text-center mt-4">
-                                    <button type="submit" class="btn-main">ПОДАЙ СИГНАЛ ДО РОСЕН СИМЕОНОВ</button>
+                                    <button type="submit" class="btn-send-signal">ИЗПРАТИ КЪМ РОСЕН СИМЕОНОВ</button>
                                 </div>
                             </div>
                         </form>
@@ -201,7 +211,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 РОСЕН СИМЕОНОВ | ДСБ РУСЕ | С ГРИЖА ЗА НАШИЯ ГРАД</p>
+            <p>© 2026 РОСЕН СИМЕОНОВ | ДСБ РУСЕ | КЪДЕТО НЯМА РЕД, НЯМА СВОБОДА</p>
         </div>
     </footer>
 
